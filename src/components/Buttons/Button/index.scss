@@ -1,0 +1,164 @@
+@import 'variables/colors';
+
+.base {
+  display: block;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  padding: 13px 23px;
+  height: 50px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.collapsed {
+  width: inherit;
+}
+
+.default {
+  @extend .base;
+
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &.primary {
+    background-color: $grey1;
+
+    &:active {
+      background-color: darken($grey1, 10%);
+    }
+  }
+
+  &.secondary {
+    background-color: $secondary;
+
+    &:active {
+      background-color: darken($secondary, 10%);
+    }
+  }
+
+  &.brand {
+    background-color: $brand;
+
+    &:active {
+      background-color: darken($brand, 10%);
+    }
+  }
+
+  &.terciary {
+    background-color: $grey4;
+    color: $grey1;
+    font-weight: 500;
+
+    &:active {
+      background-color: darken($grey4, 10%);
+    }
+  }
+
+  &.correct {
+    background-color: $correct;
+
+    &:active {
+      background-color: darken($correct, 10%);
+    }
+  }
+
+  &.wrong {
+    background-color: $wrong;
+
+    &:active {
+      background-color: darken($wrong, 10%);
+    }
+  }
+
+  &.negative {
+    background-color: white;
+    color: $brand;
+  }
+}
+
+.outline {
+  @extend .base;
+  background: transparent;
+
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &.primary {
+    border-color: $grey1;
+    color: $grey1;
+
+    &:active {
+      border-color: darken($grey1, 10%);
+      color: darken($grey1, 10%);
+    }
+  }
+
+  &.secondary {
+    border-color: $secondary;
+    color: $secondary;
+
+    &:active {
+      border-color: darken($secondary, 10%);
+      color: darken($secondary, 10%);
+    }
+  }
+
+  &.brand {
+    border-color: $brand;
+    color: $brand;
+
+    &:active {
+      border-color: darken($brand, 10%);
+      color: darken($brand, 10%);
+    }
+  }
+
+  &.terciary {
+    border-color: $grey4;
+    color: $grey3;
+
+    &:active {
+      border-color: darken($grey4, 10%);
+      color: $grey3;
+    }
+  }
+
+  &.correct {
+    border-color: $correct;
+    color: $correct;
+
+    &:active {
+      border-color: darken($correct, 10%);
+      color: darken($correct, 10%);
+    }
+  }
+
+  &.wrong {
+    border-color: $wrong;
+    color: $wrong;
+
+    &:active {
+      border-color: darken($wrong, 10%);
+      color: darken($wrong, 10%);
+    }
+  }
+
+  &.negative {
+    border-color: white;
+    color: white;
+
+    &:active {
+      border-color: darken(white, 10%);
+      color: darken(white, 10%);
+    }
+  }
+}

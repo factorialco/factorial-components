@@ -1,0 +1,53 @@
+.base {
+  display: block;
+  border-radius: 5px;
+  color: white;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: center;
+  padding: 13px 23px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  width: 100%;
+}
+
+.collapsed {
+  width: inherit;
+}
+
+.colorButton {
+  @extend .base;
+  position: relative;
+  border: 2px solid transparent;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    display: none;
+  }
+
+  &:active {
+    &:before {
+      display: block;
+      box-shadow: inset 0 0 100px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+  }
+
+  &:disabled {
+    opacity: .5;
+    cursor: default;
+  }
+
+  &.outline {
+    &:before {
+      box-shadow: none;
+    }
+  }
+}

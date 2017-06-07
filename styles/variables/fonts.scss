@@ -1,0 +1,22 @@
+$font_stack: 'Avenir Next W01', Helvetica, Arial, sans-serif;
+$h1: 30px;
+$h2: 26px;
+$h3: 20px;
+$h4: 16px;
+$h5: 14px;
+$h6: 12px;
+
+$line-height-h1: 35px;
+$line-height-h2: 35px;
+$line-height-h3: 25px;
+$line-height-h4: 25px;
+$line-height-h5: 20px;
+$line-height-h6: 20px;
+
+$sizes: $h1 $h2 $h3 $h4 $h5 $h6;
+$line_heights: $line-height-h1 $line-height-h2 $line-height-h3 $line-height-h4 $line-height-h5 $line-height-h6;
+
+@mixin font-size($size) {
+  font-size: nth($sizes, $size);
+  line-height: nth($line_heights, $size);
+}

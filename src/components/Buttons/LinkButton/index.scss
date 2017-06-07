@@ -1,0 +1,12 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.buttonLink {
+  @include font-size(5);
+  font-weight: 500;
+  display: inline-block;
+  color: $brand;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}

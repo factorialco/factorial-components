@@ -1,0 +1,24 @@
+// TODO: Move everyone to use this
+@mixin text-ellipsis () {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Hack:
+// Card has a border but we want to hide it
+// On the left side within header and subheader
+// elements because they have background color
+@mixin overlap_horizontal_parent_border($border_width: 1px) {
+  // Full width overlaping card border
+  position: relative;
+  left: -$border_width;
+  margin-right: -$border_width * 2;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder { @content }
+  &:-moz-placeholder { @content }
+  &::-moz-placeholder { @content }
+  &:-ms-input-placeholder { @content }
+}

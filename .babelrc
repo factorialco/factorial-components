@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          ">1%",
+          "last 4 versions",
+          "Firefox ESR",
+          "not ie < 10"
+        ]
+      }
+    }],
+    "flow",
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "babel-plugin-transform-es2015-for-of",
+    "transform-es2015-parameters",
+    ["transform-object-rest-spread", { "useBuiltIns": true }],
+    ["transform-react-jsx", { "useBuiltIns": true }],
+    ["transform-regenerator", {"async": false}]
+  ]
+}
