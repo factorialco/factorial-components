@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack/webpack.config.js",
     "storybook": "start-storybook -p 6006",
+    "prepublish": "npm run build",
     "build-storybook": "build-storybook"
   },
   "repository": {
