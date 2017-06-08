@@ -1,17 +1,19 @@
 @import 'variables/colors';
+@import 'variables/fonts';
 
 .base {
-  display: block;
-  border-radius: 5px;
-  color: white;
-  font-size: 14px;
+  @include font-size(5);
   font-weight: 600;
-  line-height: 20px;
-  text-align: center;
-  padding: 13px 23px;
-  height: 50px;
-  cursor: pointer;
+
+  border-radius: 5px;
   border: 2px solid transparent;
+  color: white;
+  cursor: pointer;
+  display: block;
+  font-family: $font-stack;
+  height: 50px;
+  padding: 13px 23px;
+  text-align: center;
   width: 100%;
 }
 

@@ -1,43 +1,23 @@
 @import 'variables/colors';
+@import 'variables/fonts';
 
 .default {
-  font-size: 14px;
-  line-height: 20px;
-  display: block;
-  border-radius: 200px;
+  @include font-size(5);
+
   background: none;
+  box-sizing: border-box;
+  border-radius: 200px;
   border: 2px solid white;
   color: white;
   cursor: pointer;
-
-  /* We need this because firefox does not support flex in buttons */
-  .flex {
-    display: flex;
-    align-items: center;
-  }
+  display: block;
+  font-family: $font-stack;
+  padding: 0;
+  margin: 0;
 
   &:disabled {
     opacity: .5;
     cursor: default;
-  }
-
-  .icon {
-    flex: 0 0 auto;
-    height: 28px;
-    width: 28px;
-
-    // HACK: Overwrite Icon
-    svg {
-      height: 28px;
-      width: 28px;
-    }
-  }
-
-  .label {
-    flex: 0 0 auto;
-    display: none;
-    padding-right: 10px;
-    font-weight: 600;
   }
 
   &:hover {
@@ -73,5 +53,32 @@
   &.wrong {
     border-color: $wrong;
     fill: $wrong;
+  }
+
+  /* We need this because firefox does not support flex in buttons */
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    flex: 0 0 auto;
+    height: 28px;
+    width: 28px;
+    box-sizing: border-box;
+
+    // HACK: Overwrite Icon
+    svg {
+      box-sizing: border-box;
+      height: 28px;
+      width: 28px;
+    }
+  }
+
+  .label {
+    flex: 0 0 auto;
+    display: none;
+    padding-right: 10px;
+    font-weight: 600;
   }
 }
