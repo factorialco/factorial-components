@@ -29,12 +29,14 @@ export default class Button extends React.Component {
     href?: string,
     to?: string,
     submit: boolean,
+    size: 'small' | 'medium',
     disabled?: boolean,
     onClick?: (event: any) => ?Promise<void>
   };
 
   static defaultProps = {
     type: 'brand',
+    size: 'medium',
     submit: false,
     outline: false,
     disabled: false
@@ -79,16 +81,17 @@ export default class Button extends React.Component {
 
   render () {
     const {
-      type,
-      href,
-      to,
-      submit,
-      outline,
+      collapsed,
       disabled,
-      collapsed
+      href,
+      outline,
+      size,
+      submit,
+      to,
+      type
     } = this.props
 
-    const className = cx(outline ? 'outline' : 'default', type, { collapsed })
+    const className = cx(outline ? 'outline' : 'default', type, size, { collapsed })
 
     if (href) {
       return (
@@ -106,8 +109,8 @@ export default class Button extends React.Component {
       return (
         <button
           className={className}
-          onClick={this.onClick}
           disabled={disabled}
+          onClick={this.onClick}
           type={submit ? 'submit' : 'button'}
         >
           {this.renderContent()}

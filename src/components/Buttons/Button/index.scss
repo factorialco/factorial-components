@@ -5,16 +5,26 @@
   @include font-size(5);
   font-weight: 600;
 
+  box-sizing: border-box;
   border-radius: 5px;
   border: 2px solid transparent;
   color: white;
   cursor: pointer;
   display: block;
   font-family: $font-stack;
-  height: 50px;
-  padding: 13px 23px;
   text-align: center;
+  text-decoration: none;
   width: 100%;
+
+  &.small {
+    height: 40px;
+    padding: 8px 20px;
+  }
+
+  &.medium {
+    height: 50px;
+    padding: 13px 23px;
+  }
 }
 
 .collapsed {
