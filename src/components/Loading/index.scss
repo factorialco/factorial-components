@@ -1,0 +1,14 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.loading {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  padding: 50px;
+  justify-content: center;
+
+  &.inline {
+    padding: 0;
+  }
+}

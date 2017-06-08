@@ -3,4 +3,4 @@
 import Button from './Button'
 import RoundButton from './RoundButton'
 
-export { Button, RoundButton }
+export default { Button, RoundButton }

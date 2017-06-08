@@ -1,11 +1,9 @@
-import React from 'react';
+import { storiesOf } from '@storybook/react'
+import React from 'react'
 
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 
-import Button from 'components/Buttons/Button';
-import RoundButton from 'components/Buttons/RoundButton';
+import Button from 'components/Buttons/Button'
+import RoundButton from 'components/Buttons/RoundButton'
 
 storiesOf('Button', module)
   .addDecorator((story) => (
@@ -21,7 +19,7 @@ storiesOf('Button', module)
   ))
   .add('outlined', () => (
     <Button outline onClick={action('clicked')} label="this is some text" />
-  ));
+  ))
 
 storiesOf('RoundButton', module)
   .addDecorator((story) => (
