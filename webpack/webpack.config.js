@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEBUG = !process.argv.includes('--release')
 const VERBOSE = process.argv.includes('--verbose')
@@ -80,52 +81,43 @@ module.exports = {
         ]
       },
       {
-      test: /\.scss$/,
-      exclude: /node_modules/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: '[local]___[hash:base64:5]'
-          }
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [path.resolve(__dirname, '../styles')]
-          }
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            path: path.resolve(__dirname, 'postcss.config.js')
-          }
-        }
-      ]}
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                sourceMap: true,
+                modules: true,
+                importLoaders: 1,
+                localIdentName: '[local]___[hash:base64:5]'
+              }
+            },
+            {
+              loader: 'sass-loader',
+              options: {
+                includePaths: [path.resolve(__dirname, '../styles')],
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                path: path.resolve(__dirname, 'postcss.config.js')
+              }
+            }
+          ]
+        })
+      }
     ]
   },
 
   plugins: [
+    new ExtractTextPlugin('factorial-components.css'),
     new webpack.DefinePlugin(GLOBALS),
     new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en|es)$/),
     new webpack.optimize.AggressiveMergingPlugin()
-    // new webpack.optimize.UglifyJsPlugin({
-    //   sourceMap: true,
-    //   compress: {
-    //     warnings: false,
-    //     screw_ie8: true,
-    //     conditionals: true,
-    //     unused: true,
-    //     comparisons: true,
-    //     sequences: true,
-    //     dead_code: true,
-    //     evaluate: true,
-    //     if_return: true,
-    //     join_vars: true
-    //   }
-    // }),
   ]
 }

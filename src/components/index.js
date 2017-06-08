@@ -1,1 +1,1 @@
-import Buttons from 'components/Buttons'
+module.exports = require('components/Buttons') 
