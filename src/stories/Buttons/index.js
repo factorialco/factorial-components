@@ -12,13 +12,13 @@ storiesOf('Button', module)
     </div>
   ))
   .add('with text', () => (
-    <Button onClick={action('clicked')} label="this is some text" />
+    <Button label="this is some text" />
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')} label="😃 😃 😃" />
+    <Button label="😃 😃 😃" />
   ))
   .add('outlined', () => (
-    <Button outline onClick={action('clicked')} label="this is some text" />
+    <Button outline label="this is some text" />
   ))
 
 storiesOf('RoundButton', module)
@@ -31,7 +31,6 @@ storiesOf('RoundButton', module)
     <RoundButton
       set='utility'
       icon='add'
-      onClick={action('clicked')}
       label="this is some text"
     />
   ))
@@ -39,7 +38,6 @@ storiesOf('RoundButton', module)
       <RoundButton
       set='utility'
       icon='add'
-      onClick={action('clicked')}
       label="😃 😃 😃"
     />
   ))
