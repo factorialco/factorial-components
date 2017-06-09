@@ -4,7 +4,8 @@
   "description": "library of factorial components",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack/webpack.config.js",
+    "clean": "rimraf dist",
+    "build": "npm run clean && webpack --config webpack/webpack.config.js",
     "storybook": "start-storybook -p 6006",
     "prepublish": "npm run build",
     "build-storybook": "build-storybook"
@@ -32,7 +33,7 @@
     "babel-plugin-transform-react-jsx-self": "6.22.0",
     "babel-plugin-transform-react-jsx-source": "6.22.0",
     "babel-preset-env": "1.5.1",
-    "babel-preset-es2015": "6.24.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-0": "6.24.1",
     "css-loader": "0.28.4",

@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const DEBUG = !process.argv.includes('--release')
-const VERBOSE = process.argv.includes('--verbose')
 
 const GLOBALS = {
   'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
@@ -64,6 +63,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
+          babelrc: true,
           cacheDirectory: true
         }
       },
@@ -114,9 +114,24 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('factorial-components.css'),
+    new ExtractTextPlugin('main.css'),
     new webpack.DefinePlugin(GLOBALS),
     new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en|es)$/),
-    new webpack.optimize.AggressiveMergingPlugin()
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: false,
+      compress: {
+        warnings: false,
+        screw_ie8: true,
+        conditionals: true,
+        unused: true,
+        comparisons: true,
+        sequences: true,
+        dead_code: true,
+        evaluate: true,
+        if_return: true,
+        join_vars: true
+      }
+    })
   ]
 }
