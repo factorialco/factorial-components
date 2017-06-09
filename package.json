@@ -4,11 +4,11 @@
   "description": "library of factorial components",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf dist",
+    "build-storybook": "build-storybook",
     "build": "npm run clean && webpack --config webpack/server.config.js && webpack --config webpack/client.config.js",
-    "storybook": "start-storybook -p 6006",
+    "clean": "rimraf dist",
     "prepublish": "npm run build",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006"
   },
   "repository": {
     "type": "git",
