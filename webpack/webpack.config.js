@@ -24,8 +24,7 @@ module.exports = {
     'classnames': 'classnames',
     'react-router': 'react-router',
     'react': 'react',
-    'react-dom': 'react-dom',
-    'react-router': 'react-router'
+    'react-dom': 'react-dom'
   },
 
   cache: DEBUG,
@@ -75,7 +74,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'assets/[name].[sha512:hash:base64:7].[ext]'
+              name: 'static/assets/[name].[sha512:hash:base64:7].[ext]'
             }
           }
         ]

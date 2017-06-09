@@ -1,0 +1,25 @@
+@import 'variables/colors';
+
+.chevron {
+  line-height: 1;
+  stroke: none;
+  display: block;
+  width: 12px;
+  height: 12px;
+
+  &.brand {
+    fill: $brand;
+  }
+
+  &.primary {
+    fill: $grey1;
+  }
+
+  &.terciary {
+    fill: $grey3;
+  }
+
+  &.negative {
+    fill: white;
+  }
+}
