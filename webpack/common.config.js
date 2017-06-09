@@ -78,37 +78,6 @@ module.exports = {
             }
           }
         ]
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                sourceMap: true,
-                modules: true,
-                importLoaders: 1,
-                localIdentName: '[local]___[hash:base64:5]'
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                includePaths: [path.resolve(__dirname, '../styles')],
-                sourceMap: true
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                path: path.resolve(__dirname, 'postcss.config.js')
-              }
-            }
-          ]
-        })
       }
     ]
   },
