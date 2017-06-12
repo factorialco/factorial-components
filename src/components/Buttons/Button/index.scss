@@ -5,13 +5,14 @@
   @include font-size(5);
   font-weight: 600;
 
-  box-sizing: border-box;
   border-radius: 5px;
   border: 2px solid transparent;
+  box-sizing: border-box;
   color: white;
   cursor: pointer;
   display: block;
   font-family: $font-stack;
+  outline: none;
   text-align: center;
   text-decoration: none;
   width: 100%;
