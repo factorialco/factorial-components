@@ -26,8 +26,6 @@ module.exports = {
     'react-dom': 'react-dom'
   },
 
-  cache: DEBUG,
-
   stats: {
     hash: true,
     colors: true,
@@ -62,10 +60,7 @@ module.exports = {
         test: /\.js?$|\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query: {
-          babelrc: true,
-          cacheDirectory: true
-        }
+        query: { babelrc: true }
       },
       {
         test: /\.(jpe?g|png|gif|svg|ico)$/i,

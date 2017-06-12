@@ -1,0 +1,28 @@
+@import 'variables/colors';
+
+.root {
+  align-items: center;
+  background: transparent;
+  border-radius: 5px;
+  color: inherited;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  line-height: 1;
+  margin: 10px 0;
+  padding: 0 12px 0 10px;
+
+  &:hover {
+    background: $grey5;
+  }
+
+  &.selected {
+    background: $brand;
+    color: white;
+
+    &:hover {
+      background: $brand;
+    }
+  }
+}
