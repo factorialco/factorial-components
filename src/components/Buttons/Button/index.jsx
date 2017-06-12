@@ -10,6 +10,20 @@ import type { ButtonType } from '../types'
 
 const cx = classNames.bind(styles)
 
+type Props = {
+  collapsed?: boolean,
+  disabled?: boolean,
+  href?: string,
+  label: string | ReactElement,
+  onClick?: (event: any) => ?Promise<void>,
+  outline?: boolean,
+  size: 'small' | 'medium',
+  style: Object,
+  submit: boolean,
+  to?: string,
+  type?: ButtonType
+}
+
 type State = {
   clicked: boolean
 };
@@ -21,25 +35,15 @@ export default class Button extends React.Component {
   };
 
   // TODO: Use disjoint types
-  props: {
-    label: string | ReactElement,
-    collapsed?: boolean,
-    type?: ButtonType,
-    outline?: boolean,
-    href?: string,
-    to?: string,
-    submit: boolean,
-    size: 'small' | 'medium',
-    disabled?: boolean,
-    onClick?: (event: any) => ?Promise<void>
-  };
+  props: Props
 
   static defaultProps = {
-    type: 'brand',
-    size: 'medium',
-    submit: false,
+    disabled: false,
     outline: false,
-    disabled: false
+    size: 'medium',
+    style: {},
+    submit: false,
+    type: 'brand'
   };
 
   componentDidMount () {
@@ -86,6 +90,7 @@ export default class Button extends React.Component {
       href,
       outline,
       size,
+      style,
       submit,
       to,
       type
@@ -111,6 +116,7 @@ export default class Button extends React.Component {
           className={className}
           disabled={disabled}
           onClick={this.onClick}
+          style={style}
           type={submit ? 'submit' : 'button'}
         >
           {this.renderContent()}
