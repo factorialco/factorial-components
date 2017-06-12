@@ -1,0 +1,8 @@
+@import 'variables/colors';
+
+.separator {
+  width: 30px;
+  height: 1px;
+  margin: 40px 0px 40px;
+  border-bottom: 1px solid $grey4;
+}
