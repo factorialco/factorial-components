@@ -18,7 +18,6 @@ type Props = {
   onClick?: (event: any) => ?Promise<void>,
   outline?: boolean,
   size: 'small' | 'medium',
-  style: Object,
   submit: boolean,
   to?: string,
   type?: ButtonType
@@ -41,7 +40,6 @@ export default class Button extends React.Component {
     disabled: false,
     outline: false,
     size: 'medium',
-    style: {},
     submit: false,
     type: 'brand'
   };
@@ -90,7 +88,6 @@ export default class Button extends React.Component {
       href,
       outline,
       size,
-      style,
       submit,
       to,
       type
@@ -116,7 +113,6 @@ export default class Button extends React.Component {
           className={className}
           disabled={disabled}
           onClick={this.onClick}
-          style={style}
           type={submit ? 'submit' : 'button'}
         >
           {this.renderContent()}

@@ -2,6 +2,7 @@ import { storiesOf } from '@storybook/react'
 import React from 'react'
 
 import Button from 'components/Buttons/Button'
+import ColorButton from 'components/Buttons/ColorButton'
 import LinkButton from 'components/Buttons/LinkButton'
 
 storiesOf('Button', module)
@@ -26,4 +27,20 @@ storiesOf('LinkButton', module)
   )
   .add('selected', () =>
     <LinkButton selected label='I am selectedadflaksjhfld!' />
+  )
+
+storiesOf('ColorButton', module)
+  .addDecorator(story =>
+    <div style={{ width: 200 }}>
+      {story()}
+    </div>
+  )
+  .add('standard', () =>
+    <ColorButton backgroundColor='#000' label='this is some text' />
+  )
+  .add('outlined', () =>
+    <ColorButton outline backgroundColor='#000' label='this is some text' />
+  )
+  .add('inverted', () =>
+    <ColorButton inverted backgroundColor='#000' label='this is some text' />
   )
