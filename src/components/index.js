@@ -5,11 +5,4 @@ import Loading from 'components/Loading'
 import Separator from 'components/Separator'
 import Title from 'components/Title'
 
-export {
-  Button,
-  LinkButton,
-  Chevron,
-  Loading,
-  Separator,
-  Title
-}
+export { Button, LinkButton, Chevron, Loading, Separator, Title }

@@ -6,9 +6,17 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "build": "npm run clean && webpack --config webpack/server.config.js && webpack --config webpack/client.config.js",
+    "format": "prettier-standard --print-width 60 \"src/**/*.js\"",
     "clean": "rimraf dist",
     "prepublish": "npm run build",
-    "storybook": "start-storybook -p 6006"
+    "storybook": "start-storybook -p 6006",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier-standard",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
