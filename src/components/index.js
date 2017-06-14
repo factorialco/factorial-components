@@ -9,6 +9,7 @@ import InlineTooltip from 'components/InlineTooltip'
 import Modal from 'components/Modal'
 import ModalPad from 'components/Modal/Pad'
 import ModalFooter from 'components/Modal/Footer'
+import ModalSubmit from 'components/Modal/Submit'
 
 export {
   Button,
@@ -20,6 +21,7 @@ export {
   Modal,
   ModalFooter,
   ModalPad,
+  ModalSubmit,
   Separator,
   Title
 }
