@@ -27,8 +27,13 @@ storiesOf('Modal', module)
         est laborum.
       </ModalPad>
       <ModalFooter>
-        <Button label='Submit' />
-        <Button label='Cancel' type='wrong' outline />
+        <Button onClick={action('submit')} label='Submit' />
+        <Button
+          onClick={action('closed')}
+          label='Cancel'
+          type='wrong'
+          outline
+        />
       </ModalFooter>
     </Modal>
   )
@@ -37,6 +42,7 @@ storiesOf('Modal', module)
       title='this is a title'
       description='this is a title description'
       onClose={action('closed')}
+      onSubmit={action('submit')}
     >
       <ModalPad>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

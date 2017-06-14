@@ -5,7 +5,6 @@
 $illustration_size: 100px;
 
 .modal {
-  font-family: $font-stack;
   display: flex;
   flex-direction: column;
   position: fixed;
@@ -39,9 +38,10 @@ $illustration_size: 100px;
     }
 
     &.negative {
-      .container {
+      .form {
         background: $brand;
-        color: white;
+        border-radius: 10px;
+
         .header {
           background: $brand;
           color: white;
@@ -72,31 +72,39 @@ $illustration_size: 100px;
       }
     }
 
-    .close{
-      position: absolute;
-      top: 20px;
-      right: 20px;
-
-      > button {
-        background: transparent;
-        border: none;
-        padding: 0;
-        margin: 0;
-
-        > svg {
-          width: 16px;
-          height: 16px;
-        }
-      }
-    }
-
     &:focus {
       outline: none;
     }
 
-    .container {
+    .form {
       display: flex;
       flex-direction: column;
+
+      .close,
+      .back {
+        position: absolute;
+        top: 20px;
+      }
+
+      .back {
+        left: 30px;
+      }
+
+      .close {
+        right: 20px;
+
+        > button {
+          outline: none;
+          border: none;
+          background: transparent;
+
+          > svg {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+
       .header {
         margin: 30px 30px 0 30px;
         text-align: center;
@@ -131,23 +139,23 @@ $illustration_size: 100px;
           color: $grey2;
         }
       }
-    }
 
-    .element {
-      flex: 1 1 auto;
-      border-bottom: 1px solid $grey4;
+      .element {
+        flex: 1 1 auto;
+        border-bottom: 1px solid $grey4;
 
-      &:last-of-type {
-        border-bottom: none;
+        &:last-of-type {
+          border-bottom: none;
+        }
       }
-    }
 
-    .footer {
-      padding: 20px 30px;
-      background: $grey5;
-      border-top: 1px solid $grey4;
-      border-radius: 0px 0px 10px 10px;
-      display: flex;
+      .footer {
+        padding: 20px 30px;
+        background: $grey5;
+        border-top: 1px solid $grey4;
+        border-radius: 0px 0px 10px 10px;
+        display: flex;
+      }
     }
   }
 }

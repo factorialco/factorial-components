@@ -15,6 +15,7 @@ export type Modal = {
   locked?: boolean,
   negative?: boolean,
   onClose: () => void,
+  submit: Function,
   title?: string,
   type?: Colors
 }

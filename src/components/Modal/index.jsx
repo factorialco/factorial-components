@@ -4,6 +4,7 @@ import { ReactElement } from 'tcomb-react'
 import $ from 'jquery'
 import autobind from 'autobind-decorator'
 import cn from 'classnames/bind'
+import Form from 'components/Form'
 import Portal from 'react-portal'
 import React from 'react'
 
@@ -36,6 +37,16 @@ export default class Modal extends React.Component {
 
   @autobind cancel () {
     this.props.onClose()
+  }
+
+  @autobind submit () {
+    const { onSubmit } = this.props
+
+    if (onSubmit) {
+      return onSubmit()
+    } else {
+      return Promise.resolve()
+    }
   }
 
   @autobind onCancel (event: any) {
@@ -98,8 +109,8 @@ export default class Modal extends React.Component {
             className={cx('box', { big, negative })}
             onClick={this.onClickBox}
           >
-            {this.renderCancel()}
-            <div className={styles.container}>
+            <Form onSubmit={this.submit} className={styles.form}>
+              {this.renderCancel()}
               <div className={styles.header}>
                 <h2 className={styles.title}>
                   {title}
@@ -109,7 +120,7 @@ export default class Modal extends React.Component {
                 </h3>
               </div>
               {React.Children.map(children, this.renderElement)}
-            </div>
+            </Form>
           </div>
         </div>
       </div>
