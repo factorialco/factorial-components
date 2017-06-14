@@ -1,0 +1,140 @@
+@import 'variables/colors';
+
+$width: 11px;
+$height: 11px;
+
+$space: 20px;
+
+.arrow {
+  margin-top: $space;
+
+  &:before, &:after {
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  &:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: $grey5;
+    border-width: $width;
+    margin-left: -$width;
+  }
+
+  &:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: none;
+    border-width: $height;
+    margin-left: -$height;
+  }
+}
+
+.root {
+  background-color: $grey5;
+  border-radius: 5px;
+  color: $grey2;
+  font-size: 16px;
+  padding: 40px;
+  position: relative;
+  text-align: center;
+
+  &.correct {
+    color: white;
+    background-color: $correct;
+  }
+
+  &.wrong {
+    background-color: $wrong;
+    color: white;
+    &:after {
+      border-bottom-color: $wrong;
+    }
+  }
+
+  &.brand {
+    background-color: $brand;
+    color: white;
+    &:after {
+      border-bottom-color: $brand;
+    }
+  }
+
+  &.accent {
+    color: white;
+    background-color: $accent;
+  }
+
+  &.top {
+    @extend .arrow;
+    &:after, &:before {
+    	bottom: 100%;
+    	left: 50%;
+    }
+  }
+
+  &.right {
+    @extend .arrow;
+    &:after, &:before {
+    	left: 100%;
+    	top: 50%;
+    }
+
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-left-color: $grey5;
+    	border-width: $width;
+    	margin-top: -$width;
+    }
+    &:before {
+    	border-color: rgba(0, 0, 0, 0);
+    	border-left-color: none;
+    	border-width: $height;
+    	margin-top: -$height;
+    }
+  }
+
+  &.left {
+    @extend .arrow;
+    &:after, &:before {
+    	right: 100%;
+    	top: 50%;
+    }
+
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-right-color: $grey5;
+    	border-width: $width;
+    	margin-top: -$width;
+    }
+    &:before {
+    	border-color: rgba(0, 0, 0, 0);
+    	border-right-color: none;
+    	border-width: $height;
+    	margin-top: -$height;
+    }
+  }
+
+  &.bottom {
+    @extend .arrow;
+    &:after, &:before {
+    	top: 100%;
+    	left: 50%;
+    }
+
+    &:after {
+    	border-color: rgba(255, 255, 255, 0);
+    	border-top-color: $grey5;
+    	border-width: $width;
+    	margin-left: -$width;
+    }
+    &:before {
+    	border-color: rgba(0, 0, 0, 0);
+    	border-top-color: none;
+    	border-width: $height;
+    	margin-left: -$height;
+    }
+  }
+}
