@@ -75,8 +75,10 @@
   "dependencies": {
     "autobind-decorator": "1.4.1",
     "classnames": "^2.2.5",
+    "jquery": "^3.2.1",
     "react": "15.5.4",
     "react-dom": "15.5.4",
+    "react-portal": "^3.1.0",
     "react-router": "3.0.5"
   }
 }

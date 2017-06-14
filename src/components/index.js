@@ -6,14 +6,20 @@ import Loading from 'components/Loading'
 import Separator from 'components/Separator'
 import Title from 'components/Title'
 import InlineTooltip from 'components/InlineTooltip'
+import Modal from 'components/Modal'
+import ModalPad from 'components/Modal/Pad'
+import ModalFooter from 'components/Modal/Footer'
 
 export {
   Button,
-  LinkButton,
-  ColorButton,
   Chevron,
+  ColorButton,
+  InlineTooltip,
+  LinkButton,
   Loading,
+  Modal,
+  ModalFooter,
+  ModalPad,
   Separator,
-  Title,
-  InlineTooltip
+  Title
 }

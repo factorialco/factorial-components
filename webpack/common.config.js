@@ -21,8 +21,10 @@ module.exports = {
   externals: {
     'autobind-decorator': 'autobind-decorator',
     'classnames': 'classnames',
+    'jquery': 'jquery',
     'react-router': 'react-router',
     'react': 'react',
+    'react-portal': 'react-portal',
     'react-dom': 'react-dom'
   },
 

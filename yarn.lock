@@ -3258,6 +3258,10 @@ jodid25519@^1.0.0:
   dependencies:
     jsbn "~0.1.0"
 
+jquery@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
 js-base64@^2.1.8, js-base64@^2.1.9:
   version "2.1.9"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.1.9.tgz#f0e80ae039a4bd654b5f281fc93f04a914a7fcce"
@@ -4737,6 +4741,12 @@ react-modal@^1.7.6, react-modal@^1.7.7:
     exenv "1.2.0"
     lodash.assign "^4.2.0"
     prop-types "^15.5.7"
+
+react-portal@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/react-portal/-/react-portal-3.1.0.tgz#865c44fb72a1da106c649206936559ce891ee899"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-router@3.0.5:
   version "3.0.5"
