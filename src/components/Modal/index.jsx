@@ -6,6 +6,7 @@ import autobind from 'autobind-decorator'
 import cn from 'classnames/bind'
 import Form from 'components/Form'
 import Icon from 'components/Icon'
+import Illustration from 'components/Illustration'
 import Portal from 'react-portal'
 import React from 'react'
 
@@ -84,6 +85,29 @@ export default class Modal extends React.Component {
     )
   }
 
+  renderIllustration () {
+    const { illustration, type } = this.props
+
+    if (!illustration) return null
+
+    if (typeof illustration !== 'string') {
+      return (
+        <div
+          className={styles.illustration}
+          style={{ backgroundColor: illustration.backgroundColor }}
+        >
+          {illustration.illustration}
+        </div>
+      )
+    }
+
+    return (
+      <div className={styles.illustration}>
+        <Illustration type={type} name={illustration} />
+      </div>
+    )
+  }
+
   renderCancel () {
     const { locked, negative } = this.props
 
@@ -116,6 +140,7 @@ export default class Modal extends React.Component {
             <Form onSubmit={this.submit} className={styles.form}>
               {this.renderCancel()}
               <div className={styles.header}>
+                {this.renderIllustration()}
                 <h2 className={styles.title}>
                   {title}
                 </h2>

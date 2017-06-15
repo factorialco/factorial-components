@@ -52,31 +52,31 @@ module.exports = {
         ]
       },
       {
-      test: /\.scss$/,
-      exclude: /node_modules/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            localIdentName: '[local]___[hash:base64:5]'
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              importLoaders: 1,
+              localIdentName: '[local]___[hash:base64:5]'
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [path.join(path.resolve(__dirname, '..'), 'styles')]
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              path: path.resolve(__dirname, '..', 'webpack/postcss.config.js')
+            }
           }
-        },
-        {
-          loader: 'sass-loader',
-          options: {
-            includePaths: [path.join(path.resolve(__dirname, '..'), 'styles')]
-          }
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            path: path.resolve(__dirname, '..', 'webpack/postcss.config.js')
-          }
-        }
-      ]}
-    ],
-  },
-};
+        ] }
+    ]
+  }
+}
