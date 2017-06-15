@@ -22,10 +22,13 @@ module.exports = {
     'autobind-decorator': 'autobind-decorator',
     'classnames': 'classnames',
     'jquery': 'jquery',
+    'moment': 'moment',
+    'react-dom': 'react-dom',
+    'react-dropzone': 'react-dropzone',
+    'react-portal': 'react-portal',
     'react-router': 'react-router',
     'react': 'react',
-    'react-portal': 'react-portal',
-    'react-dom': 'react-dom'
+    'tcomb-react': 'tcomb-react'
   },
 
   stats: {

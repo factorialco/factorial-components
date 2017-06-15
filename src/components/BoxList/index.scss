@@ -1,0 +1,37 @@
+@import 'variables/colors';
+
+$gutter: 30px;
+
+.list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $grey4;
+  border-radius: 5px;
+  overflow: hidden;
+
+  .item {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    border-bottom: 1px solid $grey4;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  &.dropActive {
+    border: 1px dashed $brand;
+    background: rgba($brand, .1);
+  }
+
+  &.disabled {
+    .item {
+      background: $grey5;
+      cursor: default;
+      border-bottom-color: $grey4;
+    }
+  }
+}

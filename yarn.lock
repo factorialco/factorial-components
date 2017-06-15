@@ -342,6 +342,10 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
+attr-accept@^1.0.3:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-1.1.0.tgz#b5cd35227f163935a8f1de10ed3eba16941f6be6"
+
 autobind-decorator@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/autobind-decorator/-/autobind-decorator-1.4.1.tgz#e05887e92e6466d43ec247c0692f8774d95ca3fd"
@@ -3770,9 +3774,24 @@ mixin-object@^2.0.1:
   dependencies:
     minimist "0.0.8"
 
+mobx-rest@^2.1.7:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/mobx-rest/-/mobx-rest-2.1.7.tgz#448794a03d0266d89e4217765459a83e5d799375"
+  dependencies:
+    lodash "^4.17.4"
+    mobx "^3.1.11"
+
 mobx@^2.3.4:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
+
+mobx@^3.1.11:
+  version "3.1.15"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.1.15.tgz#b2c8831725de2f6f1b8d136e589b674b5b75c35d"
+
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 ms@0.7.1:
   version "0.7.1"
@@ -4705,6 +4724,13 @@ react-dom@15.5.4:
     object-assign "^4.1.0"
     prop-types "~15.5.7"
 
+react-dropzone@^3.13.2:
+  version "3.13.2"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-3.13.2.tgz#318745c03007ca6b948cdd4431abc009b16a6588"
+  dependencies:
+    attr-accept "^1.0.3"
+    prop-types "^15.5.7"
+
 react-inspector@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/react-inspector/-/react-inspector-2.0.0.tgz#c945932f2c2bf2fab7873c6e07d83881404b9313"
@@ -5497,7 +5523,7 @@ tcomb-doc@^0.5.0:
   dependencies:
     tcomb "^3.0.0"
 
-tcomb-react@0.9.3:
+tcomb-react@^0.9.3:
   version "0.9.3"
   resolved "https://registry.yarnpkg.com/tcomb-react/-/tcomb-react-0.9.3.tgz#44713e1d2e8c2ff744b8ed6579bf77aed23b0efc"
   dependencies:

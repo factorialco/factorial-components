@@ -1,6 +1,7 @@
 import Button from 'components/Buttons/Button'
 import Chevron from 'components/Chevron'
 import ColorButton from 'components/Buttons/ColorButton'
+import EmployeeSelector from 'components/EmployeeSelector'
 import Form from 'components/Form'
 import Icon from 'components/Icon'
 import Illustration from 'components/Illustration'
@@ -20,6 +21,7 @@ export {
   Button,
   Chevron,
   ColorButton,
+  EmployeeSelector,
   Form,
   Icon,
   Illustration,

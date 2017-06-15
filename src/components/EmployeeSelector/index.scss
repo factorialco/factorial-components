@@ -1,0 +1,89 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+.blank {
+  @include font-size(4);
+  padding: 40px;
+  margin: 0 auto;
+  color: $grey3;
+  font-weight: 500;
+}
+
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  .label {
+    colors: $grey3;
+  }
+  .actions {
+    display: flex;
+    button {
+      margin-left: 10px;
+    }
+  }
+}
+
+.employee {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid $grey4;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background: $grey5;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .employeeInfo {
+    display: flex;
+    align-items: center;
+  }
+
+  .avatar {
+    margin-right: 10px;
+  }
+
+  .name {
+    @include text-ellipsis();
+    @include font-size(4);
+    color: $grey1;
+    flex-grow: 2;
+    font-weight: 500;
+    margin-right: 10px;
+    max-width: 218px;
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+
+  .checkbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    border: 2px solid $grey4;
+    width: 30px;
+    height: 30px;
+
+    svg {
+      position: relative;
+    }
+  }
+
+  &.selected {
+    background: $grey5;
+    .checkbox {
+      background: $brand;
+      border-color: $brand;
+    }
+  }
+}
+  
