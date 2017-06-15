@@ -3,12 +3,13 @@
 
 .buttonLink {
   @include font-size(5);
-  
+
   background: transparent;
   border: none;
   color: $brand;
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
+  outline: none;
   text-align: center;
 }

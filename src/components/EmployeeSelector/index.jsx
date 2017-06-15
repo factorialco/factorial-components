@@ -7,6 +7,7 @@ import BoxList from 'components/BoxList'
 import classNames from 'classnames/bind'
 import Icon from 'components/Icon'
 import InlineSearch from 'components/InlineSearch'
+import LinkButton from 'components/Buttons/LinkButton'
 import React from 'react'
 import ScrollableItem from 'components/ScrollableItem'
 import ScrollableList from 'components/ScrollableList'
@@ -112,12 +113,12 @@ export default class EmployeeSelector extends React.Component {
         <div className={styles.label}>
           {label || 'select'}:
         </div>
-        <a className={styles.link} onClick={this.onSelectAll}>
+        <LinkButton onClick={this.onSelectAll}>
           {all || 'all'}
-        </a>
-        <a className={styles.link} onClick={this.onSelectNone}>
+        </LinkButton>
+        <LinkButton onClick={this.onSelectNone}>
           {none || 'none'}
-        </a>
+        </LinkButton>
       </div>
     )
   }
