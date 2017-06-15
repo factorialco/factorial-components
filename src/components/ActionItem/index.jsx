@@ -42,22 +42,41 @@ export default function ActionItem (
   if (!children) return null
 
   if (isClickable) {
-    return (
-      <Link className={className} onClick={onClick} to={to}>
-        <div className={styles.wrapper}>
-          {children}
-        </div>
-        {showIcon && (
-          <div className={styles.icon}>
-            <Icon
-              set='utility'
-              icon='forward'
-              type={highlighted ? 'negative' : 'terciary'}
-            />
+    if (to) {
+      return (
+        <Link className={className} to={to}>
+          <div className={styles.wrapper}>
+            {children}
           </div>
-        )}
-      </Link>
-    )
+          {showIcon && (
+            <div className={styles.icon}>
+              <Icon
+                set='utility'
+                icon='forward'
+                type={highlighted ? 'negative' : 'terciary'}
+              />
+            </div>
+          )}
+        </Link>
+      )
+    } else if (onClick) {
+      return (
+        <div className={className} onClick={onClick}>
+          <div className={styles.wrapper}>
+            {children}
+          </div>
+          {showIcon && (
+            <div className={styles.icon}>
+              <Icon
+                set='utility'
+                icon='forward'
+                type={highlighted ? 'negative' : 'terciary'}
+              />
+            </div>
+          )}
+        </div>
+      )
+    }
   }
 
   return (
