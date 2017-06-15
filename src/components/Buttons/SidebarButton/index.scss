@@ -1,0 +1,44 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+.root {
+  @include font-size(4);
+  font-weight: 400;
+
+  align-items: center;
+  background: transparent;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  color: $grey1;
+  cursor: pointer;
+  display: flex;
+  font-family: $font-stack;
+  height: 40px;
+  justify-content: space-between;
+  line-height: 1;
+  outline: none;
+  padding: 0 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+
+  &:hover {
+    background: $grey5;
+  }
+
+  &.selected {
+    background: $brand;
+    color: white;
+
+    &:hover {
+      background: $brand;
+    }
+  }
+
+  .content {
+    width: 90%;
+    @include text-ellipsis()
+  }
+}

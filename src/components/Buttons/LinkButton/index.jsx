@@ -1,39 +1,23 @@
 // @flow
+import React from 'react'
 import { ReactChildren } from 'tcomb-react'
-import Chevron from 'components/Chevron'
-import cn from 'classnames/bind'
-import React, { Component } from 'react'
 
 import styles from './index.scss'
 
 type Props = {
-  label: ReactChildren | string;
-  selected?: boolean;
-  size?: string;
-  style?: Object;
-}
+  children?: ReactChildren,
+  onClick?: ?(event: SyntheticEvent) => any
+};
 
-const cx = cn.bind(styles)
-
-export default class LinkButton extends Component {
-  props: Props
-
-  static defaultProps = {
-    size: 'small',
-    style: {},
-    selected: false
-  }
-
-  render () {
-    const { label, selected, size, style } = this.props
-
-    return (
-      <button style={style} className={cx('root', size, { selected })}>
-        <div className={styles.content}>
-          {label}
-        </div>
-        {selected && <Chevron type='negative' direction='right' />}
-      </button>
-    )
-  }
+export default function LinkButon (
+  {
+    children,
+    onClick
+  }: Props
+) {
+  return (
+    <button className={styles.buttonLink} onClick={onClick} type='button'>
+      {children}
+    </button>
+  )
 }

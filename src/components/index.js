@@ -13,6 +13,7 @@ import ModalFooter from 'components/Modal/Footer'
 import ModalPad from 'components/Modal/Pad'
 import ModalSubmit from 'components/Modal/Submit'
 import Separator from 'components/Separator'
+import SidebarButton from 'components/Buttons/SidebarButton'
 import ScrollableItem from 'components/ScrollableItem'
 import ScrollableList from 'components/ScrollableList'
 import Title from 'components/Title'
@@ -33,6 +34,7 @@ export {
   ModalPad,
   ModalSubmit,
   Separator,
+  SidebarButton,
   ScrollableItem,
   ScrollableList,
   Title

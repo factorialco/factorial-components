@@ -4,6 +4,7 @@ import React from 'react'
 import Button from 'components/Buttons/Button'
 import ColorButton from 'components/Buttons/ColorButton'
 import LinkButton from 'components/Buttons/LinkButton'
+import SidebarButton from 'components/Buttons/SidebarButton'
 
 storiesOf('Button', module)
   .addDecorator(story =>
@@ -15,18 +16,18 @@ storiesOf('Button', module)
   .add('with some emoji', () => <Button label='😃 😃 😃' />)
   .add('outlined', () => <Button outline label='this is some text' />)
 
-storiesOf('LinkButton', module)
+storiesOf('SidebarButton', module)
   .addDecorator(story =>
     <div style={{ width: 200 }}>
       {story()}
     </div>
   )
-  .add('with text', () => <LinkButton label='this is some text' />)
+  .add('with text', () => <SidebarButton label='this is some text' />)
   .add('with some react children', () =>
-    <LinkButton label={<div>I am inside a div!</div>} />
+    <SidebarButton label={<div>I am inside a div!</div>} />
   )
   .add('selected', () =>
-    <LinkButton selected label='I am selectedadflaksjhfld!' />
+    <SidebarButton selected label='I am selectedadflaksjhfld!' />
   )
 
 storiesOf('ColorButton', module)
@@ -43,4 +44,16 @@ storiesOf('ColorButton', module)
   )
   .add('inverted', () =>
     <ColorButton inverted backgroundColor='#000' label='this is some text' />
+  )
+
+storiesOf('LinkButton', module)
+  .addDecorator(story =>
+    <div style={{ width: 200 }}>
+      {story()}
+    </div>
+  )
+  .add('standard', () =>
+    <LinkButton>
+      this is some text
+    </LinkButton>
   )
