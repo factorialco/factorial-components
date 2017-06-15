@@ -1,0 +1,9 @@
+@import 'variables/colors';
+
+.scrollableItem {
+  border-bottom: 1px solid $grey4;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

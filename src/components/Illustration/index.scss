@@ -1,0 +1,101 @@
+@import 'variables/colors';
+@import 'variables/sizes';
+
+.illustration {
+  fill: none;
+  stroke-width: 2px;
+  display: block;
+
+  svg {
+    display: block;
+  }
+}
+
+.small {
+  width: $small_size;
+  height: $small_size;
+}
+
+.short {
+  width: $short_size;
+  height: $short_size;
+}
+
+.medium {
+  width: $medium_size;
+  height: $medium_size;
+}
+
+.grande {
+  width: $grande_size;
+  height: $grande_size;
+}
+
+.big {
+  width: $big_size;
+  height: $big_size;
+}
+
+.primary {
+  stroke: $grey2;
+}
+
+.secondary {
+  stroke: $secondary;
+}
+
+.terciary {
+  stroke: $grey3;
+}
+
+.correct {
+  stroke: $correct;
+}
+
+.wrong {
+  stroke: $wrong;
+}
+
+.accent {
+  stroke: $accent;
+}
+
+.brand {
+  stroke: $brand;
+}
+
+.fill {
+  stroke: none;
+
+  &.primary {
+    fill: $grey2;
+  }
+
+  &.secondary {
+    fill: $secondary;
+  }
+
+  &.terciary {
+    fill: $grey3;
+  }
+
+  &.correct {
+    fill: $correct;
+  }
+
+  &.wrong {
+    fill: $wrong;
+  }
+
+  &.accent {
+    fill: $accent;
+  }
+
+  &.brand {
+    fill: $brand;
+  }
+}
+
+.negative {
+  stroke: white;
+}
