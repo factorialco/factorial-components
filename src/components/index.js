@@ -7,6 +7,7 @@ import {
   TableRow
 } from 'components/Table'
 import { Tooltip, TooltipPad, TooltipButton } from 'components/Tooltip'
+import Avatar from 'components/Avatar'
 import Button from 'components/Buttons/Button'
 import Chevron from 'components/Chevron'
 import ColorButton from 'components/Buttons/ColorButton'
@@ -29,6 +30,7 @@ import Title from 'components/Title'
 import WithToggleState from 'components/WithToggleState'
 
 export {
+  Avatar,
   Button,
   Chevron,
   ColorButton,
