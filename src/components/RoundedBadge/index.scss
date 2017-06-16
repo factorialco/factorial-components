@@ -1,0 +1,59 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+.roundedBadge {
+  box-sizing: border-box;
+  font-family: $font-stack;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  height: 20px;
+  line-height: 1;
+  padding-top: 4px;
+  text-align: center;
+  width: 20px;
+  cursor: default;
+
+  &.small {
+    @include font-size(6);
+    height: 14px;
+    line-height: 1;
+    padding-left: 1px;
+    padding-top: 1px;
+    width: 14px;
+  }
+
+  &.primary {
+    background-color: $grey2;
+  }
+
+  &.brand {
+    background-color: $brand;
+  }
+
+  &.terciary {
+    background-color: $grey3;
+  }
+
+  &.correct {
+    background-color: $correct;
+  }
+
+  &.wrong {
+    background-color: $wrong;
+  }
+
+  &.accent {
+    background-color: $accent;
+  }
+
+  &.negative {
+    color: $brand;
+    background-color: white;
+  }
+
+  &.black {
+    background-color: $grey1;
+  }
+}

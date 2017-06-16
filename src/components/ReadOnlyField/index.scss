@@ -1,0 +1,32 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.field {
+  font-family: $font-stack;
+  box-sizing: border-box;
+  background: rgba($grey4, .4);
+  border-radius: 5px;
+  font-size: $h5;
+  min-height: 70px;
+  padding: 13px;
+  position: relative;
+
+  .label {
+    font-weight: 600;
+    color: $grey3;
+    font-size: $h5;
+    margin-bottom: 5px;
+  }
+
+  .value {
+    color: $grey1;
+    font-size: $h4;
+    min-height: 1.3em;
+  }
+
+  .iconContainer {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+  }
+}

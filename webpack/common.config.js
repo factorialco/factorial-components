@@ -23,6 +23,8 @@ module.exports = {
     'classnames': 'classnames',
     'jquery': 'jquery',
     'lodash': 'lodash',
+    'mobx': 'mobx',
+    'mobx-react': 'mobx-react',
     'moment': 'moment',
     'react-dom': 'react-dom',
     'react-dropzone': 'react-dropzone',

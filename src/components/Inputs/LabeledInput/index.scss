@@ -1,0 +1,87 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+.normal {
+  box-sizing: border-box;
+  font-family: $font-stack;
+  position: relative;
+  color: $grey3;
+
+  input {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .labelContainer {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 0 15px;
+    pointer-events: none;
+    position: absolute;
+    top: 15px;
+    width: 100%;
+
+    .label {
+      @include text-ellipsis()
+      color: $grey3;
+      font-weight: 600;
+      font-size: 14px;
+      display: block;
+      pointer-events: none;
+      transition: color .1s ease;
+    }
+  }
+
+  .iconContainer {
+    position: absolute;
+    top: 15px;
+    right: 17px;
+  }
+
+
+  .icons {
+    position: absolute;
+    top: 19px;
+    right: 9px;
+
+    .infoIcon {
+      cursor: pointer;
+      fill: $brand;
+    }
+  }
+}
+
+.info {
+  padding-right: 50px;
+}
+
+.focused {
+  composes: normal;
+
+  .labelContainer {
+    .label {
+      color: $brand;
+    }
+  }
+
+  .error {
+    display: block;
+  }
+}
+
+.wrong {
+  composes: normal;
+
+  .labelContainer {
+    .label {
+      color: $wrong;
+    }
+  }
+
+  .icons {
+    fill: $wrong;
+  }
+}

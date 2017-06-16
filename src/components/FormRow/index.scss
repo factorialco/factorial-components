@@ -1,0 +1,24 @@
+.row {
+  box-sizing: border-box;
+  margin-bottom: 20px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.multi {
+  box-sizing: border-box;
+  display: flex;
+
+  .subRow {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    margin-right: 20px;
+    width: 50%;
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}

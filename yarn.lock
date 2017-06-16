@@ -2467,6 +2467,15 @@ extsprintf@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
+factorial-form@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/factorial-form/-/factorial-form-0.0.8.tgz#223575bae71496fa3a6abac9b4a983e71edfe027"
+  dependencies:
+    flat "2.0.1"
+    lodash "^4.17.4"
+    mobx "^3.1.11"
+    moment "2.18.1"
+
 fast-levenshtein@~2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/fast-levenshtein/-/fast-levenshtein-2.0.6.tgz#3d8a5c66883a16a30ca8643e851f19baa7797917"
@@ -2574,6 +2583,12 @@ flat-cache@^1.2.1:
     del "^2.0.2"
     graceful-fs "^4.1.2"
     write "^0.2.1"
+
+flat@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/flat/-/flat-2.0.1.tgz#70e29188a74be0c3c89409eed1fa9577907ae32f"
+  dependencies:
+    is-buffer "~1.1.2"
 
 flatten@^1.0.2:
   version "1.0.2"
@@ -3041,7 +3056,7 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
-is-buffer@^1.0.2, is-buffer@^1.1.5:
+is-buffer@^1.0.2, is-buffer@^1.1.5, is-buffer@~1.1.2:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.5.tgz#1f3b26ef613b214b88cbca23cc6c01d87961eecc"
 
@@ -3775,6 +3790,12 @@ mixin-object@^2.0.1:
   dependencies:
     minimist "0.0.8"
 
+mobx-react@^4.2.1:
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/mobx-react/-/mobx-react-4.2.1.tgz#35324834b71ae27a7553d76ad413e5f96ba40db5"
+  dependencies:
+    hoist-non-react-statics "^1.2.0"
+
 mobx-rest@^2.1.7:
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/mobx-rest/-/mobx-rest-2.1.7.tgz#448794a03d0266d89e4217765459a83e5d799375"
@@ -3786,11 +3807,11 @@ mobx@^2.3.4:
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-2.7.0.tgz#cf3d82d18c0ca7f458d8f2a240817b3dc7e54a01"
 
-mobx@^3.1.11:
+mobx@^3.1.11, mobx@^3.1.15:
   version "3.1.15"
   resolved "https://registry.yarnpkg.com/mobx/-/mobx-3.1.15.tgz#b2c8831725de2f6f1b8d136e589b674b5b75c35d"
 
-moment@^2.18.1:
+moment@2.18.1, moment@^2.18.1:
   version "2.18.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 

@@ -1,0 +1,48 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+$radius: 5px;
+
+.normal {
+  box-sizing: border-box;
+  font-family: $font-stack;
+  width: 100%;
+  border: 2px solid $grey4;
+  border-radius: $radius;
+  padding: 13px;
+  padding-top: 33px;
+  font-size: $h4;
+  background: white;
+  transition: border-color .1s ease;
+  color: $grey1;
+  height: 70px;
+  @include text-ellipsis();
+  @include placeholder {
+    color: $grey3;
+  }
+}
+
+.select {
+  background-image: linear-gradient(45deg, transparent 50%, $grey3 50%), linear-gradient(135deg, $grey3 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(2em + 2px), calc(100% - 15px) calc(2em + 2px), calc(100% - .5em) .5em;
+  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.focused {
+  composes: normal;
+  border-color: $brand;
+  color: $grey1;
+
+  &.select {
+    background-image: linear-gradient(45deg, transparent 50%, $brand 50%), linear-gradient(135deg, $brand 50%, transparent 50%);
+  }
+}
+
+.wrong {
+  composes: normal;
+  border: 2px solid $wrong;
+  padding-right: 40px;
+}
