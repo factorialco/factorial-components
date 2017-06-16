@@ -1,0 +1,133 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+@import 'mixins';
+
+$table_border_color: $grey4;
+$table_border_radius: 5px;
+
+.tableContainer {
+  font-family: $font-stack;
+  overflow-x: scroll;
+  padding: 2px;
+}
+
+.table {
+  @include font-size(5);
+  text-align: left;
+  border-collapse: collapse;
+  border-style: hidden;
+  box-shadow: 0 0 0 1px $table_border_color;
+  border-radius: $table_border_radius;
+  table-layout: fixed;
+
+  &.expanded {
+    width: 100%;
+    table-layout: auto;
+  }
+
+  /**
+   * Maybe there's no THEAD after the caption?
+   */
+  caption + tbody {
+    tr:first-child {
+      td:first-child,
+      th:first-child {
+        border-top-left-radius: $table_border_radius;
+      }
+      td:last-child,
+      th:last-child {
+        border-top-right-radius: $table_border_radius;
+      }
+    }
+  }
+
+  tbody:first-child {
+    tr:first-child {
+      td:first-child,
+      th:first-child {
+        border-top-left-radius: $table_border_radius;
+      }
+
+      td:last-child,
+      th:last-child {
+        border-top-right-radius: $table_border_radius;
+      }
+    }
+  }
+
+  tbody:last-child {
+    tr:last-child {
+      td:first-child,
+      th:first-child {
+        border-bottom-left-radius: $table_border_radius;
+      }
+
+      td:last-child,
+      th:last-child {
+        border-bottom-right-radius: $table_border_radius;
+      }
+    }
+  }
+
+  thead {
+    tr:last-child {
+      td:first-child,
+      th:first-child {
+        border-top-left-radius: $table_border_radius;
+      }
+
+      td:last-child,
+      th:last-child {
+        border-top-right-radius: $table_border_radius;
+      }
+    }
+  }
+
+  .th {
+    @include text-ellipsis();
+    padding: 15px 20px;
+    background: $grey5;
+    white-space: nowrap;
+    color: $grey3;
+    text-transform: uppercase;
+    font-size: $h6;
+    font-weight: 600;
+  }
+
+  .tr {
+    border: 1px solid $table_border_color;
+    .td {
+      @include font-size(4);
+      padding: 16px;
+      white-space: nowrap;
+    }
+
+    &.clickable {
+      .td {
+        cursor: pointer;
+      }
+      &:hover {
+        .td {
+          background-color: rgba($grey5, .6);
+        }
+      }
+    }
+  }
+
+  // Reset tables inside table
+  table tr th,
+  table tr td {
+    border-radius: 0;
+  }
+}
+
+.th,
+.td {
+  &.short {
+    width: 30px
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}

@@ -22,12 +22,14 @@ module.exports = {
     'autobind-decorator': 'autobind-decorator',
     'classnames': 'classnames',
     'jquery': 'jquery',
+    'lodash': 'lodash',
     'moment': 'moment',
     'react-dom': 'react-dom',
     'react-dropzone': 'react-dropzone',
     'react-portal': 'react-portal',
     'react-router': 'react-router',
     'react': 'react',
+    'tether': 'tether',
     'tcomb-react': 'tcomb-react'
   },
 

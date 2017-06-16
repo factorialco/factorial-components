@@ -1,0 +1,22 @@
+@import 'variables/colors';
+
+.tooltipButton {
+  background: rgba($grey1, .1);
+  border: none;
+  color: white;
+  display: block;
+  font-weight: 600;
+  outline: none;
+  padding: 15px 20px;
+  text-align: center;
+  width: 100%;
+
+  &:active {
+    background: rgba($grey1, .2);
+  }
+
+  &.disabled {
+    opacity: .5;
+    cursor: default;
+  }
+}
