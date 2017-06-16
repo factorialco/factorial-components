@@ -35,9 +35,12 @@ export default class BoxList extends React.Component {
   }
 
   @autobind renderCollapse (elements: number) {
-    const { close, more } = this.props
+    const { close, more, overflowLimit } = this.props
     const { isOpen } = this.state
-    const count = elements - this.props.overflowLimit
+
+    if (!overflowLimit) return null
+
+    const count = elements - overflowLimit
 
     return (
       <div className={styles.toggle} onClick={this.onClickToggle}>

@@ -1,0 +1,30 @@
+[include]
+<PROJECT_ROOT>/src/.*
+
+[libs]
+flow/global.js
+
+[ignore]
+<PROJECT_ROOT>/node_modules/.*
+<PROJECT_ROOT>/dist/.*
+<PROJECT_ROOT>/scripts/.*
+<PROJECT_ROOT>/coverage/.*
+<PROJECT_ROOT>/styles/.*
+<PROJECT_ROOT>/webpack/.*
+<PROJECT_ROOT>/__tests__/.*
+
+[options]
+esproposal.class_instance_fields=enable
+esproposal.decorators=ignore
+unsafe.enable_getters_and_setters=true
+suppress_type=$FlowIssue
+module.name_mapper='^Routes\/\(.*\)$' -> '<PROJECT_ROOT>/src/Routes/\1'
+module.name_mapper='^lib\/\(.*\)$' -> '<PROJECT_ROOT>/src/lib/\1'
+module.name_mapper='^components\/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^config\/\(.*\)$' -> '<PROJECT_ROOT>/src/config/\1'
+module.name_mapper='^stores\/\(.*\)$' -> '<PROJECT_ROOT>/src/stores/\1'
+module.name_mapper='^forms\/\(.*\)$' -> '<PROJECT_ROOT>/src/forms/\1'
+module.name_mapper='.*\(.s?css\)' -> '<PROJECT_ROOT>/flow/stubs/css-modules.js'
+module.name_mapper='.*\(.svg\)' -> '<PROJECT_ROOT>/flow/stubs/url-loader.js'
+module.name_mapper='.*\(.png\)' -> '<PROJECT_ROOT>/flow/stubs/url-loader.js'
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

@@ -14,7 +14,7 @@ type Props = {
 };
 
 type State = {
-  open: false
+  open: boolean
 };
 
 export default class WithToggleState extends React.Component {
@@ -22,7 +22,9 @@ export default class WithToggleState extends React.Component {
   state: State = { open: false }
 
   componentWillMount () {
-    if (this.props.opened) this.setState({ open: this.props.opened })
+    if (this.props.opened) {
+      this.setState({ open: this.props.opened })
+    }
   }
 
   @autobind onToggle (value: boolean) {

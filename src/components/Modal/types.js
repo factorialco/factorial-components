@@ -11,10 +11,12 @@ export type Modal = {
   big?: boolean,
   children?: ReactChildren,
   description?: string,
+  illustration?: string,
   fixed?: boolean, // Only used for the style guide
   locked?: boolean,
   negative?: boolean,
   onClose: () => void,
+  onSubmit?: Function,
   submit: Function,
   title?: string,
   type?: Colors
