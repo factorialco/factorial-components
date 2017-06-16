@@ -2,6 +2,7 @@
 @import 'variables/sizes';
 
 .illustration {
+  box-sizing: border-box;
   fill: none;
   stroke-width: 2px;
   display: block;

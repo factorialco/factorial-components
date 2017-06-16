@@ -2,6 +2,7 @@
 @import 'variables/fonts';
 
 .base {
+  box-sizing: border-box;
   line-height: 1;
   padding: 6px;
   stroke: none;

@@ -8,7 +8,9 @@ import {
 } from 'components/Table'
 import { Tooltip, TooltipPad, TooltipButton } from 'components/Tooltip'
 import Avatar from 'components/Avatar'
+import ActionItem from 'components/ActionItem'
 import Button from 'components/Buttons/Button'
+import BoxList from 'components/BoxList'
 import Chevron from 'components/Chevron'
 import ColorButton from 'components/Buttons/ColorButton'
 import EmployeeSelector from 'components/EmployeeSelector'
@@ -31,6 +33,8 @@ import WithToggleState from 'components/WithToggleState'
 
 export {
   Avatar,
+  ActionItem,
+  BoxList,
   Button,
   Chevron,
   ColorButton,

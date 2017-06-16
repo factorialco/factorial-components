@@ -10,6 +10,21 @@ $gutter: 30px;
   border-radius: 5px;
   overflow: hidden;
 
+  .toggle {
+    background: $grey5;
+    border-top: 1px solid $grey4;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .text {
+      margin-right: 10px;
+      font-weight: 500;
+    }
+  }
+
   .item {
     box-sizing: border-box;
     display: flex;
