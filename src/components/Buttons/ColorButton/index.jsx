@@ -1,6 +1,5 @@
 // @flow
 import React from 'react'
-import { Link } from 'react-router'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 
@@ -11,7 +10,6 @@ type Props = {
   backgroundColor: string,
   color?: string,
   label?: string,
-  to?: string,
   outline?: boolean,
   inverted: boolean,
   onClick?: (event: SyntheticEvent) => mixed
@@ -62,15 +60,7 @@ export default class ColorButton extends React.Component {
   }
 
   render () {
-    const { label, to, outline } = this.props
-
-    if (to) {
-      return (
-        <Link className={styles.colorButton} to={to} style={this.getStyle()}>
-          {label}
-        </Link>
-      )
-    }
+    const { label, outline } = this.props
 
     return (
       <button

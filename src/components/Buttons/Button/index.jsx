@@ -1,5 +1,4 @@
 // @flow
-import { Link } from 'react-router'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 import React from 'react'
@@ -19,7 +18,6 @@ type Props = {
   outline?: boolean,
   size: 'small' | 'medium',
   submit: boolean,
-  to?: string,
   type?: ButtonType
 }
 
@@ -89,7 +87,6 @@ export default class Button extends React.Component {
       outline,
       size,
       submit,
-      to,
       type
     } = this.props
 
@@ -100,12 +97,6 @@ export default class Button extends React.Component {
         <a className={className} href={href}>
           {this.renderContent()}
         </a>
-      )
-    } else if (to) {
-      return (
-        <Link className={className} to={to}>
-          {this.renderContent()}
-        </Link>
       )
     } else {
       return (
