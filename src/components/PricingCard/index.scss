@@ -1,0 +1,51 @@
+@import 'variables/fonts';
+@import 'variables/colors';
+
+.root {
+  overflow: hidden;
+  font-family: $font-stack;
+  box-sizing: border-box;
+  border: 1px solid $grey4;
+  border-radius: 5px;
+
+  .header {
+    width: 100%;
+    padding: 20px 0;
+    display: flex;
+    background: $grey5;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid $grey4;
+
+    .title {
+      @include font-size(6);
+      color: $grey2;
+      font-weight: 600;
+      line-height: 1;
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+
+  .content {
+    @include font-size(4);
+    padding: 30px 45px;
+    text-align: center;
+    color: $grey2;
+
+    .costs {
+      .cost {
+        @include font-size(1);
+        font-weight: 600;
+      }
+    }
+    .description {
+      font-style: italic;
+      padding: 20px 0;
+
+      > p {
+        margin: 0;
+      }
+    }
+  }
+}

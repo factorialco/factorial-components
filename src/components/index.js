@@ -25,6 +25,7 @@ import Modal from 'components/Modal'
 import ModalFooter from 'components/Modal/Footer'
 import ModalPad from 'components/Modal/Pad'
 import ModalSubmit from 'components/Modal/Submit'
+import PricingCard from 'components/PricingCard'
 import ReadOnlyField from 'components/ReadOnlyField'
 import RoundedBadge from 'components/RoundedBadge'
 import ScrollableItem from 'components/ScrollableItem'
@@ -54,6 +55,7 @@ export {
   ModalFooter,
   ModalPad,
   ModalSubmit,
+  PricingCard,
   ReadOnlyField,
   RoundedBadge,
   ScrollableItem,
