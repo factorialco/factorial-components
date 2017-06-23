@@ -14,7 +14,7 @@ type Cost = {
 
 type Props = {
   cost: Cost,
-  footer: ReactChildren,
+  footer?: ReactChildren,
   title: string
 }
 
@@ -46,9 +46,11 @@ const PricingCard = ({ cost, footer, title }: Props) => {
         <div className={styles.description}>
           {cost.description}
         </div>
-        <footer>
-          {footer}
-        </footer>
+        {renderIf(Boolean(footer))(
+          <footer>
+            {footer}
+          </footer>
+        )}
       </section>
     </div>
   )
