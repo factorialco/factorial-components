@@ -12,6 +12,7 @@ export type Modal = {
   children?: ReactChildren,
   description?: string,
   illustration?: string,
+  color?: string,
   fixed?: boolean, // Only used for the style guide
   locked?: boolean,
   negative?: boolean,

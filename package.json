@@ -11,6 +11,8 @@
     "format": "prettier-standard --print-width 60 \"src/**/*.js\"",
     "lint-fix": "eslint --fix --ext .jsx,.js src/ __tests__/",
     "lint": "eslint --ext .jsx,.js --cache src/ __tests__/",
+    "test": "yarn flow && yarn lint && yarn jest",
+    "jest": "jest",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "storybook": "start-storybook -p 6006"
