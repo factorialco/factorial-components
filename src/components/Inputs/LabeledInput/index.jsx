@@ -1,5 +1,4 @@
 // @flow
-import { observer } from 'mobx-react'
 import { ReactChildren } from 'tcomb-react'
 import { Tooltip } from 'components/Tooltip'
 import classNames from 'classnames/bind'
@@ -17,21 +16,20 @@ const cx = classNames.bind(styles)
 type Props = {
   bang?: boolean,
   children?: ReactChildren,
-  fieldModel: Object,
+  field: Object,
   focused: boolean,
   info?: ReactChildren,
   label: string,
-  missing?: string,
+  missingField: string,
   readonly?: boolean,
   value?: string
 };
 
-@observer
 export default class LabeledInput extends React.Component {
   props: Props;
 
   renderIcons () {
-    const { info, fieldModel } = this.props
+    const { info, field } = this.props
 
     if (info) {
       return (
@@ -54,7 +52,7 @@ export default class LabeledInput extends React.Component {
     }
 
     // TODO: Implement click to clear
-    if (!fieldModel.isDirty && fieldModel.errors) {
+    if (!field.isDirty && field.errors) {
       return <Icon type='wrong' set='utility' icon='clear' />
     }
 
@@ -62,7 +60,7 @@ export default class LabeledInput extends React.Component {
   }
 
   renderLabel () {
-    const { bang, fieldModel, label, missing } = this.props
+    const { bang, field, label, missingField } = this.props
 
     return (
       <div>
@@ -72,7 +70,7 @@ export default class LabeledInput extends React.Component {
           </label>
         </div>
         <div className={styles.iconContainer}>
-          {renderIf(!!bang && !fieldModel.value)(
+          {renderIf(!!bang && !field.value)(
             <WithToggleState
               target={({ open, toggle }) => (
                 <Tooltip
@@ -84,7 +82,7 @@ export default class LabeledInput extends React.Component {
                 >
                   <RoundedBadge size='small' type='brand'>!</RoundedBadge>
                   <div>
-                    {missing || 'Missing field'}
+                    {missingField || 'Missing field'}
                   </div>
                 </Tooltip>
               )}
@@ -96,17 +94,17 @@ export default class LabeledInput extends React.Component {
   }
 
   renderReadonly () {
-    const { value, fieldModel, label } = this.props
+    const { value, field, label } = this.props
 
-    return <ReadOnlyField label={label} value={value || fieldModel.value} />
+    return <ReadOnlyField label={label} value={value || field.value} />
   }
 
   render () {
-    const { info, readonly, fieldModel, focused } = this.props
+    const { info, readonly, field, focused } = this.props
     if (readonly) return this.renderReadonly()
 
-    const error = !fieldModel.isDirty
-      ? fieldModel.errors && fieldModel.errors[0]
+    const error = !field.isDirty
+      ? field.errors && field.errors[0]
       : null
 
     const className = cx('normal', {

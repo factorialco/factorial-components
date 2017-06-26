@@ -4715,6 +4715,13 @@ rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-day-picker@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/react-day-picker/-/react-day-picker-6.0.3.tgz#179a9a9e622b8c25f6a0259c910d58e02e8ef513"
+  dependencies:
+    object-assign "^4.1.1"
+    prop-types "^15.5.10"
+
 react-docgen@^2.15.0:
   version "2.15.0"
   resolved "https://registry.yarnpkg.com/react-docgen/-/react-docgen-2.15.0.tgz#11aced462256e4862b14e6af6e46bdcefacb28bb"

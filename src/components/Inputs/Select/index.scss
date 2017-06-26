@@ -1,0 +1,43 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.normal {
+  -moz-appearance: none; /* Firefox 36+ */
+  -webkit-appearance: none; /* Chrome 41+ */
+  font-size: $h4;
+  padding: 13px;
+  padding-top: 33px;
+  border: 2px solid $grey4;
+  border-radius: 5px;
+  background: white;
+  transition: border-color .1s ease;
+  width: 100%;
+  background-image: linear-gradient(45deg, transparent 50%, $grey3 50%), linear-gradient(135deg, $grey3 50%, transparent 50%);
+  background-position: calc(100% - 20px) calc(2em + 2px), calc(100% - 15px) calc(2em + 2px), calc(100% - .5em) .5em;
+  background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
+  background-repeat: no-repeat;
+  height: 70px;
+  color: $grey1;
+}
+
+.focused {
+  composes: normal;
+  outline: none;
+  border: 2px solid $brand;
+  background-image: linear-gradient(45deg, transparent 50%, $brand 50%), linear-gradient(135deg, $brand 50%, transparent 50%);
+  color: $grey1;
+}
+
+.wrong {
+  composes: normal;
+  border: 2px solid $wrong;
+  padding-right: 40px;
+
+  &:focus {
+    border-color: $wrong;
+  }
+
+  &:focus ~ .label {
+    color: $wrong;
+  }
+}

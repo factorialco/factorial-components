@@ -17,6 +17,21 @@ module.exports = {
     path: path.join(__dirname, '../dist')
   },
 
+  externals: {
+    'autobind-decorator': 'autobind-decorator',
+    'classnames': 'classnames',
+    'jquery': 'jquery',
+    'lodash': 'lodash',
+    'mobx': 'mobx',
+    'moment': 'moment',
+    'react': 'react',
+    'react-day-picker': 'react-day-picker',
+    'react-dom': 'react-dom',
+    'react-dropzone': 'react-dropzone',
+    'react-portal': 'react-portal',
+    'tether': 'tether'
+  },
+
   stats: {
     hash: true,
     colors: true,
