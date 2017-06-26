@@ -1,5 +1,6 @@
 // @flow
 import { ReactChildren } from 'tcomb-react'
+import cn from 'classnames/bind'
 import React from 'react'
 import renderIf from 'lib/renderIf'
 
@@ -14,14 +15,26 @@ type Cost = {
 
 type Props = {
   cost: Cost,
+  color?: string,
   footer?: ReactChildren,
+  onClick?: () => void,
+  selected?: boolean,
   title: string
 }
 
-const PricingCard = ({ cost, footer, title }: Props) => {
+const cx = cn.bind(styles)
+
+const PricingCard = ({ cost, color, footer, title, onClick, selected }: Props) => {
   return (
-    <div className={styles.root}>
-      <header className={styles.header}>
+    <div
+      className={cx('root', { selected })}
+      onClick={onClick}
+      style={(selected && color) ? { borderColor: color } : {}}
+    >
+      <header
+        style={(selected && color) ? { backgroundColor: color } : {}}
+        className={styles.header}
+      >
         <h6 className={styles.title}>{title}</h6>
       </header>
       <section className={styles.content}>

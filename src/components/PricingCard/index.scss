@@ -5,8 +5,22 @@
   overflow: hidden;
   font-family: $font-stack;
   box-sizing: border-box;
-  border: 1px solid $grey4;
+  border: 1px solid;
   border-radius: 5px;
+  border-color: $grey4;
+
+  &.selected {
+    border: 2px solid;
+    border-color: $brand;
+
+    .header {
+      background-color: $brand;
+
+      .title {
+        color: white;
+      }
+    }
+  }
 
   .header {
     width: 100%;
