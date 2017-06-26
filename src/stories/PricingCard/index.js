@@ -27,6 +27,7 @@ storiesOf('PricingCard', module)
   .add('selected', () =>
     <div style={{ width: 280 }}>
       <PricingCard
+        onClick={action('clicked!')}
         selected
         title='Coste para el empleado'
         footer={
@@ -46,6 +47,7 @@ storiesOf('PricingCard', module)
   .add('selected with custom color', () =>
     <div style={{ width: 280 }}>
       <PricingCard
+        onClick={action('clicked!')}
         color='#000'
         selected
         title='Coste para el empleado'

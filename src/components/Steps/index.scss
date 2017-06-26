@@ -1,0 +1,32 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.steps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:last-child {
+      .line {
+        display: none;
+      }
+    }
+
+    .step {
+      width: 15px;
+      height: 15px;
+      border-radius: 100px;
+    }
+
+    .line {
+      height: 4px;
+      width: 35px;
+      margin: 0;
+    }
+  }
+}
