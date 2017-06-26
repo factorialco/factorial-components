@@ -18,6 +18,7 @@ export type Colors =
 
 type Props = {
   name: string,
+  color?: string,
   size?: Sizes,
   fill?: boolean,
   type?: Colors
@@ -25,9 +26,13 @@ type Props = {
 
 const cx = cn.bind(styles)
 
-const Illustration = ({ fill, type, size, name }: Props) => {
+const Illustration = ({ fill, type, size, name, color }: Props) => {
+  let style = {}
+  if (color) style = fill ? { fill: color } : { stroke: color }
+
   return (
     <svg
+      style={style}
       aria-hidden='true'
       className={cx('illustration', type, size, { fill })}
     >

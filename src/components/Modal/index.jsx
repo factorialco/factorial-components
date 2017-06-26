@@ -86,7 +86,7 @@ export default class Modal extends React.Component {
   }
 
   renderIllustration () {
-    const { illustration, type } = this.props
+    const { color, illustration, type } = this.props
 
     if (!illustration) return null
 
@@ -103,7 +103,7 @@ export default class Modal extends React.Component {
 
     return (
       <div className={styles.illustration}>
-        <Illustration type={type} name={illustration} />
+        <Illustration color={color} type={type} name={illustration} />
       </div>
     )
   }
