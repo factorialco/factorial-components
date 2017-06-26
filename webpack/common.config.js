@@ -5,8 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const DEBUG = !process.argv.includes('--release')
 
 const GLOBALS = {
-  'process.env.NODE_ENV': DEBUG ? '"development"' : '"production"',
-  __DEV__: DEBUG
+  'process.env.NODE_ENV': '"production"'
 }
 
 module.exports = {
