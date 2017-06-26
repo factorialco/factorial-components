@@ -32,6 +32,7 @@ import ScrollableItem from 'components/ScrollableItem'
 import ScrollableList from 'components/ScrollableList'
 import Separator from 'components/Separator'
 import SidebarButton from 'components/Buttons/SidebarButton'
+import Steps from 'components/Steps'
 import Text from 'components/Inputs/Text'
 import Title from 'components/Title'
 import WithToggleState from 'components/WithToggleState'
@@ -62,6 +63,7 @@ export {
   ScrollableList,
   Separator,
   SidebarButton,
+  Steps,
   Table,
   TableBody,
   TableBodyCell,
