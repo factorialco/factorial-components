@@ -9,13 +9,19 @@ type Types =
  | 'primary'
 
 type Props = {
+  color?: string,
   type: Types
 }
 
 const cx = cn.bind(styles)
 
-const Separator = ({ type }: Props) => {
-  return <div className={cx('separator', type)} />
+const Separator = ({ color, type }: Props) => {
+  return (
+    <div
+      style={color ? { borderColor: color } : {}}
+      className={cx('separator', type)}
+    />
+  )
 }
 
 Separator.defaultProps = {

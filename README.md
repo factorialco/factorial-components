@@ -1,3 +1,5 @@
+![](https://travis-ci.org/factorialco/factorial-components.svg?branch=master)
+
 # Factorial Components
 
 Library of React components to be used at Factorial.
