@@ -1,5 +1,5 @@
 // @flow
-import { observer } from 'mobx-react'
+import { Field } from 'factorial-form'
 import { ReactElement, ReactChildren } from 'tcomb-react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
@@ -10,9 +10,7 @@ import styles from './index.scss'
 
 type Props = {
   bang?: boolean,
-  select?: boolean,
-  value?: string,
-  fieldModel: Object,
+  field: Field,
   focused?: boolean,
   getRef?: (ref: ReactElement) => mixed,
   info?: ReactChildren,
@@ -21,7 +19,9 @@ type Props = {
   onFocus?: (e: SyntheticEvent) => mixed,
   placeholder?: string,
   readonly?: boolean,
-  type?: 'text' | 'password'
+  select?: boolean,
+  type?: 'text' | 'password',
+  value?: string
 };
 
 type ComponentState = {
@@ -30,7 +30,6 @@ type ComponentState = {
 
 const cx = classNames.bind(styles)
 
-@observer
 export default class Text extends React.Component {
   props: Props;
   state: ComponentState = {
@@ -38,7 +37,7 @@ export default class Text extends React.Component {
   };
 
   @autobind onChange (event: any) {
-    this.props.fieldModel.set(event.target.value)
+    this.props.field.set(event.target.value)
   }
 
   @autobind onFocus (event: any) {
@@ -60,7 +59,7 @@ export default class Text extends React.Component {
     const {
       bang,
       placeholder,
-      fieldModel,
+      field,
       info,
       label,
       getRef,
@@ -71,7 +70,7 @@ export default class Text extends React.Component {
     } = this.props
 
     const inputClassName = cx('normal', {
-      wrong: !fieldModel.isDirty && fieldModel.errors,
+      wrong: !field.isDirty && field.errors,
       focused: focused || this.state.focused,
       select: this.props.select
     })
@@ -81,7 +80,7 @@ export default class Text extends React.Component {
         bang={bang}
         label={label}
         value={value}
-        fieldModel={fieldModel}
+        field={field}
         info={info}
         focused={focused || this.state.focused}
         readonly={readonly}
@@ -92,7 +91,7 @@ export default class Text extends React.Component {
           }}
           className={inputClassName}
           placeholder={placeholder}
-          value={value || fieldModel.value}
+          value={value || field.value}
           onChange={this.onChange}
           onFocus={this.onFocus}
           onBlur={this.onBlur}

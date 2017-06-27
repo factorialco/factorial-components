@@ -11,6 +11,17 @@
     flex-direction: column;
   }
 
+  &.compact {
+    .title {
+      @include font-size(3);
+    }
+
+    .separator {
+      margin-top: -30px;
+      margin-bottom: -40px;
+    }
+  }
+
   .title {
     @include font-size(2);
   }

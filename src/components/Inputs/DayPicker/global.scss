@@ -1,0 +1,106 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+:global {
+  .DayPicker {
+    font-family: $font-stack;
+    color: $grey2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    padding: 1.5rem 0;
+    user-select: none;
+    background: white;
+    border-radius: 10px;
+    outline: none;
+    font-size: $h5;
+
+    input,
+    select {
+      -moz-appearance: none; /* Firefox 36+ */
+      -webkit-appearance: none; /* Chrome 41+ */
+      border: none;
+      background: transparent;
+      color: $grey2;
+      font-family: $font-stack;
+      font-size: 16px;
+    }
+
+    &-Month {
+      display: table;
+      border-collapse: collapse;
+      border-spacing: 0;
+      user-select: none;
+      margin: 0 1.5rem;
+      height: 280px; /* Otherwise with the popover it "jumps" */
+    }
+
+    &-Weekdays {
+      display: table-header-group;
+
+      &Row {
+        display: table-row;
+      }
+    }
+
+    &-Weekday {
+      display: table-cell;
+      padding: .5rem;
+      text-align: center;
+      color: $grey3;
+
+      abbr[title] {
+        border: none;
+      }
+    }
+
+    &-Body {
+      display: table-row-group;
+    }
+
+    &-Week {
+      display: table-row;
+    }
+
+    &-Day {
+      display: table-cell;
+      padding: .5rem;
+      border: 1px solid $grey5;
+      text-align: center;
+      cursor: pointer;
+      vertical-align: middle;
+      font-size: $h4;
+      outline: none;
+
+      &--today {
+        color: $brand;
+        font-weight: 500;
+      }
+
+      &--disabled {
+        color: $grey4;
+        cursor: default;
+        background-color: $grey5;
+      }
+
+      &--outside {
+        cursor: default;
+        color: $grey4;
+      }
+
+      &--sunday:not(&--today) {
+        color: $grey4;
+      }
+
+      &--selected:not(&--disabled):not(&--outside) {
+        color: white;
+        background-color: $brand;
+      }
+    }
+
+    &--interactionDisabled &-Day {
+      cursor: default;
+    }
+  }
+}

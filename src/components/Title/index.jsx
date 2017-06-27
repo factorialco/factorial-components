@@ -10,6 +10,8 @@ type Types =
   | 'primary'
 
 type Props = {
+  compact?: boolean,
+  color?: string,
   label: string,
   type: Types,
   separator: boolean,
@@ -18,15 +20,15 @@ type Props = {
 
 const cx = cn.bind(styles)
 
-const Title = ({ centered, label, separator, type }: Props) => {
+const Title = ({ compact, color, centered, label, separator, type }: Props) => {
   return (
-    <div className={cx('root', { centered })}>
+    <div className={cx('root', { centered, compact })}>
       <div className={styles.title}>
         {label}
       </div>
       {separator && (
         <div className={styles.separator}>
-          <Separator type={type || 'brand'} />
+          <Separator color={color} type={type || 'brand'} />
         </div>
       )}
     </div>
