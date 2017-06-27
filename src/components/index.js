@@ -27,7 +27,6 @@ import ModalPad from 'components/Modal/Pad'
 import ModalSubmit from 'components/Modal/Submit'
 import PricingCard from 'components/PricingCard'
 import ReadOnlyField from 'components/ReadOnlyField'
-import RoundButton from 'components/Buttons/RoundButton'
 import RoundedBadge from 'components/RoundedBadge'
 import ScrollableItem from 'components/ScrollableItem'
 import ScrollableList from 'components/ScrollableList'
@@ -62,7 +61,6 @@ export {
   ModalSubmit,
   PricingCard,
   ReadOnlyField,
-  RoundButton,
   RoundedBadge,
   ScrollableItem,
   ScrollableList,
