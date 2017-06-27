@@ -37,7 +37,7 @@ type State = {
 export default class DayPicker extends React.Component {
   props: Props;
   handler: ?() => void;
-  state: State = { isFocused: false };
+  state: State;
   daypicker: ?any;
   input: ?HTMLInputElement;
   clickedInside = false;
@@ -48,7 +48,8 @@ export default class DayPicker extends React.Component {
 
     this.state = {
       fromMonth: moment().subtract(100, 'years').toDate(),
-      toMonth: moment().add(1, 'year').toDate()
+      toMonth: moment().add(1, 'year').toDate(),
+      isFocused: false
     }
 
     this.handler = autorun(this.changeMonth)

@@ -20,7 +20,7 @@ type Props = {
   focused: boolean,
   info?: ReactChildren,
   label: string,
-  missingField: string,
+  missingField?: string,
   readonly?: boolean,
   value?: string
 };
