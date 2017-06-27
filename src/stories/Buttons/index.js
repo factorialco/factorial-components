@@ -57,3 +57,8 @@ storiesOf('LinkButton', module)
       this is some text
     </LinkButton>
   )
+  .add('custom color', () =>
+    <LinkButton color='blue'>
+      this is some text
+    </LinkButton>
+  )
