@@ -1,6 +1,7 @@
 // @flow
 import { ReactChildren } from 'tcomb-react'
 import { Tooltip } from 'components/Tooltip'
+import { observer } from 'mobx-react'
 import classNames from 'classnames/bind'
 import Icon from 'components/Icon'
 import React from 'react'
@@ -25,6 +26,7 @@ type Props = {
   value?: string
 };
 
+@observer
 export default class LabeledInput extends React.Component {
   props: Props;
 

@@ -87,21 +87,6 @@ module.exports = {
     new ExtractTextPlugin('main.css'),
     new webpack.DefinePlugin(GLOBALS),
     new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en|es)$/),
-    new webpack.optimize.AggressiveMergingPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true
-      }
-    })
+    new webpack.optimize.AggressiveMergingPlugin()
   ]
 }

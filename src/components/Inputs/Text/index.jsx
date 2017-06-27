@@ -1,4 +1,5 @@
 // @flow
+import { observer } from 'mobx-react'
 import { Field } from 'factorial-form'
 import { ReactElement, ReactChildren } from 'tcomb-react'
 import autobind from 'autobind-decorator'
@@ -30,6 +31,7 @@ type ComponentState = {
 
 const cx = classNames.bind(styles)
 
+@observer
 export default class Text extends React.Component {
   props: Props;
   state: ComponentState = {

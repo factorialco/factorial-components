@@ -1,4 +1,3 @@
-import { observer } from 'mobx-react'
 import { storiesOf } from '@storybook/react'
 import { Form } from 'factorial-form'
 import React from 'react'
@@ -11,17 +10,14 @@ const form = new Form(
   { name: 'string', date: 'date' }
 )
 
-const ObserverText = observer(Text)
-const ObserverDayPicker = observer(DayPicker)
-
 storiesOf('Text', module).add('standard', () =>
   <div>
-    <ObserverText label='This is a label' field={form.get('name')} />
+    <Text label='This is a label' field={form.get('name')} />
   </div>
 )
 
 storiesOf('DayPicker', module).add('standard', () =>
   <form>
-    <ObserverDayPicker label='This is a label' field={form.get('date')} />
+    <DayPicker label='This is a label' field={form.get('date')} />
   </form>
 )

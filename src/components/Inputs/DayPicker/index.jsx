@@ -1,6 +1,7 @@
 // @flow
 import _ from 'lodash'
 import { autorun } from 'mobx'
+import { observer } from 'mobx-react'
 import { Field } from 'factorial-form'
 import autobind from 'autobind-decorator'
 import Caption from './Caption'
@@ -34,6 +35,7 @@ type State = {
   isFocused: boolean
 };
 
+@observer
 export default class DayPicker extends React.Component {
   props: Props;
   handler: ?() => void;

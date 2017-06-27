@@ -1,4 +1,5 @@
 // @flow
+import { observer } from 'mobx-react'
 import _ from 'lodash'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
@@ -15,6 +16,7 @@ type ComponentState = {
   focused: boolean
 };
 
+@observer
 export default class Select extends React.Component {
   props: SelectWithOptionsProps;
   state: ComponentState = {
