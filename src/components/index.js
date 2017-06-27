@@ -34,6 +34,8 @@ import Separator from 'components/Separator'
 import SidebarButton from 'components/Buttons/SidebarButton'
 import Steps from 'components/Steps'
 import Text from 'components/Inputs/Text'
+import Select from 'components/Inputs/Select'
+import DayPicker from 'components/Inputs/DayPicker'
 import Title from 'components/Title'
 import WithToggleState from 'components/WithToggleState'
 
@@ -44,6 +46,7 @@ export {
   Button,
   Chevron,
   ColorButton,
+  DayPicker,
   EmployeeSelector,
   Form,
   FormRow,
@@ -61,6 +64,7 @@ export {
   RoundedBadge,
   ScrollableItem,
   ScrollableList,
+  Select,
   Separator,
   SidebarButton,
   Steps,

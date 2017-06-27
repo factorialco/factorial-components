@@ -5,6 +5,7 @@ import { ReactChildren } from 'tcomb-react'
 import styles from './index.scss'
 
 type Props = {
+  color?: string,
   children?: ReactChildren,
   onClick?: ?(event: SyntheticEvent) => any
 };
@@ -12,11 +13,17 @@ type Props = {
 export default function LinkButon (
   {
     children,
+    color,
     onClick
   }: Props
 ) {
   return (
-    <button className={styles.buttonLink} onClick={onClick} type='button'>
+    <button
+      style={color ? { color } : {}}
+      className={styles.buttonLink}
+      onClick={onClick}
+      type='button'
+    >
       {children}
     </button>
   )

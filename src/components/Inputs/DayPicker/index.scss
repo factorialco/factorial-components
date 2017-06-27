@@ -1,0 +1,52 @@
+@import 'variables/z-index';
+
+$arrow_size: 8px;
+$arrow_padding: 12px;
+
+@keyframes appearIn {
+  from, 70%, to {
+    animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.root {
+  position: relative;
+
+  .dayPicker {
+    animation: appearIn .3s;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, .3);
+    left: calc(-150px + 50%);
+    top: calc(100% + 16px);
+    position: absolute;
+    z-index: $z_index_modal;
+
+    .arrow {
+      content: "";
+      width: 16px;
+      height: 16px;
+      position: absolute;
+      border-radius: 20px 0 5px 0;
+      background: white;
+      top: -$arrow_size;
+      left: calc(50% - #{$arrow_size});
+      transform: rotate(225deg);
+    }
+  }
+}
