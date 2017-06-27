@@ -6,16 +6,26 @@
   height: 1.5rem;
   text-align: center;
   font-size: $h4;
-}
 
-.select {
-  outline: none;
-  padding: 0px 5px;
-  color: $grey2;
-  cursor: pointer;
+  .selectWrapper {
+    display: inline-flex;
+    align-items: center;
+    border-bottom: 1px solid $grey3;
+    border-radius: 0;
+    margin: 0px 10px;
+    color: $grey2;
+    cursor: pointer;
 
-  &:hover {
-    color: $brand;
+    .select {
+      outline: none;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    &:hover, .open {
+      color: $brand;
+      border-bottom-color: $brand;
+    }
   }
 }
 

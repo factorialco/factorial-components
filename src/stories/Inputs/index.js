@@ -21,7 +21,7 @@ storiesOf('Text', module).add('standard', () =>
 )
 
 storiesOf('DayPicker', module).add('standard', () =>
-  <div>
+  <form>
     <ObserverDayPicker label='This is a label' field={form.get('date')} />
-  </div>
+  </form>
 )

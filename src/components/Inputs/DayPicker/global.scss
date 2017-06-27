@@ -33,7 +33,7 @@
       border-spacing: 0;
       user-select: none;
       margin: 0 1.5rem;
-      height: 280px; /* Otherwise with the popver it "jumps" */
+      height: 280px; /* Otherwise with the popover it "jumps" */
     }
 
     &-Weekdays {
@@ -50,7 +50,7 @@
       text-align: center;
       color: $grey3;
 
-      abbr {
+      abbr[title] {
         border: none;
       }
     }
