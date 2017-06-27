@@ -27,8 +27,8 @@ const cx = cn.bind(styles)
 const PricingCard = ({ cost, color, footer, title, onClick, selected }: Props) => {
   return (
     <div
-      className={cx('root', { selected })}
       onClick={onClick}
+      className={cx('root', { selected, clickable: Boolean(onClick) })}
       style={(selected && color) ? { borderColor: color } : {}}
     >
       <header

@@ -12,3 +12,15 @@ storiesOf('Title', module)
   .add('centered', () =>
     <Title label='This is a title' centered separator type='primary' />
   )
+  .add('compact', () =>
+    <Title compact separator label='This is a title' type='primary' />
+  )
+  .add('with color', () =>
+    <Title
+      compact
+      separator
+      color='blue'
+      label='This is a title'
+      type='primary'
+    />
+  )

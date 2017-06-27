@@ -1,0 +1,43 @@
+@import 'variables/colors';
+
+:global {
+  .DayPicker-Day--disabled {
+    color: $grey3;
+  }
+
+  .DayPicker-Day--isWeekend {
+    color: $grey3;
+  }
+
+  .DayPicker-Day--isHoliday {
+    color: $wrong;
+  }
+}
+
+.navBar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 0 1rem;
+}
+
+.button {
+  fill: $grey2;
+  position: absolute;
+  cursor: pointer;
+  top: 3px;
+
+  &:hover {
+    fill: $brand;
+  }
+}
+
+.prev {
+  composes: button;
+  left: 20px;
+}
+
+.next {
+  composes: button;
+  right: 20px;
+}
