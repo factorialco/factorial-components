@@ -7,11 +7,12 @@ import styles from './index.scss'
 const cx = classNames.bind(styles)
 
 type Props = {
-  backgroundColor: string,
   color?: string,
   label?: string,
   outline?: boolean,
   inverted: boolean,
+  disabled?: boolean,
+  backgroundColor: string,
   onClick?: (event: SyntheticEvent) => mixed
 };
 
@@ -60,11 +61,12 @@ export default class ColorButton extends React.Component {
   }
 
   render () {
-    const { label, outline } = this.props
+    const { disabled, label, outline } = this.props
 
     return (
       <button
         className={cx('colorButton', { outline })}
+        disabled={disabled}
         onClick={this.onClick}
         style={this.getStyle()}
       >
