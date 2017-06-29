@@ -18,6 +18,7 @@ const cx = classNames.bind(styles)
 
 type Props = {
   all?: string,
+  color?: string,
   employees: Array<Object>,
   label?: string,
   none?: string,
@@ -58,7 +59,7 @@ export default class EmployeeSelector extends React.Component {
   }
 
   @autobind renderEmployee (employee: Employee) {
-    const { selectedEmployeeIds } = this.props
+    const { color, selectedEmployeeIds } = this.props
     const selected = _.includes(selectedEmployeeIds, employee.get('id'))
 
     return (
@@ -79,7 +80,13 @@ export default class EmployeeSelector extends React.Component {
                 {employee.user.fullName()}
               </div>
             </div>
-            <div className={styles.checkbox}>
+            <div
+              style={color && selected
+                ? { background: color, borderColor: color }
+                : {}
+              }
+              className={styles.checkbox}
+            >
               {selected &&
                 <Icon
                   icon='check'
@@ -107,17 +114,17 @@ export default class EmployeeSelector extends React.Component {
   }
 
   renderHelperBtns () {
-    const { label, all, none } = this.props
+    const { color, label, all, none } = this.props
 
     return (
       <div className={styles.actions}>
         <div className={styles.label}>
           {label || 'select'}:
         </div>
-        <LinkButton onClick={this.onSelectAll}>
+        <LinkButton color={color} onClick={this.onSelectAll}>
           {all || 'all'}
         </LinkButton>
-        <LinkButton onClick={this.onSelectNone}>
+        <LinkButton color={color} onClick={this.onSelectNone}>
           {none || 'none'}
         </LinkButton>
       </div>
