@@ -30,12 +30,24 @@ employees.add([
   }
 ])
 
-storiesOf('EmployeeSelector', module).add('standard', () =>
-  <div style={{ width: 400 }}>
-    <EmployeeSelector
-      employees={employees.models}
-      onSelectEmployee={action('employee selected!')}
-      selectedEmployeeIds={[]}
-    />
-  </div>
-)
+storiesOf('EmployeeSelector', module)
+  .add('standard', () =>
+    <div style={{ width: 400 }}>
+      <EmployeeSelector
+        employees={employees.models}
+        onSelectEmployee={action('employee selected!')}
+        selectedEmployeeIds={[]}
+      />
+    </div>
+  )
+  .add('with custom color', () =>
+    <div style={{ width: 400 }}>
+      <EmployeeSelector
+        color='blue'
+        employees={employees.models}
+        onSelectMultiple={action('selected multiple!')}
+        onSelectEmployee={action('employee selected!')}
+        selectedEmployeeIds={[]}
+      />
+    </div>
+  )
