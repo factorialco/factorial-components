@@ -5,7 +5,6 @@ import autobind from 'autobind-decorator'
 import Avatar from 'components/Avatar'
 import BoxList from 'components/BoxList'
 import classNames from 'classnames/bind'
-import Employee from 'stores/models/Employee'
 import Icon from 'components/Icon'
 import InlineSearch from 'components/InlineSearch'
 import LinkButton from 'components/Buttons/LinkButton'
@@ -42,7 +41,7 @@ export default class EmployeeSelector extends React.Component {
     this.setState({ search: event.target.value || '' })
   }
 
-  onClickEmployee (employee: Employee) {
+  onClickEmployee (employee: Object) {
     return () => {
       this.props.onSelectEmployee(employee.get('id'))
     }
@@ -58,7 +57,7 @@ export default class EmployeeSelector extends React.Component {
     )
   }
 
-  @autobind renderEmployee (employee: Employee) {
+  @autobind renderEmployee (employee: Object) {
     const { color, selectedEmployeeIds } = this.props
     const selected = _.includes(selectedEmployeeIds, employee.get('id'))
 
@@ -131,7 +130,7 @@ export default class EmployeeSelector extends React.Component {
     )
   }
 
-  renderControls (filteredEmployees: Array<Employee>) {
+  renderControls (filteredEmployees: Array<Object>) {
     const { onSelectMultiple } = this.props
 
     if (!filteredEmployees.length || !!this.state.search) return null

@@ -20,15 +20,18 @@ module.exports = {
   externals: {
     'autobind-decorator': 'autobind-decorator',
     'classnames': 'classnames',
+    'factorial-form': 'factorial-form',
     'jquery': 'jquery',
     'lodash': 'lodash',
     'mobx': 'mobx',
+    'mobx-react': 'mobx-react',
     'moment': 'moment',
     'react': 'react',
     'react-day-picker': 'react-day-picker',
     'react-dom': 'react-dom',
     'react-dropzone': 'react-dropzone',
     'react-portal': 'react-portal',
+    'tcomb-react': 'tcomb-react',
     'tether': 'tether'
   },
 
