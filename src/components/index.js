@@ -19,6 +19,7 @@ import FormRow from 'components/FormRow'
 import Icon from 'components/Icon'
 import Illustration from 'components/Illustration'
 import InlineTooltip from 'components/InlineTooltip'
+import LabeledInput from 'components/Inputs/LabeledInput'
 import LinkButton from 'components/Buttons/LinkButton'
 import Loading from 'components/Loading'
 import Modal from 'components/Modal'
@@ -59,6 +60,7 @@ export {
   Icon,
   Illustration,
   InlineTooltip,
+  LabeledInput,
   LinkButton,
   Loading,
   Modal,
