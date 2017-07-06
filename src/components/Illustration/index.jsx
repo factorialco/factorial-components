@@ -1,4 +1,5 @@
 // @flow
+import configuration from 'shared'
 import cn from 'classnames/bind'
 import React from 'react'
 
@@ -36,7 +37,7 @@ const Illustration = ({ fill, type, size, name, color }: Props) => {
       aria-hidden='true'
       className={cx('illustration', type, size, { fill })}
     >
-      <use xlinkHref={`#${name}`} />
+      <use xlinkHref={`${configuration.iconsPath.illustrations}#${name}`} />
     </svg>
   )
 }

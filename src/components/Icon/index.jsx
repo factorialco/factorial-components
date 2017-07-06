@@ -1,4 +1,5 @@
 // @flow
+import configuration from 'shared'
 import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './index.scss'
@@ -28,7 +29,7 @@ export default class Icon extends React.Component {
         className={cx('base', type, size)}
         opacity={opacity}
       >
-        <use xlinkHref={`#${set}__${icon}`} />
+        <use xlinkHref={`${configuration.iconsPath[set]}#${icon}`} />
       </svg>
     )
   }

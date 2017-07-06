@@ -39,6 +39,12 @@ import DayPicker from 'components/Inputs/DayPicker'
 import Title from 'components/Title'
 import WithToggleState from 'components/WithToggleState'
 
+import configuration from 'shared'
+
+export default function main ({ iconsPath }) {
+  configuration.iconsPath = iconsPath
+}
+
 export {
   Avatar,
   ActionItem,

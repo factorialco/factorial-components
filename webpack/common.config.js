@@ -13,7 +13,7 @@ module.exports = {
 
   output: {
     filename: 'index.js',
-    libraryTarget: 'commonjs',
+    libraryTarget: 'umd',
     path: path.join(__dirname, '../dist')
   },
 
