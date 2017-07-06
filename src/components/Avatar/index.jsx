@@ -1,5 +1,6 @@
 // @flow
 import classNames from 'classnames/bind'
+import configuration from 'shared'
 import React from 'react'
 
 import styles from './index.scss'
@@ -46,7 +47,7 @@ export default class Avatar extends React.Component {
 
     return (
       <svg aria-hidden='true' className={styles.illustration}>
-        <use xlinkHref='#avatar' />
+        <use xlinkHref={`${configuration.iconsPath.illustrations}#avatar`} />
       </svg>
     )
   }
