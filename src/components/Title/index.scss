@@ -24,6 +24,8 @@
 
   .title {
     @include font-size(2);
+    font-weight: 400;
+    margin: 0;
   }
 
   .separator {

@@ -1,6 +1,6 @@
 {
   "name": "factorial-components",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "library of factorial components",
   "main": "index.js",
   "scripts": {

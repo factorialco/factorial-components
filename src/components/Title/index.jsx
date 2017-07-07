@@ -23,9 +23,9 @@ const cx = cn.bind(styles)
 const Title = ({ compact, color, centered, label, separator, type }: Props) => {
   return (
     <div className={cx('root', { centered, compact })}>
-      <div className={styles.title}>
+      <h2 className={styles.title}>
         {label}
-      </div>
+      </h2>
       {separator && (
         <div className={styles.separator}>
           <Separator color={color} type={type || 'brand'} />
