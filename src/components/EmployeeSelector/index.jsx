@@ -23,6 +23,7 @@ type Props = {
   none?: string,
   onSelectEmployee: (id: number) => void,
   onSelectMultiple?: (seledtedUserIds: Array<number>) => void,
+  fallback?: string,
   placeholder?: string,
   selectedEmployeeIds: Array<number>
 };
@@ -48,11 +49,11 @@ export default class EmployeeSelector extends React.Component {
   }
 
   renderBlank () {
-    const { placeholder } = this.props
+    const { fallback } = this.props
 
     return (
       <div className={styles.blank}>
-        {placeholder || 'Employees not found'}
+        {fallback || 'Employees not found'}
       </div>
     )
   }
@@ -144,7 +145,7 @@ export default class EmployeeSelector extends React.Component {
   }
 
   render () {
-    const { employees } = this.props
+    const { employees, placeholder } = this.props
     const filteredEmployees = _.sortBy(
       _.filter(employees, employee => employee.user.matchesFullName(this.state.search)),
       employee => employee.user.fullName()
@@ -152,7 +153,11 @@ export default class EmployeeSelector extends React.Component {
 
     return (
       <BoxList>
-        <InlineSearch search={this.state.search} onSearch={this.onSearch} />
+        <InlineSearch
+          onSearch={this.onSearch}
+          placeholder={placeholder}
+          search={this.state.search}
+        />
         {this.renderControls(filteredEmployees)}
         <ScrollableList>
           {filteredEmployees.length > 0

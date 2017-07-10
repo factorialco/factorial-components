@@ -45,8 +45,8 @@ const PricingCard = ({ cost, color, footer, title, onClick, selected }: Props) =
             </span>
             {renderIf(Boolean(cost.periodicity))(
               <span>
-                &nbsp; / &nbsp;
-                {cost.periodicity}
+                <br />
+                / {cost.periodicity}
               </span>
             )}
           </div>
