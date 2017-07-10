@@ -39,7 +39,8 @@
   }
 
   .content {
+    @include text-ellipsis();
     width: 90%;
-    @include text-ellipsis()
+    overflow: visible;
   }
 }
