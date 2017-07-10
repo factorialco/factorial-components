@@ -50,7 +50,7 @@ export default class DayPicker extends React.Component {
 
     this.state = {
       fromMonth: moment().subtract(100, 'years').toDate(),
-      toMonth: moment().add(1, 'year').toDate(),
+      toMonth: moment().add(3, 'year').endOf('year').toDate(),
       isFocused: false
     }
 
