@@ -29,9 +29,10 @@
 }
 
 .avatar {
-  stroke: $grey3;
   background: $grey5;
+  overflow: hidden;
   position: relative;
+  stroke: $grey3;
 
   .capitals {
     display: flex;
@@ -145,4 +146,3 @@
     height: $big_size;
   }
 }
-
