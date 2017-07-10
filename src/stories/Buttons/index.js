@@ -26,9 +26,7 @@ storiesOf('SidebarButton', module)
   .add('with some react children', () =>
     <SidebarButton label={<div>I am inside a div!</div>} />
   )
-  .add('selected', () =>
-    <SidebarButton selected label='I am selectedadflaksjhfld!' />
-  )
+  .add('selected', () => <SidebarButton selected label='I am ggggg!' />)
 
 storiesOf('ColorButton', module)
   .addDecorator(story =>
