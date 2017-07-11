@@ -26,7 +26,7 @@ export default class Icon extends React.Component {
     return (
       <svg
         aria-hidden='true'
-        className={cx('base', type, size)}
+        className={cx('base', set, type, size)}
         opacity={opacity}
       >
         <use xlinkHref={`${configuration.iconsPath[set]}#${icon}`} />
