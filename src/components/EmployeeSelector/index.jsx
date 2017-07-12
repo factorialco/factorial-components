@@ -77,7 +77,7 @@ export default class EmployeeSelector extends React.Component {
                 <Avatar
                   url={employee.user.has('avatar') && employee.user.get('avatar')
                     ? `${rootPath || ''}${employee.user.get('avatar')}`
-                    : null
+                    : ''
                   }
                   size='short'
                 />
