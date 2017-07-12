@@ -19,12 +19,13 @@ type Props = {
   all?: string,
   color?: string,
   employees: Array<Object>,
+  fallback?: string,
   label?: string,
   none?: string,
   onSelectEmployee: (id: number) => void,
   onSelectMultiple?: (seledtedUserIds: Array<number>) => void,
-  fallback?: string,
   placeholder?: string,
+  rootPath?: string,
   selectedEmployeeIds: Array<number>
 };
 
@@ -59,7 +60,7 @@ export default class EmployeeSelector extends React.Component {
   }
 
   @autobind renderEmployee (employee: Object) {
-    const { color, selectedEmployeeIds } = this.props
+    const { color, selectedEmployeeIds, rootPath } = this.props
     const selected = _.includes(selectedEmployeeIds, employee.get('id'))
 
     return (
@@ -73,7 +74,13 @@ export default class EmployeeSelector extends React.Component {
           <div className={cx('employee', { selected })}>
             <div className={styles.employeeInfo}>
               <div className={styles.avatar}>
-                <Avatar user={employee.user} size='short' />
+                <Avatar
+                  url={employee.user.has('avatar') && employee.user.get('avatar')
+                    ? `${rootPath || ''}${employee.user.get('avatar')}`
+                    : null
+                  }
+                  size='short'
+                />
               </div>
 
               <div className={styles.name}>
