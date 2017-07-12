@@ -1,5 +1,5 @@
 declare class Process {
-  env: { [key: string] : string };
+  env: { [key: string]: string };
 }
 
 declare var System: {
@@ -7,7 +7,9 @@ declare var System: {
 }
 
 declare var module : {
-  hot : {
-    accept(path:string, callback:() => void): void;
+  hot: {
+    accept(path: string, callback: () => void): void;
   };
 };
+
+declare var __CLIENT__
