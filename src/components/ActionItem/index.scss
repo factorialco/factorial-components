@@ -2,6 +2,9 @@
 @import 'variables/fonts';
 @import 'mixins';
 
+@import 'variables/colors';
+@import 'mixins';
+
 .item {
   box-sizing: border-box;
   font-family: $font-stack;
@@ -26,18 +29,12 @@
 
   &.highlighted {
     background-color: $brand;
-    color: white;
     cursor: default;
     pointer-events: none;
 
     &:hover {
       background: $brand;
     }
-  }
-
-  &.href {
-    color: inherit;
-    text-decoration: none;
   }
 
   &.isClickable {
@@ -54,6 +51,12 @@
     &:hover {
       background: $grey5;
     }
+  }
+
+  .content {
+    display: flex;
+    width: 100%;
+    align-items: center;
   }
 
   .icon {
