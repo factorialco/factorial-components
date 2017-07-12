@@ -9,6 +9,7 @@ import Icon from 'components/Icon'
 import Illustration from 'components/Illustration'
 import Portal from 'react-portal'
 import React from 'react'
+import RoundButton from 'components/Buttons/RoundButton'
 
 import styles from './index.scss'
 
@@ -127,6 +128,27 @@ export default class Modal extends React.Component {
     )
   }
 
+  renderBack () {
+    const { onBack } = this.props
+    if (!onBack) return null
+    return (
+      <div className={styles.back}>
+        <RoundButton
+          icon='back'
+          onClick={onBack}
+          set='utility'
+          type='negative'
+        />
+      </div>
+    )
+  }
+
+  renderHeaderContent () {
+    const { headerContent } = this.props
+    if (!headerContent) return null
+    return headerContent()
+  }
+
   renderContent () {
     const { title, description, big, negative, children } = this.props
 
@@ -139,6 +161,7 @@ export default class Modal extends React.Component {
           >
             <Form onSubmit={this.submit} className={styles.form}>
               {this.renderCancel()}
+              {this.renderBack()}
               <div className={styles.header}>
                 {this.renderIllustration()}
                 <h2 className={styles.title}>
@@ -147,6 +170,7 @@ export default class Modal extends React.Component {
                 <h3 className={styles.description}>
                   {description}
                 </h3>
+                {this.renderHeaderContent()}
               </div>
               {React.Children.map(children, this.renderElement)}
             </Form>
