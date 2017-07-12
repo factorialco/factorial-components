@@ -1,6 +1,12 @@
 const common = require('./common.config')
 const merge = require('webpack-merge')
 const path = require('path')
+const webpack = require('webpack')
+
+const GLOBALS = {
+  'process.env.NODE_ENV': '"production"',
+  'process.env.__CLIENT__': 'true'
+}
 
 module.exports = merge(common, {
   output: {
@@ -39,5 +45,9 @@ module.exports = merge(common, {
         ]
       }
     ]
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin(GLOBALS)
+  ]
 })
