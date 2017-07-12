@@ -1,4 +1,5 @@
 // @flow
+/* global __CLIENT__ */
 import React from 'react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
@@ -7,13 +8,14 @@ import styles from './index.scss'
 const cx = classNames.bind(styles)
 
 type Props = {
-  color?: string,
-  label?: string,
-  outline?: boolean,
-  inverted: boolean,
-  disabled?: boolean,
   backgroundColor: string,
-  onClick?: (event: SyntheticEvent) => mixed
+  color?: string,
+  disabled?: boolean,
+  inverted: boolean,
+  label?: string,
+  onClick?: (event: SyntheticEvent) => mixed,
+  outline?: boolean,
+  to?: string
 };
 
 export default class ColorButton extends React.Component {
@@ -61,7 +63,16 @@ export default class ColorButton extends React.Component {
   }
 
   render () {
-    const { disabled, label, outline } = this.props
+    const { to, disabled, label, outline } = this.props
+
+    if (to && __CLIENT__) {
+      const { Link } = require('react-router')
+      return (
+        <Link className={styles.colorButton} to={to} style={this.getStyle()}>
+          {label}
+        </Link>
+      )
+    }
 
     return (
       <button

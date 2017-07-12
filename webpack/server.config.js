@@ -2,6 +2,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const common = require('./common.config')
 const merge = require('webpack-merge')
 const path = require('path')
+const webpack = require('webpack')
+
+const GLOBALS = {
+  'process.env.NODE_ENV': '"production"',
+  '__CLIENT__': false
+}
 
 module.exports = merge(common, {
   output: {
@@ -45,6 +51,7 @@ module.exports = merge(common, {
   },
 
   plugins: [
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('main.css'),
+    new webpack.DefinePlugin(GLOBALS)
   ]
 })

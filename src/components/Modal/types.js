@@ -10,12 +10,14 @@ export type CustomIllustration = {
 export type Modal = {
   big?: boolean,
   children?: ReactChildren,
-  description?: string,
-  illustration?: string,
   color?: string,
+  description?: string,
   fixed?: boolean, // Only used for the style guide
+  headerContent?: Function,
+  illustration?: string,
   locked?: boolean,
   negative?: boolean,
+  onBack?: Function,
   onClose: () => void,
   onSubmit?: Function,
   submit: Function,
