@@ -1,4 +1,5 @@
 // @flow
+/* global __CLIENT__ */
 import { ReactChildren } from 'tcomb-react'
 import classNames from 'classnames/bind'
 import Icon from 'components/Icon'
@@ -17,6 +18,7 @@ type Props = {
   selected?: boolean,
   showIcon?: boolean,
   href?: string,
+  to?: string
 };
 
 export default function ActionItem (
@@ -27,10 +29,11 @@ export default function ActionItem (
     onClick,
     selected,
     showIcon = true,
-    href
+    href,
+    to
   }: Props
 ) {
-  const isClickable = Boolean((onClick || href) && !highlighted)
+  const isClickable = Boolean((onClick || to || href) && !highlighted)
   const className = cx('item', {
     disabled: !isClickable,
     compact,
@@ -42,47 +45,49 @@ export default function ActionItem (
 
   if (!children) return null
 
-  if (isClickable) {
-    if (onClick) {
-      return (
-        <div className={className} onClick={onClick}>
-          <div className={styles.wrapper}>
-            {children}
-          </div>
-          {showIcon && (
-            <div className={styles.icon}>
-              <Icon
-                set='utility'
-                icon='forward'
-                type={highlighted ? 'negative' : 'terciary'}
-              />
-            </div>
-          )}
+  if (!isClickable) {
+    return (
+      <div className={className}>
+        {children}
+      </div>
+    )
+  }
+
+  const content = (
+    <div className={styles.content}>
+      <div className={styles.wrapper}>
+        {children}
+      </div>
+      {renderIf(showIcon)(
+        <div className={styles.icon}>
+          <Icon
+            set='utility'
+            icon='forward'
+            type={highlighted ? 'negative' : 'terciary'}
+          />
         </div>
-      )
-    } else {
-      return (
-        <a className={className} href={href}>
-          <div className={styles.wrapper}>
-            {children}
-          </div>
-          {renderIf(showIcon)(
-            <div className={styles.icon}>
-              <Icon
-                set='utility'
-                icon='forward'
-                type={highlighted ? 'negative' : 'terciary'}
-              />
-            </div>
-          )}
-        </a>
-      )
-    }
+      )}
+    </div>
+  )
+
+  if (to && __CLIENT__) {
+    const { Link } = require('react-router')
+    return (
+      <Link className={className} to={to}>
+        {content}
+      </Link>
+    )
+  } else if (onClick) {
+    return (
+      <div className={className} onClick={onClick}>
+        {content}
+      </div>
+    )
   }
 
   return (
-    <div className={className}>
-      {children}
-    </div>
+    <a className={className} href={href}>
+      {content}
+    </a>
   )
 }
