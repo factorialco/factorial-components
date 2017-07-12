@@ -11,9 +11,9 @@ type Size = 'small' | 'short' | 'medium' | 'grande' | 'big';
 type Status = 'active' | 'idle' | 'off';
 
 type Props = {
+  letters?: string,
   size?: Size,
   status?: Status,
-  team?: string,
   url?: string
 };
 
@@ -27,16 +27,16 @@ export default class Avatar extends React.Component {
   }
 
   renderContent () {
-    const { team, url } = this.props
+    const { letters, url } = this.props
 
     if (url) {
       return <img className={styles.img} src={url} />
     }
 
-    if (team) {
+    if (letters) {
       return (
         <div className={styles.capitals}>
-          {team}
+          {letters}
         </div>
       )
     }
