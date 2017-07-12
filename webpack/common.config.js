@@ -31,6 +31,7 @@ module.exports = {
     'react-dom': 'react-dom',
     'react-dropzone': 'react-dropzone',
     'react-portal': 'react-portal',
+    'react-router': 'react-router',
     'tcomb-react': 'tcomb-react',
     'tether': 'tether'
   },
