@@ -6,10 +6,12 @@ import styles from './index.scss'
 const cx = classNames.bind(styles)
 
 type Props = {
-  color: string,
+  color?: string,
   step: number,
   steps: number
 };
+
+const brand = '#DFE3E6'
 
 function Steps ({ color, step, steps }: Props) {
   const data = []
@@ -26,11 +28,11 @@ function Steps ({ color, step, steps }: Props) {
         return (
           <div className={styles.container} key={i}>
             <div
-              style={{ backgroundColor: dotActive ? color : '#DFE3E6' }}
+              style={{ backgroundColor: dotActive ? color : brand }}
               className={cx('step', { active: dotActive })}
             />
             <div
-              style={{ backgroundColor: lineActive ? color : '#DFE3E6' }}
+              style={{ backgroundColor: lineActive ? color : brand }}
               className={cx('line', { active: lineActive })}
             />
           </div>
