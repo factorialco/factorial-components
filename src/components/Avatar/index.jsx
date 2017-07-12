@@ -13,9 +13,8 @@ type Status = 'active' | 'idle' | 'off';
 type Props = {
   size?: Size,
   status?: Status,
-  team?: Object,
-  url?: string,
-  user?: Object
+  team?: string,
+  url?: string
 };
 
 export default class Avatar extends React.Component {
@@ -23,24 +22,21 @@ export default class Avatar extends React.Component {
 
   renderStatus () {
     const { status } = this.props
-
     if (!status) return null
-
     return <span className={cx('statusIndicator', [status])} />
   }
 
   renderContent () {
-    const { user, team, url } = this.props
-    const avatarUrl = url || (user && user.has('avatar') && user.get('avatar'))
+    const { team, url } = this.props
 
-    if (avatarUrl) {
-      return <img className={styles.img} src={avatarUrl} />
+    if (url) {
+      return <img className={styles.img} src={url} />
     }
 
     if (team) {
       return (
         <div className={styles.capitals}>
-          {team.capitals()}
+          {team}
         </div>
       )
     }
