@@ -18,23 +18,25 @@ type Props = {
   more?: string,
   onDrop?: ?(files: Array<File>, key: any) => mixed,
   overflowLimit?: number
-};
+}
 
 type State = {
-  isOpen: boolean;
+  isOpen: boolean
 }
 
 export default class BoxList extends React.Component {
-  props: Props;
+  props: Props
   state: State = { isOpen: false }
 
-  @autobind onClickToggle () {
+  @autobind
+  onClickToggle () {
     this.setState(prevState => {
       return { isOpen: !prevState.isOpen }
     })
   }
 
-  @autobind renderCollapse (elements: number) {
+  @autobind
+  renderCollapse (elements: number) {
     const { close, more, overflowLimit } = this.props
     const { isOpen } = this.state
 
@@ -45,19 +47,15 @@ export default class BoxList extends React.Component {
     return (
       <div className={styles.toggle} onClick={this.onClickToggle}>
         <span className={styles.text}>
-          {isOpen
-            ? close || 'Close'
-            : more || `View ${count} more`}
+          {isOpen ? close || 'Close' : more || `View ${count} more`}
         </span>
-        <Chevron
-          direction={isOpen ? 'up' : 'down'}
-          type='terciary'
-        />
+        <Chevron direction={isOpen ? 'up' : 'down'} type='terciary' />
       </div>
     )
   }
 
-  @autobind renderItem (element: ReactElement, i: number) {
+  @autobind
+  renderItem (element: ReactElement, i: number) {
     return (
       <li className={styles.item} key={i}>
         {element}
@@ -66,7 +64,13 @@ export default class BoxList extends React.Component {
   }
 
   render () {
-    const { disabled, children, onDrop, overflowLimit, disableClick } = this.props
+    const {
+      disabled,
+      children,
+      onDrop,
+      overflowLimit,
+      disableClick
+    } = this.props
     const { isOpen } = this.state
 
     if (!children) return null

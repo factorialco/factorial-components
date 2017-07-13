@@ -9,14 +9,14 @@ import type { IconType } from './types'
 const cx = classNames.bind(styles)
 
 export default class Icon extends React.Component {
-  props: IconType;
+  props: IconType
 
   static defaultProps = {
     opacity: 1,
     set: 'standard',
     type: 'primary',
     size: 'medium'
-  };
+  }
 
   render () {
     const { opacity, icon, set, size, type } = this.props

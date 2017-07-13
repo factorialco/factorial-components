@@ -24,15 +24,22 @@ type Props = {
 
 const cx = cn.bind(styles)
 
-const PricingCard = ({ cost, color, footer, title, onClick, selected }: Props) => {
+const PricingCard = ({
+  cost,
+  color,
+  footer,
+  title,
+  onClick,
+  selected
+}: Props) => {
   return (
     <div
       onClick={onClick}
       className={cx('root', { selected, clickable: Boolean(onClick) })}
-      style={(selected && color) ? { borderColor: color } : {}}
+      style={selected && color ? { borderColor: color } : {}}
     >
       <header
-        style={(selected && color) ? { backgroundColor: color } : {}}
+        style={selected && color ? { backgroundColor: color } : {}}
         className={styles.header}
       >
         <h6 className={styles.title}>{title}</h6>

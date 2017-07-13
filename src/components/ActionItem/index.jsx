@@ -19,20 +19,18 @@ type Props = {
   showIcon?: boolean,
   href?: string,
   to?: string
-};
+}
 
-export default function ActionItem (
-  {
-    children,
-    compact,
-    highlighted,
-    onClick,
-    selected,
-    showIcon = true,
-    href,
-    to
-  }: Props
-) {
+export default function ActionItem ({
+  children,
+  compact,
+  highlighted,
+  onClick,
+  selected,
+  showIcon = true,
+  href,
+  to
+}: Props) {
   const isClickable = Boolean((onClick || to || href) && !highlighted)
   const className = cx('item', {
     disabled: !isClickable,

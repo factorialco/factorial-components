@@ -11,15 +11,9 @@ type Props = {
   children?: ReactChildren,
   centered?: boolean,
   short?: boolean
-};
+}
 
-export default function TableBodyCell (
-  {
-    children,
-    centered,
-    short
-  }: Props
-) {
+export default function TableBodyCell ({ children, centered, short }: Props) {
   return (
     <td className={cx('td', { short, centered })}>
       {children}

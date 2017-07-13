@@ -27,23 +27,23 @@ type Props = {
   minDate?: moment,
   maxDate?: moment,
   holidays?: Object
-};
+}
 
 type State = {
   fromMonth: Date,
   toMonth: Date,
   isFocused: boolean
-};
+}
 
 @observer
 export default class DayPicker extends React.Component {
-  props: Props;
-  handler: ?() => void;
-  state: State;
-  daypicker: ?any;
-  input: ?HTMLInputElement;
-  clickedInside = false;
-  clickTimeout = null;
+  props: Props
+  handler: ?() => void
+  state: State
+  daypicker: ?any
+  input: ?HTMLInputElement
+  clickedInside = false
+  clickTimeout = null
 
   constructor (props: Props) {
     super(props)
@@ -65,12 +65,14 @@ export default class DayPicker extends React.Component {
     clearTimeout(this.clickTimeout)
   }
 
-  @autobind onDateChange (date: Date) {
+  @autobind
+  onDateChange (date: Date) {
     if (!this.daypicker) return
     this.daypicker.showMonth(date)
   }
 
-  @autobind changeMonth () {
+  @autobind
+  changeMonth () {
     const month = this.getMonth()
     if (!this.daypicker) return
     this.daypicker.showMonth(month)
@@ -89,20 +91,19 @@ export default class DayPicker extends React.Component {
     if (this.state.isFocused && this.input) this.input.focus()
   }
 
-  @autobind handleContainerMouseDown () {
+  @autobind
+  handleContainerMouseDown () {
     this.clickedInside = true
 
     // The input's onBlur method is called from a queue right after onMouseDown event.
     // setTimeout adds another callback in the queue, but is called later than onBlur event
-    this.clickTimeout = setTimeout(
-      () => {
-        this.clickedInside = false
-      },
-      0
-    )
+    this.clickTimeout = setTimeout(() => {
+      this.clickedInside = false
+    }, 0)
   }
 
-  @autobind onDayClick (day: Date, e: SyntheticEvent) {
+  @autobind
+  onDayClick (day: Date, e: SyntheticEvent) {
     const date = moment(day).format(FORMAT)
 
     this.props.field.set(date)
@@ -111,24 +112,28 @@ export default class DayPicker extends React.Component {
     if (this.input) this.input.blur()
   }
 
-  @autobind toggleFocus (toggle: boolean) {
+  @autobind
+  toggleFocus (toggle: boolean) {
     return () => {
       this.setState({ isFocused: toggle })
     }
   }
 
-  @autobind onBlur () {
+  @autobind
+  onBlur () {
     this.setState({ isFocused: this.clickedInside })
 
     // Force input's focus if blur event was caused by clicking on the calendar
     if (this.clickedInside && this.input) this.input.focus()
   }
 
-  @autobind onGetInputRef (el: ?HTMLInputElement) {
+  @autobind
+  onGetInputRef (el: ?HTMLInputElement) {
     this.input = el
   }
 
-  @autobind isDisabled (day: Date) {
+  @autobind
+  isDisabled (day: Date) {
     const { minDate, maxDate } = this.props
     const { fromMonth, toMonth } = this.state
     const d = moment(day)
@@ -148,7 +153,8 @@ export default class DayPicker extends React.Component {
   }
 
   // TODO: DRY
-  @autobind isHoliday (day: Date) {
+  @autobind
+  isHoliday (day: Date) {
     const { holidays } = this.props
 
     if (!holidays) return false

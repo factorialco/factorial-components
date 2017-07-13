@@ -27,19 +27,20 @@ type Props = {
   placeholder?: string,
   rootPath?: string,
   selectedEmployeeIds: Array<number>
-};
+}
 
 type State = {
   search: string
-};
+}
 
 export default class EmployeeSelector extends React.Component {
-  props: Props;
+  props: Props
   state: State = {
     search: ''
-  };
+  }
 
-  @autobind onSearch (event: any) {
+  @autobind
+  onSearch (event: any) {
     this.setState({ search: event.target.value || '' })
   }
 
@@ -59,7 +60,8 @@ export default class EmployeeSelector extends React.Component {
     )
   }
 
-  @autobind renderEmployee (employee: Object) {
+  @autobind
+  renderEmployee (employee: Object) {
     const { color, selectedEmployeeIds, rootPath } = this.props
     const selected = _.includes(selectedEmployeeIds, employee.get('id'))
 
@@ -75,9 +77,10 @@ export default class EmployeeSelector extends React.Component {
             <div className={styles.employeeInfo}>
               <div className={styles.avatar}>
                 <Avatar
-                  url={employee.user.has('avatar') && employee.user.get('avatar')
-                    ? `${rootPath || ''}${employee.user.get('avatar')}`
-                    : ''
+                  url={
+                    employee.user.has('avatar') && employee.user.get('avatar')
+                      ? `${rootPath || ''}${employee.user.get('avatar')}`
+                      : ''
                   }
                   size='short'
                 />
@@ -88,9 +91,10 @@ export default class EmployeeSelector extends React.Component {
               </div>
             </div>
             <div
-              style={color && selected
-                ? { background: color, borderColor: color }
-                : {}
+              style={
+                color && selected
+                  ? { background: color, borderColor: color }
+                  : {}
               }
               className={styles.checkbox}
             >
@@ -108,14 +112,16 @@ export default class EmployeeSelector extends React.Component {
     )
   }
 
-  @autobind onSelectAll () {
+  @autobind
+  onSelectAll () {
     const { employees, onSelectMultiple } = this.props
     if (onSelectMultiple) {
       onSelectMultiple(employees.map(_.method('get', 'id')))
     }
   }
 
-  @autobind onSelectNone () {
+  @autobind
+  onSelectNone () {
     const { onSelectMultiple } = this.props
     if (onSelectMultiple) onSelectMultiple([])
   }
@@ -154,7 +160,9 @@ export default class EmployeeSelector extends React.Component {
   render () {
     const { employees, placeholder } = this.props
     const filteredEmployees = _.sortBy(
-      _.filter(employees, employee => employee.user.matchesFullName(this.state.search)),
+      _.filter(employees, employee =>
+        employee.user.matchesFullName(this.state.search)
+      ),
       employee => employee.user.fullName()
     )
 

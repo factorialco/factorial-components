@@ -9,7 +9,7 @@ type Props = {
   color?: string,
   step: number,
   steps: number
-};
+}
 
 const brand = '#DFE3E6'
 
@@ -22,8 +22,8 @@ function Steps ({ color, step, steps }: Props) {
   return (
     <div className={styles.steps}>
       {data.map((s, i) => {
-        const dotActive = step >= (i + 1)
-        const lineActive = step >= (i + 2)
+        const dotActive = step >= i + 1
+        const lineActive = step >= i + 2
 
         return (
           <div className={styles.container} key={i}>

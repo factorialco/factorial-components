@@ -24,11 +24,11 @@ type Props = {
   missingField?: string,
   readonly?: boolean,
   value?: string
-};
+}
 
 @observer
 export default class LabeledInput extends React.Component {
-  props: Props;
+  props: Props
 
   renderIcons () {
     const { info, field } = this.props
@@ -36,7 +36,7 @@ export default class LabeledInput extends React.Component {
     if (info) {
       return (
         <WithToggleState
-          target={({ open, toggle }) => (
+          target={({ open, toggle }) =>
             <Tooltip
               type='primary'
               attachment='middle left'
@@ -47,8 +47,7 @@ export default class LabeledInput extends React.Component {
                 <Icon type='primary' set='utility' icon='info' />
               </div>
               {info}
-            </Tooltip>
-          )}
+            </Tooltip>}
         />
       )
     }
@@ -74,7 +73,7 @@ export default class LabeledInput extends React.Component {
         <div className={styles.iconContainer}>
           {renderIf(!!bang && !field.value)(
             <WithToggleState
-              target={({ open, toggle }) => (
+              target={({ open, toggle }) =>
                 <Tooltip
                   attachment='bottom center'
                   open={open}
@@ -86,8 +85,7 @@ export default class LabeledInput extends React.Component {
                   <div>
                     {missingField || 'Missing field'}
                   </div>
-                </Tooltip>
-              )}
+                </Tooltip>}
             />
           )}
         </div>
@@ -105,9 +103,7 @@ export default class LabeledInput extends React.Component {
     const { info, readonly, field, focused } = this.props
     if (readonly) return this.renderReadonly()
 
-    const error = !field.isDirty
-      ? field.errors && field.errors[0]
-      : null
+    const error = !field.isDirty ? field.errors && field.errors[0] : null
 
     const className = cx('normal', {
       info,

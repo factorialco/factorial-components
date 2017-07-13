@@ -12,12 +12,13 @@ const cx = classNames.bind(styles)
 type Props = {
   multi?: boolean,
   children?: ReactChildren
-};
+}
 
 export default class FormRow extends React.Component {
-  props: Props;
+  props: Props
 
-  @autobind renderMultiRow (children: ReactChildren, i: number) {
+  @autobind
+  renderMultiRow (children: ReactChildren, i: number) {
     return (
       <div className={styles.subRow} key={i}>
         {children}

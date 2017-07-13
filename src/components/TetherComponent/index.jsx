@@ -19,17 +19,17 @@ type Props = {
   children?: ReactChildren,
   onUpdate?: () => any,
   onRepositioned?: () => any
-};
+}
 
 export default class TetherComponent extends React.Component {
-  props: Props;
-  targetNode: any = null;
-  elementParentNode: any = null;
-  tether: ?Tether = null;
+  props: Props
+  targetNode: any = null
+  elementParentNode: any = null
+  tether: ?Tether = null
 
   static defaultProps = {
     renderElementTag: 'div'
-  };
+  }
 
   componentDidMount () {
     /* eslint "react/no-find-dom-node": "warn" */

@@ -10,7 +10,7 @@ type Props = {
   onSearch: (event: any) => void,
   placeholder?: string,
   search: string
-};
+}
 
 export default function InlineSearch (props: Props) {
   const { placeholder, onSearch, search } = props

@@ -11,7 +11,7 @@ type Props = {
   children?: ReactChildren,
   onClick: Function,
   disabled?: boolean
-};
+}
 
 export default function TooltipButton ({ onClick, children, disabled }: Props) {
   return (
