@@ -9,7 +9,7 @@
     "dev": "webpack --config webpack/server.config.js && webpack --config webpack/client.config.js",
     "clean": "rimraf dist",
     "flow": "flow --strip-root --color always",
-    "format": "prettier-standard --print-width 60 \"src/**/*.js\"",
+    "format": "prettier-standard --print-width 60 \"src/**/*.{js,jsx}\"",
     "lint-fix": "eslint --fix --ext .jsx,.js src/ __tests__/",
     "lint": "eslint --ext .jsx,.js --cache src/ __tests__/",
     "test": "yarn flow && yarn lint && yarn jest",
