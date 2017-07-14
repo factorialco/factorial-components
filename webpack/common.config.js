@@ -90,7 +90,6 @@ module.exports = {
   plugins: [
     new ExtractTextPlugin('main.css'),
     new webpack.DefinePlugin(GLOBALS),
-    new webpack.ContextReplacementPlugin(/moment[\\/]locale$/, /^\.\/(en|es)$/),
     new webpack.optimize.AggressiveMergingPlugin()
   ]
 }
