@@ -22,7 +22,6 @@ type Props = {
   bang?: boolean,
   label: string,
   field: Field,
-  locale: string,
   readonly?: boolean,
   minDate?: moment,
   maxDate?: moment,
@@ -160,7 +159,7 @@ export default class DayPicker extends React.Component {
   }
 
   renderDayPicker () {
-    const { bang, field, label, locale } = this.props
+    const { bang, field, label } = this.props
     const { fromMonth, toMonth } = this.state
 
     const input = (
@@ -196,7 +195,7 @@ export default class DayPicker extends React.Component {
             fromMonth={fromMonth}
             toMonth={toMonth}
             initialMonth={this.getMonth()}
-            locale={locale}
+            locale={moment.locale()}
             localeUtils={MomentLocaleUtils}
             onDayClick={this.onDayClick}
             selectedDays={day => moment(day).format(FORMAT) === selectedDay}
