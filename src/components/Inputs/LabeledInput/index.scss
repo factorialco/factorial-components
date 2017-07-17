@@ -26,7 +26,6 @@
 
     .label {
       @include text-ellipsis()
-      text-transform: capitalize;
       color: $grey3;
       font-weight: 600;
       font-size: 14px;
