@@ -1,5 +1,5 @@
 // @flow
-import configuration from 'shared'
+import configuration from '../../shared'
 import cn from 'classnames/bind'
 import React from 'react'
 

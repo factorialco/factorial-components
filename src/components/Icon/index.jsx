@@ -1,5 +1,5 @@
 // @flow
-import configuration from 'shared'
+import configuration from '../../shared'
 import React from 'react'
 import classNames from 'classnames/bind'
 import styles from './index.scss'

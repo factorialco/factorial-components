@@ -42,7 +42,7 @@ import DayPicker from './Inputs/DayPicker'
 import Title from './Title'
 import WithToggleState from './WithToggleState'
 
-import configuration from 'shared'
+import configuration from '../shared'
 
 export default function main ({ iconsPath }) {
   configuration.iconsPath = iconsPath
