@@ -19,9 +19,7 @@ storiesOf('Tooltip', module).add('standard', () => {
         >
           <div>hello world</div>
           <div>
-            <TooltipPad>
-              label
-            </TooltipPad>
+            <TooltipPad>label</TooltipPad>
             <TooltipButton onClick={action('onclick')} disabled={false}>
               Tooltip button
             </TooltipButton>

@@ -4,7 +4,7 @@ import { Field } from 'factorial-form'
 import { ReactElement, ReactChildren } from 'tcomb-react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
-import LabeledInput from 'components/Inputs/LabeledInput'
+import LabeledInput from '../../Inputs/LabeledInput'
 import React from 'react'
 
 import styles from './index.scss'
@@ -23,26 +23,28 @@ type Props = {
   select?: boolean,
   type?: 'text' | 'password',
   value?: string
-};
+}
 
 type ComponentState = {
   focused: boolean
-};
+}
 
 const cx = classNames.bind(styles)
 
 @observer
 export default class Text extends React.Component {
-  props: Props;
+  props: Props
   state: ComponentState = {
     focused: false
-  };
+  }
 
-  @autobind onChange (event: any) {
+  @autobind
+  onChange (event: any) {
     this.props.field.set(event.target.value)
   }
 
-  @autobind onFocus (event: any) {
+  @autobind
+  onFocus (event: any) {
     const { onFocus } = this.props
 
     this.setState({ focused: true }, () => {
@@ -50,7 +52,8 @@ export default class Text extends React.Component {
     })
   }
 
-  @autobind onBlur (event: any) {
+  @autobind
+  onBlur (event: any) {
     const { onBlur } = this.props
     this.setState({ focused: false }, () => {
       onBlur && onBlur(event)

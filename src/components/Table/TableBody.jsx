@@ -4,8 +4,12 @@ import React from 'react'
 
 type Props = {
   children?: ReactChildren
-};
+}
 
 export default function TableBody ({ children }: Props) {
-  return <tbody>{children}</tbody>
+  return (
+    <tbody>
+      {children}
+    </tbody>
+  )
 }

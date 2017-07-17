@@ -5,10 +5,10 @@ import styles from './index.scss'
 
 type Props = {
   children?: ReactChildren
-};
+}
 
 export default class ScrollableList extends Component {
-  props: Props;
+  props: Props
 
   render () {
     const { children } = this.props

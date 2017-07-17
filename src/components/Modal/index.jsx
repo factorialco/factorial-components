@@ -4,12 +4,12 @@ import { ReactElement } from 'tcomb-react'
 import $ from 'jquery'
 import autobind from 'autobind-decorator'
 import cn from 'classnames/bind'
-import Form from 'components/Form'
-import Icon from 'components/Icon'
-import Illustration from 'components/Illustration'
+import Form from '../Form'
+import Icon from '../Icon'
+import Illustration from '../Illustration'
 import Portal from 'react-portal'
 import React from 'react'
-import RoundButton from 'components/Buttons/RoundButton'
+import RoundButton from '../Buttons/RoundButton'
 
 import styles from './index.scss'
 
@@ -18,11 +18,11 @@ import type { Modal as ModalType } from './types'
 const cx = cn.bind(styles)
 
 export default class Modal extends React.Component {
-  props: ModalType;
+  props: ModalType
 
   static defaultProps = {
     type: 'brand'
-  };
+  }
 
   componentDidMount () {
     $('html').css({
@@ -38,11 +38,13 @@ export default class Modal extends React.Component {
     })
   }
 
-  @autobind cancel () {
+  @autobind
+  cancel () {
     this.props.onClose()
   }
 
-  @autobind submit () {
+  @autobind
+  submit () {
     const { onSubmit } = this.props
 
     if (onSubmit) {
@@ -52,16 +54,19 @@ export default class Modal extends React.Component {
     }
   }
 
-  @autobind onCancel (event: any) {
+  @autobind
+  onCancel (event: any) {
     event.preventDefault()
     this.cancel()
   }
 
-  @autobind onClickBox (event: any) {
+  @autobind
+  onClickBox (event: any) {
     event.stopPropagation()
   }
 
-  @autobind onClickOverlay () {
+  @autobind
+  onClickOverlay () {
     this.cancel()
   }
 
@@ -76,7 +81,8 @@ export default class Modal extends React.Component {
     return classes.join(' ')
   }
 
-  @autobind renderElement (element: ?ReactElement) {
+  @autobind
+  renderElement (element: ?ReactElement) {
     if (!element) return null
 
     return (

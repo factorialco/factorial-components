@@ -19,7 +19,7 @@ type Props = {
     | 'negative'
     | 'black',
   children?: ReactChildren
-};
+}
 
 export default function RoundedBadge ({ children, type, size }: Props) {
   return (

@@ -1,7 +1,7 @@
 // @flow
 import * as React from 'react'
 import classNames from 'classnames/bind'
-import Icon from 'components/Icon'
+import Icon from '../Icon'
 import styles from './index.scss'
 
 const cx = classNames.bind(styles)
@@ -10,7 +10,7 @@ type Props = {
   onSearch: (event: any) => void,
   placeholder?: string,
   search: string
-};
+}
 
 export default function InlineSearch (props: Props) {
   const { placeholder, onSearch, search } = props

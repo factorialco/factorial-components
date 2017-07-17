@@ -1,5 +1,5 @@
 // @flow
-import Chevron from 'components/Chevron'
+import Chevron from '../../../Chevron'
 import React from 'react'
 
 import styles from './index.scss'
@@ -7,7 +7,7 @@ import styles from './index.scss'
 type NavbarProps = {
   onNextClick?: () => mixed,
   onPreviousClick?: () => mixed
-};
+}
 
 export default function Navbar (props: NavbarProps) {
   return (

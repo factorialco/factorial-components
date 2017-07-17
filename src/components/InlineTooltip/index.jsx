@@ -6,17 +6,17 @@ import styles from './index.scss'
 
 const cx = cn.bind(styles)
 
-type DIRECTIONS = 'top' | 'bottom' | 'left' | 'right';
-type TYPES = 'correct' | 'wrong' | 'brand' | 'accent';
+type DIRECTIONS = 'top' | 'bottom' | 'left' | 'right'
+type TYPES = 'correct' | 'wrong' | 'brand' | 'accent'
 
 type Props = {
   arrow?: DIRECTIONS,
   children?: ReactChildren,
   type?: TYPES
-};
+}
 
 export default class InlineTooltip extends Component {
-  props: Props;
+  props: Props
 
   render () {
     const { arrow, children, type } = this.props

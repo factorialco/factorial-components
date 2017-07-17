@@ -8,15 +8,9 @@ type Props = {
   color?: string,
   children?: ReactChildren,
   onClick?: ?(event: SyntheticEvent) => any
-};
+}
 
-export default function LinkButon (
-  {
-    children,
-    color,
-    onClick
-  }: Props
-) {
+export default function LinkButon ({ children, color, onClick }: Props) {
   return (
     <button
       style={color ? { color } : {}}

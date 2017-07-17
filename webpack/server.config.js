@@ -6,7 +6,7 @@ const webpack = require('webpack')
 
 const GLOBALS = {
   'process.env.NODE_ENV': '"production"',
-  '__CLIENT__': false
+  'process.env.__CLIENT__': false
 }
 
 module.exports = merge(common, {

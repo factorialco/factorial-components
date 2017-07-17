@@ -1,9 +1,9 @@
 // @flow
-import { Tooltip } from 'components/Tooltip'
+import { Tooltip } from '../Tooltip'
 import React from 'react'
 import renderIf from 'lib/renderIf'
-import RoundedBadge from 'components/RoundedBadge'
-import WithToggleState from 'components/WithToggleState'
+import RoundedBadge from '../RoundedBadge'
+import WithToggleState from '../WithToggleState'
 
 import styles from './index.scss'
 
@@ -11,7 +11,7 @@ type Props = {
   bang?: string,
   label: string,
   value: mixed
-};
+}
 
 export default function ReadOnlyField (props: Props) {
   const BLANK_FIELD = ''
@@ -24,7 +24,7 @@ export default function ReadOnlyField (props: Props) {
       {renderIf(Boolean(props.bang))(
         <div className={styles.iconContainer}>
           <WithToggleState
-            target={({ open, toggle }) => (
+            target={({ open, toggle }) =>
               <Tooltip
                 attachment='bottom center'
                 open={open}
@@ -32,12 +32,13 @@ export default function ReadOnlyField (props: Props) {
                 toggle={toggle}
                 type='brand'
               >
-                <RoundedBadge size='small' type='brand'>!</RoundedBadge>
+                <RoundedBadge size='small' type='brand'>
+                  !
+                </RoundedBadge>
                 <div>
                   {props.bang}
                 </div>
-              </Tooltip>
-            )}
+              </Tooltip>}
           />
         </div>
       )}

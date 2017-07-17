@@ -8,10 +8,10 @@ const cx = classNames.bind(styles)
 
 type Props = {
   inline?: boolean
-};
+}
 
 export default class Loading extends React.Component {
-  props: Props;
+  props: Props
 
   render () {
     const { inline } = this.props

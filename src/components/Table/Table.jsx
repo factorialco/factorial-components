@@ -9,10 +9,10 @@ const cx = classNames.bind(styles)
 type Props = {
   children?: ReactChildren,
   expanded?: Boolean
-};
+}
 
 export default class Table extends Component {
-  props: Props;
+  props: Props
 
   render () {
     const { expanded, children } = this.props

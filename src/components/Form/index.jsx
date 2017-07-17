@@ -9,11 +9,11 @@ type Props = {
   children?: ReactChildren,
   className?: string,
   onSubmit: () => Promise<*> | void
-};
+}
 
 type State = {
   submitting: boolean
-};
+}
 
 export default class Form extends React.Component {
   props: Props
@@ -28,7 +28,8 @@ export default class Form extends React.Component {
     this.mounted = false
   }
 
-  @autobind onSubmit (event: SyntheticEvent) {
+  @autobind
+  onSubmit (event: SyntheticEvent) {
     event.preventDefault()
     if (this.state.submitting) return false
 

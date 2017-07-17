@@ -3,11 +3,11 @@ import { ReactChildren } from 'tcomb-react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 import React from 'react'
-import TetherComponent from 'components/TetherComponent'
+import TetherComponent from '../../TetherComponent'
 
 import styles from './index.scss'
 
-import type { Attachment } from 'components/TetherComponent/types'
+import type { Attachment } from '../../TetherComponent/types'
 
 type Props = {
   attachment: Attachment,
@@ -21,36 +21,35 @@ type Props = {
   targetAttachment?: Attachment,
   toggle?: (value: boolean) => () => void,
   type: 'primary' | 'brand' | 'wrong' | 'negative' | 'popover'
-};
+}
 
 const cx = classNames.bind(styles)
 
 export default class Tooltip extends React.Component {
-  props: Props;
-  mouseOver: boolean = false;
+  props: Props
+  mouseOver: boolean = false
 
   static defaultProps = {
     size: 'normal'
-  };
+  }
 
-  @autobind onMouseOver () {
+  @autobind
+  onMouseOver () {
     const { toggle } = this.props
     this.mouseOver = true
 
     if (toggle) toggle(true)()
   }
 
-  @autobind onMouseLeave () {
+  @autobind
+  onMouseLeave () {
     const { toggle } = this.props
     this.mouseOver = false
 
     if (toggle) {
-      setTimeout(
-        () => {
-          toggle(this.mouseOver)()
-        },
-        70
-      )
+      setTimeout(() => {
+        toggle(this.mouseOver)()
+      }, 70)
     }
   }
 

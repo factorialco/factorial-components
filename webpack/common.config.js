@@ -9,6 +9,7 @@ const GLOBALS = {
 }
 
 module.exports = {
+  devtool: 'source-map',
   entry: path.resolve(__dirname, '../src/components/index.js'),
 
   output: {

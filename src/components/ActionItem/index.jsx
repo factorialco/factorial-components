@@ -1,8 +1,7 @@
 // @flow
-/* global __CLIENT__ */
 import { ReactChildren } from 'tcomb-react'
 import classNames from 'classnames/bind'
-import Icon from 'components/Icon'
+import Icon from '../Icon'
 import React from 'react'
 import renderIf from 'lib/renderIf'
 
@@ -19,20 +18,18 @@ type Props = {
   showIcon?: boolean,
   href?: string,
   to?: string
-};
+}
 
-export default function ActionItem (
-  {
-    children,
-    compact,
-    highlighted,
-    onClick,
-    selected,
-    showIcon = true,
-    href,
-    to
-  }: Props
-) {
+export default function ActionItem ({
+  children,
+  compact,
+  highlighted,
+  onClick,
+  selected,
+  showIcon = true,
+  href,
+  to
+  }: Props) {
   const isClickable = Boolean((onClick || to || href) && !highlighted)
   const className = cx('item', {
     disabled: !isClickable,
@@ -70,7 +67,7 @@ export default function ActionItem (
     </div>
   )
 
-  if (to && __CLIENT__) {
+  if (to && process.env.__CLIENT__) {
     const { Link } = require('react-router')
     return (
       <Link className={className} to={to}>

@@ -1,16 +1,16 @@
 // @flow
 import { ReactChildren } from 'tcomb-react'
-import Chevron from 'components/Chevron'
+import Chevron from '../../Chevron'
 import cn from 'classnames/bind'
 import React, { Component } from 'react'
 
 import styles from './index.scss'
 
 type Props = {
-  label: ReactChildren | string;
-  selected?: boolean;
-  size?: string;
-  style?: Object;
+  label: ReactChildren | string,
+  selected?: boolean,
+  size?: string,
+  style?: Object
 }
 
 const cx = cn.bind(styles)

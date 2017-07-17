@@ -3,8 +3,8 @@ import React from 'react'
 import styles from './index.scss'
 import MomentLocaleUtils from 'react-day-picker/moment'
 import moment from 'moment'
-import Chevron from 'components/Chevron'
-import WithToggleState from 'components/WithToggleState'
+import Chevron from '../../../Chevron'
+import WithToggleState from '../../../WithToggleState'
 
 type CaptionProps = {
   date: Date,
@@ -12,17 +12,15 @@ type CaptionProps = {
   localeUtils: Class<MomentLocaleUtils>,
   onChange: (date: Date) => mixed,
   toMonth: Date
-};
+}
 
-export default function Caption (
-  {
-    date,
-    localeUtils,
-    onChange,
-    fromMonth,
-    toMonth
-  }: CaptionProps
-) {
+export default function Caption ({
+  date,
+  localeUtils,
+  onChange,
+  fromMonth,
+  toMonth
+  }: CaptionProps) {
   const months = moment.monthsShort()
   const years = []
 
@@ -38,7 +36,7 @@ export default function Caption (
   return (
     <div className={styles.caption}>
       <WithToggleState
-        target={({ open, toggle }) => (
+        target={({ open, toggle }) =>
           <div
             className={styles.selectWrapper}
             onMouseEnter={toggle(true)}
@@ -50,18 +48,21 @@ export default function Caption (
               onChange={handleChange}
               value={date.getMonth()}
             >
-              {months.map((month, i) => (
+              {months.map((month, i) =>
                 <option className={styles.option} key={i} value={i}>
                   {month}
                 </option>
-              ))}
+              )}
             </select>
-            <Chevron direction='down' type={open ? 'brand' : 'terciary'} size='small' />
-          </div>
-        )}
+            <Chevron
+              direction='down'
+              type={open ? 'brand' : 'terciary'}
+              size='small'
+            />
+          </div>}
       />
       <WithToggleState
-        target={({ open, toggle }) => (
+        target={({ open, toggle }) =>
           <div
             className={styles.selectWrapper}
             onMouseEnter={toggle(true)}
@@ -73,15 +74,18 @@ export default function Caption (
               onChange={handleChange}
               value={date.getFullYear()}
             >
-              {years.map((year, i) => (
+              {years.map((year, i) =>
                 <option className={styles.option} key={i} value={year}>
                   {year}
                 </option>
-              ))}
+              )}
             </select>
-            <Chevron direction='down' type={open ? 'brand' : 'terciary'} size='small' />
-          </div>
-        )}
+            <Chevron
+              direction='down'
+              type={open ? 'brand' : 'terciary'}
+              size='small'
+            />
+          </div>}
       />
     </div>
   )

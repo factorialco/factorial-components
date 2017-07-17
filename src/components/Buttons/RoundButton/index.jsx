@@ -1,10 +1,9 @@
 // @flow
-/* global __CLIENT__ */
 import React from 'react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 
-import Icon from 'components/Icon'
+import Icon from '../../Icon'
 import styles from './index.scss'
 import type { ButtonType } from '../types'
 
@@ -49,7 +48,11 @@ export default class RoundButton extends React.Component {
   renderLabel () {
     const { label } = this.props
 
-    return <div className={styles.label}>{label}</div>
+    return (
+      <div className={styles.label}>
+        {label}
+      </div>
+    )
   }
 
   renderContent () {
@@ -72,7 +75,7 @@ export default class RoundButton extends React.Component {
           {this.renderContent()}
         </a>
       )
-    } else if (to && __CLIENT__) {
+    } else if (to && process.env.__CLIENT__) {
       const { Link } = require('react-router')
       return (
         <Link className={className} title={title} to={to}>

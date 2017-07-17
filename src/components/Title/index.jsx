@@ -1,13 +1,11 @@
 // @flow
 import cn from 'classnames/bind'
-import Separator from 'components/Separator'
+import Separator from '../Separator'
 import React from 'react'
 
 import styles from './index.scss'
 
-type Types =
-  | 'brand'
-  | 'primary'
+type Types = 'brand' | 'primary'
 
 type Props = {
   compact?: boolean,
@@ -26,11 +24,10 @@ const Title = ({ compact, color, centered, label, separator, type }: Props) => {
       <h2 className={styles.title}>
         {label}
       </h2>
-      {separator && (
+      {separator &&
         <div className={styles.separator}>
           <Separator color={color} type={type || 'brand'} />
-        </div>
-      )}
+        </div>}
     </div>
   )
 }

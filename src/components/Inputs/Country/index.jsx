@@ -1,8 +1,8 @@
 // @flow
 import _ from 'lodash'
-import Loading from 'components/Loading'
+import Loading from '../../Loading'
 import React from 'react'
-import Select from 'components/Inputs/Select'
+import Select from '../../Inputs/Select'
 
 import type { SelectProps, SelectOption } from '../types'
 
@@ -13,20 +13,19 @@ type Props = SelectProps & {
   placeholder?: string,
   locale: string,
   visibleCountries?: Array<string>
-};
+}
 
 export default class Country extends React.Component {
-  props: Props;
+  props: Props
   state: { list: ?Array<SelectOption> } = {
     list: null
-  };
+  }
 
   componentWillMount () {
     const { visibleCountries, locale } = this.props
     let list = countryList[locale] || countryList.en
     if (visibleCountries) {
-      list = list.filter(country =>
-        _.includes(visibleCountries, country.value))
+      list = list.filter(country => _.includes(visibleCountries, country.value))
     }
     this.setState({ list })
   }
