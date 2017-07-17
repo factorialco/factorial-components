@@ -81,7 +81,9 @@ export default class LabeledInput extends React.Component {
                   toggle={toggle}
                   type='brand'
                 >
-                  <RoundedBadge size='small' type='brand'>!</RoundedBadge>
+                  <RoundedBadge size='small' type='brand'>
+                    !
+                  </RoundedBadge>
                   <div>
                     {missingField || 'Missing field'}
                   </div>

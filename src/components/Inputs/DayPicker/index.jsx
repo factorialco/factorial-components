@@ -183,6 +183,8 @@ export default class DayPicker extends React.Component {
     if (!this.state.isFocused) return input
 
     const selectedDay = field.value
+    // $FlowFixMe: Wrong flow-typed: https://github.com/flowtype/flow-typed/issues/1048
+    const locale: string = moment.locale()
 
     return (
       <div className={styles.root}>
@@ -201,7 +203,7 @@ export default class DayPicker extends React.Component {
             fromMonth={fromMonth}
             toMonth={toMonth}
             initialMonth={this.getMonth()}
-            locale={moment.locale()}
+            locale={locale}
             localeUtils={MomentLocaleUtils}
             onDayClick={this.onDayClick}
             selectedDays={day => moment(day).format(FORMAT) === selectedDay}

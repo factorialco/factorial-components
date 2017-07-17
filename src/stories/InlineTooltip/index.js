@@ -9,33 +9,19 @@ storiesOf('InlineTooltip', module)
       {story()}
     </div>
   )
-  .add('standard', () =>
-    <InlineTooltip>
-      This is an example
-    </InlineTooltip>
-  )
+  .add('standard', () => <InlineTooltip>This is an example</InlineTooltip>)
   .add('with bottom arrow', () =>
-    <InlineTooltip arrow='bottom'>
-      This is an example
-    </InlineTooltip>
+    <InlineTooltip arrow='bottom'>This is an example</InlineTooltip>
   )
   .add('with top arrow', () =>
-    <InlineTooltip arrow='top'>
-      This is an example
-    </InlineTooltip>
+    <InlineTooltip arrow='top'>This is an example</InlineTooltip>
   )
   .add('with right arrow', () =>
-    <InlineTooltip arrow='right'>
-      This is an example
-    </InlineTooltip>
+    <InlineTooltip arrow='right'>This is an example</InlineTooltip>
   )
   .add('with left arrow', () =>
-    <InlineTooltip arrow='left'>
-      This is an example
-    </InlineTooltip>
+    <InlineTooltip arrow='left'>This is an example</InlineTooltip>
   )
   .add('with accent', () =>
-    <InlineTooltip type='correct'>
-      This is an example
-    </InlineTooltip>
+    <InlineTooltip type='correct'>This is an example</InlineTooltip>
   )

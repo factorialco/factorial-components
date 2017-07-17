@@ -20,7 +20,7 @@ export default function Caption ({
   onChange,
   fromMonth,
   toMonth
-}: CaptionProps) {
+  }: CaptionProps) {
   const months = moment.monthsShort()
   const years = []
 

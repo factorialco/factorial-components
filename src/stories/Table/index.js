@@ -16,20 +16,14 @@ storiesOf('Table', module).add('standard', () => {
     <Table expanded>
       <TableHead>
         <TableRow>
-          <TableHeadCell>
-            employees
-          </TableHeadCell>
+          <TableHeadCell>employees</TableHeadCell>
           <TableHeadCell short />
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow onClick={action('clicked row!')}>
-          <TableBodyCell>
-            Body cell!
-          </TableBodyCell>
-          <TableBodyCell short>
-            Body cell 2!
-          </TableBodyCell>
+          <TableBodyCell>Body cell!</TableBodyCell>
+          <TableBodyCell short>Body cell 2!</TableBodyCell>
         </TableRow>
       </TableBody>
     </Table>
