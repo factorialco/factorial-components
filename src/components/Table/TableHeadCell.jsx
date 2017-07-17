@@ -12,5 +12,9 @@ type Props = {
 }
 
 export default function TableHeadCell ({ children, short }: Props) {
-  return <th className={cx('th', { short })}>{children}</th>
+  return (
+    <th className={cx('th', { short })}>
+      {children}
+    </th>
+  )
 }

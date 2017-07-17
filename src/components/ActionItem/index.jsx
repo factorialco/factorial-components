@@ -30,7 +30,7 @@ export default function ActionItem ({
   showIcon = true,
   href,
   to
-}: Props) {
+  }: Props) {
   const isClickable = Boolean((onClick || to || href) && !highlighted)
   const className = cx('item', {
     disabled: !isClickable,

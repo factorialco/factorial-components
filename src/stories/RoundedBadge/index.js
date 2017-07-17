@@ -4,7 +4,5 @@ import React from 'react'
 import RoundedBadge from 'components/RoundedBadge'
 
 storiesOf('RoundedBadge', module).add('standard', () =>
-  <RoundedBadge type='brand'>
-    !
-  </RoundedBadge>
+  <RoundedBadge type='brand'>!</RoundedBadge>
 )

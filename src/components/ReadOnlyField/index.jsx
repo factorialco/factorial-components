@@ -32,7 +32,9 @@ export default function ReadOnlyField (props: Props) {
                 toggle={toggle}
                 type='brand'
               >
-                <RoundedBadge size='small' type='brand'>!</RoundedBadge>
+                <RoundedBadge size='small' type='brand'>
+                  !
+                </RoundedBadge>
                 <div>
                   {props.bang}
                 </div>

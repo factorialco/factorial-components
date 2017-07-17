@@ -22,7 +22,6 @@ type Props = {
   bang?: boolean,
   label: string,
   field: Field,
-  locale: string,
   readonly?: boolean,
   minDate?: moment,
   maxDate?: moment,
@@ -166,7 +165,7 @@ export default class DayPicker extends React.Component {
   }
 
   renderDayPicker () {
-    const { bang, field, label, locale } = this.props
+    const { bang, field, label } = this.props
     const { fromMonth, toMonth } = this.state
 
     const input = (
@@ -184,6 +183,8 @@ export default class DayPicker extends React.Component {
     if (!this.state.isFocused) return input
 
     const selectedDay = field.value
+    // $FlowFixMe: Wrong flow-typed: https://github.com/flowtype/flow-typed/issues/1048
+    const locale: string = moment.locale()
 
     return (
       <div className={styles.root}>

@@ -49,7 +49,11 @@ export default class RoundButton extends React.Component {
   renderLabel () {
     const { label } = this.props
 
-    return <div className={styles.label}>{label}</div>
+    return (
+      <div className={styles.label}>
+        {label}
+      </div>
+    )
   }
 
   renderContent () {

@@ -7,5 +7,9 @@ type Props = {
 }
 
 export default function TableHead ({ children }: Props) {
-  return <thead>{children}</thead>
+  return (
+    <thead>
+      {children}
+    </thead>
+  )
 }

@@ -31,7 +31,7 @@ const PricingCard = ({
   title,
   onClick,
   selected
-}: Props) => {
+  }: Props) => {
   return (
     <div
       onClick={onClick}
@@ -42,7 +42,9 @@ const PricingCard = ({
         style={selected && color ? { backgroundColor: color } : {}}
         className={styles.header}
       >
-        <h6 className={styles.title}>{title}</h6>
+        <h6 className={styles.title}>
+          {title}
+        </h6>
       </header>
       <section className={styles.content}>
         <header className={styles.costs}>
