@@ -1,5 +1,4 @@
 // @flow
-/* global __CLIENT__ */
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 import React from 'react'
@@ -105,7 +104,7 @@ export default class Button extends React.Component {
           {this.renderContent()}
         </a>
       )
-    } else if (to && __CLIENT__) {
+    } else if (to && process.env.__CLIENT__) {
       const { Link } = require('react-router')
       return (
         <Link className={className} to={to}>

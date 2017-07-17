@@ -11,5 +11,3 @@ declare var module : {
     accept(path: string, callback: () => void): void;
   };
 };
-
-declare var __CLIENT__

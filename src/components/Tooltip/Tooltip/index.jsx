@@ -3,11 +3,11 @@ import { ReactChildren } from 'tcomb-react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
 import React from 'react'
-import TetherComponent from 'components/TetherComponent'
+import TetherComponent from '../../TetherComponent'
 
 import styles from './index.scss'
 
-import type { Attachment } from 'components/TetherComponent/types'
+import type { Attachment } from '../../TetherComponent/types'
 
 type Props = {
   attachment: Attachment,

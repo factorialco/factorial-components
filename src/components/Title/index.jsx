@@ -1,6 +1,6 @@
 // @flow
 import cn from 'classnames/bind'
-import Separator from 'components/Separator'
+import Separator from '../Separator'
 import React from 'react'
 
 import styles from './index.scss'

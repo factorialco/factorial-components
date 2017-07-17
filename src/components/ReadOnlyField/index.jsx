@@ -1,9 +1,9 @@
 // @flow
-import { Tooltip } from 'components/Tooltip'
+import { Tooltip } from '../Tooltip'
 import React from 'react'
 import renderIf from 'lib/renderIf'
-import RoundedBadge from 'components/RoundedBadge'
-import WithToggleState from 'components/WithToggleState'
+import RoundedBadge from '../RoundedBadge'
+import WithToggleState from '../WithToggleState'
 
 import styles from './index.scss'
 

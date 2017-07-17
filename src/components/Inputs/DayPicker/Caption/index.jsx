@@ -3,8 +3,8 @@ import React from 'react'
 import styles from './index.scss'
 import MomentLocaleUtils from 'react-day-picker/moment'
 import moment from 'moment'
-import Chevron from 'components/Chevron'
-import WithToggleState from 'components/WithToggleState'
+import Chevron from '../../../Chevron'
+import WithToggleState from '../../../WithToggleState'
 
 type CaptionProps = {
   date: Date,

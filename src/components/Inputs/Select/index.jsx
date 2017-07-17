@@ -3,7 +3,7 @@ import { observer } from 'mobx-react'
 import _ from 'lodash'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
-import LabeledInput from 'components/Inputs/LabeledInput'
+import LabeledInput from '../../Inputs/LabeledInput'
 import React from 'react'
 
 import styles from './index.scss'

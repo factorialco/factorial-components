@@ -1,5 +1,4 @@
 // @flow
-/* global __CLIENT__ */
 import React from 'react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
@@ -66,7 +65,7 @@ export default class ColorButton extends React.Component {
   render () {
     const { to, disabled, label, outline } = this.props
 
-    if (to && __CLIENT__) {
+    if (to && process.env.__CLIENT__) {
       const { Link } = require('react-router')
       return (
         <Link className={styles.colorButton} to={to} style={this.getStyle()}>

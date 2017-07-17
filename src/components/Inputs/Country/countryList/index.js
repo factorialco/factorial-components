@@ -1,5 +1,5 @@
 // @flow
-import en from './en.json'
-import es from './es.json'
+import en from './en.js'
+import es from './es.js'
 
 export { en, es }

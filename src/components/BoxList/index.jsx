@@ -2,7 +2,7 @@
 import _ from 'lodash'
 import { ReactChildren, ReactElement } from 'tcomb-react'
 import autobind from 'autobind-decorator'
-import Chevron from 'components/Chevron'
+import Chevron from '../Chevron'
 import classNames from 'classnames/bind'
 import Dropzone from 'react-dropzone'
 import React from 'react'

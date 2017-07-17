@@ -1,5 +1,5 @@
 // @flow
-import Chevron from 'components/Chevron'
+import Chevron from '../../../Chevron'
 import React from 'react'
 
 import styles from './index.scss'

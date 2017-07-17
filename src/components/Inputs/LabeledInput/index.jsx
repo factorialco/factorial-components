@@ -1,14 +1,14 @@
 // @flow
 import { ReactChildren } from 'tcomb-react'
-import { Tooltip } from 'components/Tooltip'
+import { Tooltip } from '../../Tooltip'
 import { observer } from 'mobx-react'
 import classNames from 'classnames/bind'
-import Icon from 'components/Icon'
+import Icon from '../../Icon'
 import React from 'react'
-import ReadOnlyField from 'components/ReadOnlyField'
+import ReadOnlyField from '../../ReadOnlyField'
 import renderIf from 'lib/renderIf'
-import RoundedBadge from 'components/RoundedBadge'
-import WithToggleState from 'components/WithToggleState'
+import RoundedBadge from '../../RoundedBadge'
+import WithToggleState from '../../WithToggleState'
 
 import styles from './index.scss'
 

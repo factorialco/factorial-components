@@ -1,6 +1,6 @@
 // @flow
 import { ReactElement, ReactChildren } from 'tcomb-react'
-import type { Colors } from 'components/Illustration'
+import type { Colors } from '../Illustration'
 
 export type CustomIllustration = {
   illustration: ReactElement,

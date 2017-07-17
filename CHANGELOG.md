@@ -1,5 +1,11 @@
 # Changelog
 
+## `1.1.5`
+
+:nail_care:
+
+  - Flow fixes
+
 ## `1.1.4`
 
 :nail_care:

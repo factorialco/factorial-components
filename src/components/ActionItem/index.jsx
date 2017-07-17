@@ -1,8 +1,7 @@
 // @flow
-/* global __CLIENT__ */
 import { ReactChildren } from 'tcomb-react'
 import classNames from 'classnames/bind'
-import Icon from 'components/Icon'
+import Icon from '../Icon'
 import React from 'react'
 import renderIf from 'lib/renderIf'
 
@@ -68,7 +67,7 @@ export default function ActionItem ({
     </div>
   )
 
-  if (to && __CLIENT__) {
+  if (to && process.env.__CLIENT__) {
     const { Link } = require('react-router')
     return (
       <Link className={className} to={to}>

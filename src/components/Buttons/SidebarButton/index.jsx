@@ -1,6 +1,6 @@
 // @flow
 import { ReactChildren } from 'tcomb-react'
-import Chevron from 'components/Chevron'
+import Chevron from '../../Chevron'
 import cn from 'classnames/bind'
 import React, { Component } from 'react'
 

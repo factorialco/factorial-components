@@ -1,6 +1,6 @@
 // @flow
-import Button from 'components/Buttons/Button'
-import ModalFooter from 'components/Modal/Footer'
+import Button from '../../Buttons/Button'
+import ModalFooter from '../../Modal/Footer'
 import React from 'react'
 
 type Props = {

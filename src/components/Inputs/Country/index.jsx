@@ -1,8 +1,8 @@
 // @flow
 import _ from 'lodash'
-import Loading from 'components/Loading'
+import Loading from '../../Loading'
 import React from 'react'
-import Select from 'components/Inputs/Select'
+import Select from '../../Inputs/Select'
 
 import type { SelectProps, SelectOption } from '../types'
 
