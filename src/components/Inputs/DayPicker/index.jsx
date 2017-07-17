@@ -203,7 +203,7 @@ export default class DayPicker extends React.Component {
             fromMonth={fromMonth}
             toMonth={toMonth}
             initialMonth={this.getMonth()}
-            locale={moment.locale()}
+            locale={locale}
             localeUtils={MomentLocaleUtils}
             onDayClick={this.onDayClick}
             selectedDays={day => moment(day).format(FORMAT) === selectedDay}
