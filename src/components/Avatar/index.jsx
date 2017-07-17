@@ -7,18 +7,18 @@ import styles from './index.scss'
 
 const cx = classNames.bind(styles)
 
-type Size = 'small' | 'short' | 'medium' | 'grande' | 'big';
-type Status = 'active' | 'idle' | 'off';
+type Size = 'small' | 'short' | 'medium' | 'grande' | 'big'
+type Status = 'active' | 'idle' | 'off'
 
 type Props = {
   letters?: string,
   size?: Size,
   status?: Status,
   url?: string
-};
+}
 
 export default class Avatar extends React.Component {
-  props: Props;
+  props: Props
 
   renderStatus () {
     const { status } = this.props

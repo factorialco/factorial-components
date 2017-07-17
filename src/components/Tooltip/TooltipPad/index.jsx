@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 
 type Props = {
   children?: ReactChildren
-};
+}
 
 export default function TooltipPad ({ children }: Props) {
   return (

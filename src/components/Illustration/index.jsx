@@ -5,7 +5,7 @@ import React from 'react'
 
 import styles from './index.scss'
 
-type Sizes = 'short' | 'small' | 'medium' | 'grande' | 'big';
+type Sizes = 'short' | 'small' | 'medium' | 'grande' | 'big'
 
 export type Colors =
   | 'primary'
@@ -15,7 +15,7 @@ export type Colors =
   | 'wrong'
   | 'accent'
   | 'negative'
-  | 'brand';
+  | 'brand'
 
 type Props = {
   name: string,
@@ -23,7 +23,7 @@ type Props = {
   size?: Sizes,
   fill?: boolean,
   type?: Colors
-};
+}
 
 const cx = cn.bind(styles)
 

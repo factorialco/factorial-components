@@ -6,19 +6,19 @@ import { ReactElement } from 'tcomb-react'
 type Params = {
   open: boolean,
   toggle: (value: boolean) => () => void
-};
+}
 
 type Props = {
   opened?: boolean,
   target: (params: Params) => ReactElement
-};
+}
 
 type State = {
   open: boolean
-};
+}
 
 export default class WithToggleState extends React.Component {
-  props: Props;
+  props: Props
   state: State = { open: false }
 
   componentWillMount () {
@@ -27,7 +27,8 @@ export default class WithToggleState extends React.Component {
     }
   }
 
-  @autobind onToggle (value: boolean) {
+  @autobind
+  onToggle (value: boolean) {
     return () => this.setState({ open: value })
   }
 

@@ -16,17 +16,18 @@ type Props = {
   onClick?: (event: SyntheticEvent) => mixed,
   outline?: boolean,
   to?: string
-};
+}
 
 export default class ColorButton extends React.Component {
-  props: Props;
+  props: Props
 
   static defaultProps = {
     type: 'brand',
     color: 'white'
-  };
+  }
 
-  @autobind onClick (event: SyntheticEvent) {
+  @autobind
+  onClick (event: SyntheticEvent) {
     const { onClick } = this.props
     if (event.defaultPrevented) return
     if (onClick) return onClick(event)

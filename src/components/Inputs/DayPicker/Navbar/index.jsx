@@ -7,7 +7,7 @@ import styles from './index.scss'
 type NavbarProps = {
   onNextClick?: () => mixed,
   onPreviousClick?: () => mixed
-};
+}
 
 export default function Navbar (props: NavbarProps) {
   return (

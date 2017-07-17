@@ -8,12 +8,13 @@ import styles from './index.scss'
 type Props = {
   children?: ReactChildren,
   vertical?: boolean
-};
+}
 
 export default class ModalFooter extends React.Component {
-  props: Props;
+  props: Props
 
-  @autobind renderButton (element: ?ReactElement) {
+  @autobind
+  renderButton (element: ?ReactElement) {
     return (
       <div className={styles.wrapper}>
         {element}

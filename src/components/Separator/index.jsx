@@ -4,9 +4,7 @@ import React from 'react'
 
 import styles from './index.scss'
 
-type Types =
- | 'brand'
- | 'primary'
+type Types = 'brand' | 'primary'
 
 type Props = {
   color?: string,

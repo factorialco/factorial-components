@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 
 type Props = {
   children?: ReactChildren
-};
+}
 
 export default function Pad ({ children }: Props) {
   const empty = !React.Children.count(children)

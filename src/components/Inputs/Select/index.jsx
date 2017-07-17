@@ -14,26 +14,29 @@ const cx = classNames.bind(styles)
 
 type ComponentState = {
   focused: boolean
-};
+}
 
 @observer
 export default class Select extends React.Component {
-  props: SelectWithOptionsProps;
+  props: SelectWithOptionsProps
   state: ComponentState = {
     focused: false
-  };
+  }
 
-  @autobind onChange (event: any) {
+  @autobind
+  onChange (event: any) {
     // TODO: implement SyntheticEvent when flow supports it
     this.props.field.set(event.target.value)
     if (this.props.onChange) this.props.onChange(event.target.value)
   }
 
-  @autobind onFocus (_event: mixed) {
+  @autobind
+  onFocus (_event: mixed) {
     this.setState({ focused: true })
   }
 
-  @autobind onBlur (_event: mixed) {
+  @autobind
+  onBlur (_event: mixed) {
     this.setState({ focused: false })
   }
 
@@ -42,11 +45,11 @@ export default class Select extends React.Component {
 
     if (Array.isArray(options)) return this.renderOptions(options)
 
-    return _.map(options, (options, label) => (
+    return _.map(options, (options, label) =>
       <optgroup label={label} key={label}>
         {this.renderOptions(options)}
       </optgroup>
-    ))
+    )
   }
 
   renderOptions (options: Array<SelectOption>) {
