@@ -54,9 +54,10 @@
       display: none;
       color: $grey3;
     }
-
-    .searchLabelText {
-      color: $grey5;
-    }
   }
+}
+
+.searchLabelText {
+  font-size: 14px;
+  color: $grey2;
 }
