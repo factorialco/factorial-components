@@ -135,10 +135,10 @@ export default class EmployeeSelector extends React.Component {
           {label || 'select'}:
         </div>
         <div className={styles.links}>
-          <LinkButton color={color} onClick={this.onSelectAll}>
+          <LinkButton size='small' color={color} onClick={this.onSelectAll}>
             {all || 'all'}
           </LinkButton>
-          <LinkButton color={color} onClick={this.onSelectNone}>
+          <LinkButton size='small' color={color} onClick={this.onSelectNone}>
             {none || 'nsone'}
           </LinkButton>
         </div>
