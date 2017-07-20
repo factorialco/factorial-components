@@ -24,8 +24,14 @@
     display: flex;
     align-items: center;
 
-    button {
-      margin-left: 10px;
+    .label {
+      margin-right: 10px;
+    }
+
+    .links {
+      button:last-child {
+        margin-left: 10px;
+      }
     }
   }
 }
