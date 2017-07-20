@@ -20,7 +20,8 @@ type Props = {
   size?: 'small' | 'normal',
   targetAttachment?: Attachment,
   toggle?: (value: boolean) => () => void,
-  type: 'primary' | 'brand' | 'wrong' | 'negative' | 'popover'
+  type: 'primary' | 'brand' | 'wrong' | 'negative' | 'popover',
+  animated: boolean
 }
 
 const cx = classNames.bind(styles)
@@ -30,7 +31,8 @@ export default class Tooltip extends React.Component {
   mouseOver: boolean = false
 
   static defaultProps = {
-    size: 'normal'
+    size: 'normal',
+    animated: true
   }
 
   @autobind
@@ -54,14 +56,14 @@ export default class Tooltip extends React.Component {
   }
 
   renderTooltip () {
-    const { darkenArrow, open, children, type, size } = this.props
+    const { darkenArrow, open, children, type, size, animated } = this.props
 
     if (!open) return null
     if (!children) return null // flow
 
     return (
       <div
-        className={cx(type, 'tooltip', type, size)}
+        className={cx(type, 'tooltip', type, size, { animated })}
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
       >
