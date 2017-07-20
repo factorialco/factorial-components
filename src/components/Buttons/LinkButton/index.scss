@@ -2,8 +2,6 @@
 @import 'variables/fonts';
 
 .buttonLink {
-  @include font-size(4);
-
   background: transparent;
   border: none;
   color: $brand;
@@ -12,4 +10,12 @@
   font-weight: 500;
   outline: none;
   text-align: center;
+
+  &.medium {
+    @include font-size(4);
+  }
+
+  &.small {
+    @include font-size(5);
+  }
 }

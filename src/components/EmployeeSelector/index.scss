@@ -25,11 +25,8 @@
     align-items: center;
 
     .label {
-      margin-right: 10px;
-    }
-
-    .links {
       @include font-size(5);
+      margin-right: 10px;
     }
   }
 }
