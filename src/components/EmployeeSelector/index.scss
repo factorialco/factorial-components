@@ -27,6 +27,10 @@
     .label {
       margin-right: 10px;
     }
+
+    .links {
+      @include font-size(5);
+    }
   }
 }
 
