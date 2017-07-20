@@ -54,7 +54,6 @@ const PricingCard = ({
             </span>
             {renderIf(Boolean(cost.periodicity))(
               <span>
-                <br />
                 / {cost.periodicity}
               </span>
             )}
