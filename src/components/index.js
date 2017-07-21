@@ -15,6 +15,7 @@ import Country from './Inputs/Country'
 import Chevron from './Chevron'
 import ColorButton from './Buttons/ColorButton'
 import EmployeeSelector from './EmployeeSelector'
+import Flash from './Flash'
 import Form from './Form'
 import FormRow from './FormRow'
 import Icon from './Icon'
@@ -58,6 +59,7 @@ export {
   ColorButton,
   DayPicker,
   EmployeeSelector,
+  Flash,
   Form,
   FormRow,
   Icon,
