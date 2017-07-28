@@ -20,11 +20,6 @@
 @include animation(popoverTopBottom, 0, 0, -60px, 0);
 @include animation(popoverBottomTop, 0, 0, 60px, 0);
 
-.wrapper {
-  height: 100%;
-  width: 100%;
-}
-
 .tooltip {
   font-family: $font-stack;
   position: relative;
