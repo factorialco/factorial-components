@@ -94,7 +94,7 @@ export default class Tooltip extends React.Component {
       <div
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
-        className={cx('wrapper', className)}
+        className={className}
       >
         <TetherComponent
           attachment={attachment}
