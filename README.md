@@ -62,3 +62,20 @@ Here is an example importing the css file as a string and injecting it to the ht
 Build both server and client packages with: `yarn build`
 
 This command will generate a `dist` folder containing subsequent `server` and `client` folders for each case.
+
+## Release flow
+If you don't have it, install [git flow](https://github.com/nvie/gitflow) and initialize it in the repo like so: `git flow init -d`.
+
+To start a new release:
+
+`git flow release start <NEW_RELEASE_VERSION>`
+
+On the newly created branch modify `package.json`'s version to `NEW_RELEASE_VERSION` and commit changes:
+
+`git ci -am '<NEW_RELEASE_VERSION>'`
+
+Finally close the release with :
+
+`git flow release finish <NEW_RELEASE_VERSION>`
+
+You are done, now simply `npm publish` it ;)
