@@ -117,6 +117,7 @@ $illustration_size: 100px;
           display: flex;
           align-items: center;
           justify-content: center;
+          overflow: hidden;
           width: $illustration_size;
           height: $illustration_size;
           background: white;
