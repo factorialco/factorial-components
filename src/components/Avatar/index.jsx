@@ -49,11 +49,10 @@ export default class Avatar extends React.Component {
   }
 
   render () {
-    const { size } = this.props
-    const className = styles[size || 'medium']
+    const { size, url } = this.props
 
     return (
-      <div className={className}>
+      <div className={cx(size || 'medium', { url })}>
         {this.renderContent()}
         {this.renderStatus()}
       </div>
