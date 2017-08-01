@@ -43,7 +43,7 @@
   &.primary {
     background-color: $grey1;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($grey1, 10%);
     }
   }
@@ -51,7 +51,7 @@
   &.secondary {
     background-color: $secondary;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($secondary, 10%);
     }
   }
@@ -59,7 +59,7 @@
   &.brand {
     background-color: $brand;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($brand, 10%);
     }
   }
@@ -69,7 +69,7 @@
     color: $grey1;
     font-weight: 500;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($grey4, 10%);
     }
   }
@@ -77,7 +77,7 @@
   &.correct {
     background-color: $correct;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($correct, 10%);
     }
   }
@@ -85,7 +85,7 @@
   &.wrong {
     background-color: $wrong;
 
-    &:active {
+    &:active, &:focus {
       background-color: darken($wrong, 10%);
     }
   }
@@ -93,6 +93,10 @@
   &.negative {
     background-color: white;
     color: $brand;
+
+    &:active, &:focus {
+      background-color: darken(white, 10%);
+    }
   }
 }
 
@@ -109,7 +113,7 @@
     border-color: $grey1;
     color: $grey1;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($grey1, 10%);
       color: darken($grey1, 10%);
     }
@@ -119,7 +123,7 @@
     border-color: $secondary;
     color: $secondary;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($secondary, 10%);
       color: darken($secondary, 10%);
     }
@@ -129,7 +133,7 @@
     border-color: $brand;
     color: $brand;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($brand, 10%);
       color: darken($brand, 10%);
     }
@@ -139,7 +143,7 @@
     border-color: $grey4;
     color: $grey3;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($grey4, 10%);
       color: $grey3;
     }
@@ -149,7 +153,7 @@
     border-color: $correct;
     color: $correct;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($correct, 10%);
       color: darken($correct, 10%);
     }
@@ -159,7 +163,7 @@
     border-color: $wrong;
     color: $wrong;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken($wrong, 10%);
       color: darken($wrong, 10%);
     }
@@ -169,7 +173,7 @@
     border-color: white;
     color: white;
 
-    &:active {
+    &:active, &:focus {
       border-color: darken(white, 10%);
       color: darken(white, 10%);
     }
