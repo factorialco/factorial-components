@@ -13,6 +13,7 @@ type Props = {
   bang?: boolean,
   field: Field,
   focused?: boolean,
+  autofocus?: boolean,
   getRef?: (ref: ReactElement) => mixed,
   info?: ReactChildren,
   label: string,
@@ -71,6 +72,7 @@ export default class Text extends React.Component {
       type,
       readonly,
       focused,
+      autofocus,
       value
     } = this.props
 
@@ -101,6 +103,7 @@ export default class Text extends React.Component {
           onFocus={this.onFocus}
           onBlur={this.onBlur}
           type={type || 'text'}
+          autoFocus={autofocus && 'autofocus'}
         />
       </LabeledInput>
     )
