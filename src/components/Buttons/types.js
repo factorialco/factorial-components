@@ -7,3 +7,4 @@ export type ButtonType =
   | 'correct'
   | 'wrong'
   | 'negative'
+  | 'featured'
