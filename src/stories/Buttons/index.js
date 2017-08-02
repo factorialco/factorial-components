@@ -42,6 +42,9 @@ storiesOf('ColorButton', module)
   .add('standard', () =>
     <ColorButton backgroundColor='#000' label='this is some text' />
   )
+  .add('compact', () =>
+    <ColorButton compact backgroundColor='#000' label='this is some text' />
+  )
   .add('outlined', () =>
     <ColorButton outline backgroundColor='#000' label='this is some text' />
   )
