@@ -183,7 +183,7 @@ export default class DayPicker extends React.Component {
     if (!this.state.isFocused) return input
 
     const selectedDay = field.value
-    const locale: string = moment.locale()
+    const locale: string = moment().locale()
 
     return (
       <div className={styles.root}>
