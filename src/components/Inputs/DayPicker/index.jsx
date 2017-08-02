@@ -183,7 +183,6 @@ export default class DayPicker extends React.Component {
     if (!this.state.isFocused) return input
 
     const selectedDay = field.value
-    // $FlowFixMe: Wrong flow-typed: https://github.com/flowtype/flow-typed/issues/1048
     const locale: string = moment.locale()
 
     return (
