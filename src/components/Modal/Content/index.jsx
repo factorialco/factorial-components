@@ -7,7 +7,7 @@ import Form from 'components/Form'
 import Icon from 'components/Icon'
 import Illustration from 'components/Illustration'
 import React, { Component } from 'react'
-import RoundButton from 'components/Buttons/RoundButton'
+import RoundButton from 'components/RoundButton'
 
 import styles from '../index.scss'
 
