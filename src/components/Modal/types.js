@@ -10,6 +10,7 @@ export type CustomIllustration = {
 export type Modal = {
   big?: boolean,
   children?: ReactChildren,
+  closePortal?: Function,
   color?: string,
   description?: string,
   fixed?: boolean, // Only used for the style guide

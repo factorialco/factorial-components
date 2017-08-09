@@ -1,11 +1,15 @@
 @import 'variables/colors';
 
 .separator {
-  width: 30px;
   height: 1px;
   margin: 40px 0px 40px;
   border-bottom: 2px solid;
 
+  &.small { width: 20px; }
+  &.medium { width: 30px; }
+
   &.brand { border-color: $brand; }
+  &.wrong { border-color: $wrong; }
   &.primary { border-color: $grey4; }
+  &.negative { border-color: white; }
 }

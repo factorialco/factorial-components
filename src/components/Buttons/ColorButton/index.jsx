@@ -9,6 +9,7 @@ const cx = classNames.bind(styles)
 type Props = {
   backgroundColor: string,
   color?: string,
+  compact?: boolean,
   disabled?: boolean,
   inverted: boolean,
   label?: string,
@@ -63,7 +64,7 @@ export default class ColorButton extends React.Component {
   }
 
   render () {
-    const { to, disabled, label, outline } = this.props
+    const { to, disabled, label, outline, compact } = this.props
 
     if (to && process.env.__CLIENT__) {
       const { Link } = require('react-router')
@@ -76,7 +77,7 @@ export default class ColorButton extends React.Component {
 
     return (
       <button
-        className={cx('colorButton', { outline })}
+        className={cx('colorButton', { outline, compact })}
         disabled={disabled}
         onClick={this.onClick}
         style={this.getStyle()}
