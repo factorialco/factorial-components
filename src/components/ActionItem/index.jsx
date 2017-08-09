@@ -76,7 +76,7 @@ export default function ActionItem ({
     )
   } else if (onClick) {
     return (
-      <div className={className} onClick={onClick}>
+      <div className={className} onClick={onClick} role='button'>
         {content}
       </div>
     )
