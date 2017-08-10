@@ -16,6 +16,7 @@ export default class RoundButton extends React.Component {
     to?: string,
     set: string,
     type?: ButtonType,
+    opened?: boolean,
     href?: string,
     disabled?: boolean,
     title?: string,
@@ -46,10 +47,10 @@ export default class RoundButton extends React.Component {
   }
 
   renderLabel () {
-    const { label } = this.props
+    const { label, opened } = this.props
 
     return (
-      <div className={styles.label}>
+      <div className={cx('label', { opened })}>
         {label}
       </div>
     )
