@@ -28,7 +28,7 @@ $radius: 5px;
   background-position: calc(100% - 20px) calc(2em + 2px), calc(100% - 15px) calc(2em + 2px), calc(100% - .5em) .5em;
   background-size: 5px 5px, 5px 5px, 1.5em 1.5em;
   background-repeat: no-repeat;
-  cursor: pointer;
+  cursor: default;
 }
 
 .focused {
