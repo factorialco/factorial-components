@@ -36,6 +36,10 @@
     display: none;
     padding-right: 10px;
     font-weight: 600;
+
+    &.opened {
+      display: block;
+    }
   }
 
   &:hover {
