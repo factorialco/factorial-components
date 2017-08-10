@@ -25,7 +25,7 @@ export default class Content extends Component {
     const { onSubmit } = this.props
 
     if (onSubmit) {
-      return onSubmit()
+      return onSubmit(this.props.closePortal)
     } else {
       return Promise.resolve()
     }
