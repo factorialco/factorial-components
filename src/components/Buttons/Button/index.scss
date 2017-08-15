@@ -64,6 +64,14 @@
     }
   }
 
+  &.darker {
+    background-color: rgba(0,0,0, 0.1);
+
+    &:active, &:focus {
+      background-color: rgba(0,0,0, 0.2);
+    }
+  }
+
   &.terciary {
     background-color: $grey4;
     color: $grey1;
@@ -136,6 +144,16 @@
     &:active, &:focus {
       border-color: darken($brand, 10%);
       color: darken($brand, 10%);
+    }
+  }
+
+  &.darker {
+    border-color: rgba(0,0,0, 0.1);
+    color: rgba(0,0,0, 0.1);
+
+    &:active, &:focus {
+      border-color: rgba(0,0,0, 0.2);
+      color: rgba(0,0,0, 0.2);
     }
   }
 
