@@ -45,7 +45,7 @@ export default class BoxList extends React.Component {
     const count = elements - overflowLimit
 
     return (
-      <div className={styles.toggle} onClick={this.onClickToggle}>
+      <div className={styles.toggle} onClick={this.onClickToggle} role='button'>
         <span className={styles.text}>
           {isOpen ? close || 'Close' : more || `View ${count} more`}
         </span>

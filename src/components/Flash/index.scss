@@ -1,0 +1,62 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+.flash {
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px 0 rgba(0,0,0,0.2);
+  color: white;
+  display: flex;
+  font-family: $font-stack;
+  font-size: $h4;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 15px 20px;
+
+  &.correct {
+    background: $correct;
+  }
+
+  &.wrong {
+    background: $wrong;
+  }
+
+  &.brand {
+    background: $brand;
+  }
+
+  &.terciary {
+    background: $grey4;
+    color: $grey1;
+    font-weight: 400;
+  }
+
+  &.accent {
+    background: $accent;
+    color: $grey1;
+    font-weight: 400;
+  }
+
+  .icon {
+    align-items: center;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    height: 16px;
+    justify-content: center;
+    width: 16px;
+  }
+
+  .close {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    background: none;
+    border: none;
+    display: flex;
+  }
+
+  .message {
+    margin: 0 20px;
+  }
+}

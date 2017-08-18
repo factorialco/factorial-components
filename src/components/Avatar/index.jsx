@@ -14,6 +14,7 @@ type Props = {
   letters?: string,
   size?: Size,
   status?: Status,
+  label?: string,
   url?: string
 }
 
@@ -27,15 +28,15 @@ export default class Avatar extends React.Component {
   }
 
   renderContent () {
-    const { letters, url } = this.props
+    const { letters, url, label } = this.props
 
     if (url) {
-      return <img className={styles.img} src={url} />
+      return <img className={styles.img} src={url} alt={label} />
     }
 
     if (letters) {
       return (
-        <div className={styles.capitals}>
+        <div className={styles.capitals} aria-label={label}>
           {letters}
         </div>
       )
@@ -49,11 +50,10 @@ export default class Avatar extends React.Component {
   }
 
   render () {
-    const { size } = this.props
-    const className = styles[size || 'medium']
+    const { size, url } = this.props
 
     return (
-      <div className={className}>
+      <div className={cx(size || 'medium', { url })}>
         {this.renderContent()}
         {this.renderStatus()}
       </div>

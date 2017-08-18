@@ -24,8 +24,9 @@
     display: flex;
     align-items: center;
 
-    button {
-      margin-left: 10px;
+    .label {
+      @include font-size(5);
+      margin-right: 10px;
     }
   }
 }
@@ -88,5 +89,11 @@
       background: $brand;
       border-color: $brand;
     }
+  }
+}
+
+.links {
+  button:first-child {
+    margin-right: 5px;
   }
 }

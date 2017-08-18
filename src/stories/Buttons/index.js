@@ -15,6 +15,10 @@ storiesOf('Button', module)
   .add('with text', () => <Button label='this is some text' />)
   .add('with some emoji', () => <Button label='😃 😃 😃' />)
   .add('outlined', () => <Button outline label='this is some text' />)
+  .add('darker', () => <Button type='darker' label='Darker Button' />)
+  .add('darker with outline', () =>
+    <Button type='darker' outline label='Darker Outline  Button' />
+  )
 
 storiesOf('SidebarButton', module)
   .addDecorator(story =>
@@ -41,6 +45,9 @@ storiesOf('ColorButton', module)
   )
   .add('standard', () =>
     <ColorButton backgroundColor='#000' label='this is some text' />
+  )
+  .add('compact', () =>
+    <ColorButton compact backgroundColor='#000' label='this is some text' />
   )
   .add('outlined', () =>
     <ColorButton outline backgroundColor='#000' label='this is some text' />
