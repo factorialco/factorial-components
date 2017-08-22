@@ -16,6 +16,7 @@ type Props = {
   constraints?: Array<*>,
   darkenArrow?: boolean,
   offset?: string,
+  color?: string,
   open: boolean,
   size?: 'small' | 'normal',
   targetAttachment?: Attachment,
@@ -56,10 +57,19 @@ export default class Tooltip extends React.Component {
   }
 
   renderTooltip () {
-    const { darkenArrow, open, children, type, size, animated } = this.props
+    const { darkenArrow, open, children, type, size, animated, color } = this.props
 
     if (!open) return null
     if (!children) return null // flow
+
+    let tooltipStyles = {}
+
+    if (color) {
+      tooltipStyles = {
+        backgroundColor: color,
+        color: 'white'
+      }
+    }
 
     return (
       <div
@@ -67,8 +77,8 @@ export default class Tooltip extends React.Component {
         onMouseOver={this.onMouseOver}
         onMouseLeave={this.onMouseLeave}
       >
-        <div className={cx('arrow', { darken: darkenArrow })} />
-        <div className={styles.content}>
+        <div className={cx('arrow', { darken: darkenArrow })} style={tooltipStyles} />
+        <div className={styles.content} style={tooltipStyles}>
           {children[1]}
         </div>
       </div>
