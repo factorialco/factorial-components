@@ -17,6 +17,7 @@ const cx = classNames.bind(styles)
 
 type Props = {
   all?: string,
+  autofocus?: boolean,
   color?: string,
   employees: Array<Object>,
   fallback?: string,
@@ -160,7 +161,7 @@ export default class EmployeeSelector extends React.Component {
   }
 
   render () {
-    const { employees, placeholder } = this.props
+    const { employees, placeholder, autofocus } = this.props
     const filteredEmployees = _.sortBy(
       _.filter(employees, employee =>
         employee.user.matchesFullName(this.state.search)
@@ -171,6 +172,7 @@ export default class EmployeeSelector extends React.Component {
     return (
       <BoxList>
         <InlineSearch
+          autofocus={autofocus}
           onSearch={this.onSearch}
           placeholder={placeholder}
           search={this.state.search}

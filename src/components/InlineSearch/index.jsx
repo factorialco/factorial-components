@@ -7,13 +7,14 @@ import styles from './index.scss'
 const cx = classNames.bind(styles)
 
 type Props = {
+  autofocus?: boolean,
   onSearch: (event: any) => void,
   placeholder?: string,
   search: string
 }
 
 export default function InlineSearch (props: Props) {
-  const { placeholder, onSearch, search } = props
+  const { autofocus, placeholder, onSearch, search } = props
   const className = cx('search', {
     hasSearch: search.length > 0
   })
@@ -21,9 +22,10 @@ export default function InlineSearch (props: Props) {
   return (
     <label className={className}>
       <input
-        type='text'
+        autoFocus={autofocus}
         className={styles.searchInput}
         onChange={onSearch}
+        type='text'
         value={search}
       />
       <div className={styles.searchLabel}>
