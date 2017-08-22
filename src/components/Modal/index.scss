@@ -2,8 +2,6 @@
 @import 'variables/fonts';
 @import 'variables/z-index';
 
-$illustration_size: 100px;
-
 .modal {
   display: flex;
   flex-direction: column;
@@ -42,27 +40,7 @@ $illustration_size: 100px;
 
     &.negative {
       .form {
-        background: $brand;
         border-radius: 10px;
-
-        .header {
-          background: $brand;
-          color: white;
-          width: 420px;
-          margin: 0 auto 40px;
-
-          .illustration {
-            margin-top: -50px;
-          }
-
-          .title {
-            color: white;
-          }
-
-          .description {
-            color: white;
-          }
-        }
 
         .element {
           background: white;
@@ -82,67 +60,6 @@ $illustration_size: 100px;
     .form {
       display: flex;
       flex-direction: column;
-
-      .close,
-      .back {
-        position: absolute;
-        top: 20px;
-      }
-
-      .back {
-        left: 30px;
-      }
-
-      .close {
-        right: 20px;
-
-        > button {
-          outline: none;
-          border: none;
-          background: transparent;
-
-          > svg {
-            width: 16px;
-            height: 16px;
-          }
-        }
-      }
-
-      .header {
-        margin: 30px 30px 0 30px;
-        text-align: center;
-
-        .illustration {
-          stroke: $brand;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          width: $illustration_size;
-          height: $illustration_size;
-          background: white;
-          border-radius: 30px;
-          margin: 0 auto;
-          margin-top: -80px;
-          margin-bottom: 30px;
-          box-shadow: 0px 10px 20px rgba(0, 0, 0, .1);
-        }
-
-        .title {
-          font-size: $h3;
-          line-height: 25px;
-          font-weight: 500;
-          margin-bottom: 5px;
-          color: $grey1;
-        }
-
-        .description {
-          font-size: $h4;
-          line-height: 25px;
-          font-weight: 400;
-          color: $grey2;
-        }
-      }
 
       .element {
         flex: 1 1 auto;

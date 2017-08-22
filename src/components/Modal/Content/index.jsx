@@ -4,10 +4,8 @@ import { ReactElement } from 'tcomb-react'
 import autobind from 'autobind-decorator'
 import cn from 'classnames/bind'
 import Form from 'components/Form'
-import Icon from 'components/Icon'
-import Illustration from 'components/Illustration'
 import React, { Component } from 'react'
-import RoundButton from 'components/Buttons/RoundButton'
+import Header from './Header'
 
 import styles from '../index.scss'
 
@@ -61,7 +59,7 @@ export default class Content extends Component {
     return classes.join(' ')
   }
 
-    @autobind
+  @autobind
   renderElement (element: ?ReactElement) {
     if (!element) return null
 
@@ -72,71 +70,37 @@ export default class Content extends Component {
     )
   }
 
-  renderHeaderContent () {
-    const { headerContent } = this.props
-    if (!headerContent) return null
-    return headerContent()
-  }
+  @autobind
+  renderHeader () {
+    const {
+      title,
+      description,
+      illustration,
+      color,
+      negative,
+      type,
+      onBack,
+      header
+    } = this.props
 
-  renderIllustration () {
-    const { color, illustration, type } = this.props
-
-    if (!illustration) return null
-
-    if (typeof illustration !== 'string') {
-      return (
-        <div
-          className={styles.illustration}
-          style={{ backgroundColor: illustration.backgroundColor }}
-        >
-          {illustration.illustration}
-        </div>
-      )
-    }
+    if (header) return header()
 
     return (
-      <div className={styles.illustration}>
-        <Illustration color={color} type={type} name={illustration} />
-      </div>
-    )
-  }
-
-  renderCancel () {
-    const { locked, negative } = this.props
-
-    if (locked) return null
-
-    return (
-      <div className={styles.close}>
-        <button type='button' onClick={this.onClose}>
-          <Icon
-            type={negative ? 'negative' : 'primary'}
-            set='utility'
-            icon='close'
-            size='small'
-          />
-        </button>
-      </div>
-    )
-  }
-
-  renderBack () {
-    const { onBack } = this.props
-    if (!onBack) return null
-    return (
-      <div className={styles.back}>
-        <RoundButton
-          icon='back'
-          onClick={onBack}
-          set='utility'
-          type='negative'
-        />
-      </div>
+      <Header
+        title={title}
+        description={description}
+        color={color}
+        type={type}
+        illustration={illustration}
+        negative={negative}
+        onBack={onBack}
+        onClose={this.onClose}
+      />
     )
   }
 
   render () {
-    const { big, negative, title, description, children } = this.props
+    const { big, negative, children } = this.props
 
     return (
       <div className={this.getClassNames()}>
@@ -146,18 +110,8 @@ export default class Content extends Component {
             onClick={this.onClickBox}
           >
             <Form onSubmit={this.submit} className={styles.form}>
-              {this.renderCancel()}
-              {this.renderBack()}
-              <div className={styles.header}>
-                {this.renderIllustration()}
-                <h2 className={styles.title}>
-                  {title}
-                </h2>
-                <h3 className={styles.description}>
-                  {description}
-                </h3>
-                {this.renderHeaderContent()}
-              </div>
+              {this.renderHeader()}
+
               {React.Children.map(children, this.renderElement)}
             </Form>
           </div>
