@@ -50,10 +50,11 @@ export default class Avatar extends React.Component {
   }
 
   render () {
-    const { size, url } = this.props
+    const { size, url, status } = this.props
+    const avatarStyles = status ? { overflow: 'visible' } : {}
 
     return (
-      <div className={cx(size || 'medium', { url })}>
+      <div className={cx(size || 'medium', { url })} style={avatarStyles}>
         {this.renderContent()}
         {this.renderStatus()}
       </div>
