@@ -1,0 +1,67 @@
+@import 'variables/colors';
+@import 'variables/fonts';
+
+$illustration_size: 100px;
+
+.header {
+  color: white;
+  width: 420px;
+  margin: 15px;
+  text-align: center;
+}
+
+.close,
+.back {
+  position: absolute;
+  top: 20px;
+}
+
+.back {
+  left: 30px;
+}
+
+.close {
+  right: 20px;
+
+  > button {
+    outline: none;
+    border: none;
+    background: transparent;
+
+    > svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+.illustration {
+  stroke: $brand;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: $illustration_size;
+  height: $illustration_size;
+  background: white;
+  border-radius: 30px;
+  margin: 0 auto;
+  margin-top: -80px;
+  margin-bottom: 30px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, .1);
+}
+
+.title {
+  font-size: $h3;
+  line-height: 25px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: $grey1;
+}
+
+.description {
+  font-size: $h4;
+  line-height: 25px;
+  font-weight: 400;
+  color: $grey2;
+}

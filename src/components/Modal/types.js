@@ -14,7 +14,7 @@ export type Modal = {
   color?: string,
   description?: string,
   fixed?: boolean, // Only used for the style guide
-  headerContent?: Function,
+  header?: Function,
   illustration?: string,
   locked?: boolean,
   negative?: boolean,
@@ -22,6 +22,18 @@ export type Modal = {
   onClose: () => void,
   onSubmit?: Function,
   submit: Function,
+  title?: string,
+  type?: Colors
+}
+
+export type Header = {
+  color?: string,
+  description?: string,
+  illustration?: string,
+  locked?: boolean,
+  negative?: boolean,
+  onBack?: Function,
+  onClose: () => void,
   title?: string,
   type?: Colors
 }
