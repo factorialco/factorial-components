@@ -2,6 +2,7 @@
 import React from 'react'
 import autobind from 'autobind-decorator'
 import classNames from 'classnames/bind'
+import { ReactChildren } from 'tcomb-react'
 
 import Icon from '../../Icon'
 import styles from './index.scss'
@@ -20,7 +21,8 @@ export default class RoundButton extends React.Component {
     href?: string,
     disabled?: boolean,
     title?: string,
-    onClick?: (event: SyntheticEvent) => mixed
+    onClick?: (event: SyntheticEvent) => mixed,
+    children?: ReactChildren
   }
 
   static defaultProps = {
@@ -62,6 +64,7 @@ export default class RoundButton extends React.Component {
       <div className={styles.flex}>
         {icon && this.renderIcon()}
         {label && this.renderLabel()}
+        {this.props.children}
       </div>
     )
   }
