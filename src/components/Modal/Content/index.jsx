@@ -103,7 +103,7 @@ export default class Content extends Component {
     const { big, negative, children } = this.props
 
     return (
-      <div className={this.getClassNames()}>
+      <div className={this.getClassNames()} role='dialog'>
         <div className={styles.overlay} onClick={this.onClickOverlay}>
           <div
             className={cx('box', { big, negative })}
