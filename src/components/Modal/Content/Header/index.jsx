@@ -81,15 +81,13 @@ export default class Header extends React.Component {
       <div className={cx('header', { negative })}>
         {this.renderCancel()}
         {this.renderBack()}
-        <div className={styles.header}>
-          {this.renderIllustration()}
-          <h2 className={styles.title}>
-            {title}
-          </h2>
-          <h3 className={styles.description}>
-            {description}
-          </h3>
-        </div>
+        {this.renderIllustration()}
+        <h2 className={styles.title}>
+          {title}
+        </h2>
+        <h3 className={styles.description}>
+          {description}
+        </h3>
       </div>
     )
   }
