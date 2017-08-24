@@ -20,11 +20,12 @@ export default class Modal extends React.Component {
     })
   }
 
-  componentWillUnmount () {
+  beforeClose (node: any, removeFromDOM: Function) {
     $('html').css({
       'overflow-y': 'scroll',
       'padding-right': '0px'
     })
+    removeFromDOM()
   }
 
   renderContent () {
@@ -47,7 +48,7 @@ export default class Modal extends React.Component {
     }
 
     return (
-      <Portal closeOnEsc isOpened onClose={this.props.onClose}>
+      <Portal closeOnEsc isOpened beforeClose={this.beforeClose} onClose={this.props.onClose}>
         {this.renderContent()}
       </Portal>
     )
