@@ -3,6 +3,7 @@ import $ from 'jquery'
 import Content from './Content'
 import Portal from 'react-portal'
 import React from 'react'
+import autobind from 'autobind-decorator'
 
 import type { Modal as ModalType } from './types'
 
@@ -21,6 +22,17 @@ export default class Modal extends React.Component {
   }
 
   componentWillUnmount () {
+    this.restoreScroll()
+  }
+
+  @autobind
+  beforeClose (node: any, removeFromDOM: Function) {
+    this.restoreScroll()
+    removeFromDOM()
+  }
+
+  @autobind
+  restoreScroll () {
     $('html').css({
       'overflow-y': 'scroll',
       'padding-right': '0px'
@@ -47,7 +59,7 @@ export default class Modal extends React.Component {
     }
 
     return (
-      <Portal closeOnEsc isOpened onClose={this.props.onClose}>
+      <Portal closeOnEsc isOpened beforeClose={this.beforeClose} onClose={this.props.onClose}>
         {this.renderContent()}
       </Portal>
     )
