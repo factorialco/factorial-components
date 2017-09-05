@@ -18,6 +18,7 @@ type Props = {
   offset?: string,
   children?: ReactChildren,
   onUpdate?: () => any,
+  tetherExtraCssClasses?: string,
   onRepositioned?: () => any
 }
 
@@ -73,7 +74,7 @@ export default class TetherComponent extends React.Component {
   }
 
   update () {
-    const { children, renderElementTag } = this.props
+    const { tetherExtraCssClasses, children, renderElementTag } = this.props
     const elementComponent = Children.toArray(children)[1]
 
     // if no element component provided, bail out
@@ -89,6 +90,9 @@ export default class TetherComponent extends React.Component {
     if (!this.elementParentNode) {
       // create a node that we can stick our content Component in
       this.elementParentNode = document.createElement(renderElementTag)
+      if (tetherExtraCssClasses) {
+        this.elementParentNode.setAttribute('class', tetherExtraCssClasses)
+      }
 
       // append node to the render node
       if (document.body) {
