@@ -39,11 +39,11 @@ export default class RoundButton extends React.Component {
   }
 
   renderIcon () {
-    const { set, icon, type } = this.props
-
+    const { set, icon, type, disabled } = this.props
+    const iconType = disabled ? 'primary' : type
     return (
       <div className={styles.icon}>
-        <Icon set={set} icon={icon} type={type} />
+        <Icon set={set} icon={icon} type={iconType} />
       </div>
     )
   }
