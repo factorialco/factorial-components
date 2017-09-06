@@ -127,6 +127,10 @@
     .tether-element {
       z-index: $z_index_popovers;
 
+      &.underModal {
+        z-index: $z_index_popovers_under_modal;
+      }
+
       /**
        *
        *   +---+<P

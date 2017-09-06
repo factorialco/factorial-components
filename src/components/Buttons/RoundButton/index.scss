@@ -1,5 +1,15 @@
 @import 'variables/colors';
 
+@mixin disabled_styles {
+  &:disabled {
+    opacity: .4;
+    cursor: default;
+    border-color: $grey2;
+    color: $grey2;
+    fill: $grey2;
+  }
+}
+
 .default {
   display: block;
   border-radius: 200px;
@@ -7,6 +17,7 @@
   border: 2px solid white;
   color: white;
   cursor: pointer;
+  @include disabled_styles;
 
   /* We need this because firefox does not support flex in buttons */
   .flex {
@@ -14,10 +25,6 @@
     align-items: center;
   }
 
-  &:disabled {
-    opacity: .5;
-    cursor: default;
-  }
 
   .icon {
     flex: 0 0 auto;
@@ -52,29 +59,34 @@
     border-color: $grey2;
     color: $grey2;
     fill: $grey2;
+    @include disabled_styles;
   }
 
   &.brand {
     border-color: $brand;
     color: $brand;
     fill: $brand;
+    @include disabled_styles;
   }
 
   &.terciary {
     border-color: $grey3;
     color: $grey3;
     fill: $grey3;
+    @include disabled_styles;
   }
 
   &.correct {
     border-color: $correct;
     color: $correct;
     fill: $correct;
+    @include disabled_styles;
   }
 
   &.wrong {
     border-color: $wrong;
     fill: $wrong;
+    @include disabled_styles;
   }
 
   &.featured {
