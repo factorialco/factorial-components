@@ -20,7 +20,7 @@ type Props = {
   open: boolean,
   size?: 'small' | 'normal',
   targetAttachment?: Attachment,
-  tetherExtraCssClasses?: string,
+  underModal?: boolean,
   toggle?: (value: boolean) => () => void,
   type: 'primary' | 'brand' | 'wrong' | 'negative' | 'popover',
   animated: boolean
@@ -93,7 +93,7 @@ export default class Tooltip extends React.Component {
       attachment,
       targetAttachment,
       className,
-      tetherExtraCssClasses,
+      underModal,
       offset
     } = this.props
 
@@ -111,7 +111,7 @@ export default class Tooltip extends React.Component {
         <TetherComponent
           attachment={attachment}
           targetAttachment={targetAttachment}
-          tetherExtraCssClasses={tetherExtraCssClasses}
+          underModal={underModal}
           constraints={
             constraints || [
               {
